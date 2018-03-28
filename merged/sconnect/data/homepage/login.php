@@ -49,7 +49,8 @@
  
  	$email_escape = mysqli_real_escape_string($sql_connection, $email);
 
- 	$query = "SELECT password, salt, position, university_domain, fname, lname, status, userhash 
+ 	$query = "SELECT userhash, password, salt, status, position, fname, mname, lname, profile_image_path, 
+ 	          resume_path, dob_mm, dob_dd, dob_yyyy, degree, major, university_domain
  			  FROM sconnect_user 
  			  WHERE email = '$email_escape';";
 	$result = mysqli_query ($sql_connection, $query);
@@ -93,19 +94,27 @@
 
 		// Redirect to news feed page after successful login.
   		session_regenerate_id(); 			
-  		$_SESSION['session_userhash'] = $userData['userhash'];
-  		$_SESSION['session_position'] = $userData['position'];
-  		$_SESSION['session_university_domain'] = $userData['university_domain'];
-  		$_SESSION['session_fname'] = $userData['fname'];
-  		$_SESSION['session_lname'] = $userData['lname'];
-  		$_SESSION['session_status'] = $userData['status'];
+  		$_SESSION['userhash'] = $userData['userhash'];
+  		$_SESSION['status'] = $userData['status'];
+  		$_SESSION['position'] = $userData['position'];
+  		$_SESSION['fname'] = $userData['fname'];
+  		$_SESSION['mname'] = $userData['mname'];
+  		$_SESSION['lname'] = $userData['lname'];
+  		$_SESSION['profile_image_path'] = $userData['profile_image_path'];
+  		$_SESSION['resume_path'] = $userData['resume_path'];
+  		$_SESSION['dob_mm'] = $userData['dob_mm'];
+  		$_SESSION['dob_dd'] = $userData['dob_dd'];
+  		$_SESSION['dob_yyyy'] = $userData['dob_yyyy'];
+  		$_SESSION['degree'] = $userData['degree'];
+  		$_SESSION['major'] = $userData['major'];
+  		$_SESSION['university_domain'] = $userData['university_domain'];
   		session_write_close();
   		
   		$returnObject = new stdClass();
 		$returnObject->success = "true";
 		$returnObject->message = "OK! Loggin In...";
 		$returnObject->redirect = "true";
-		$returnObject->redirectURL = "feed/";
+		$returnObject->redirectURL = "profile/";
 		echo json_encode($returnObject);	
 	}
 	else if($userData['status'] == 'PENDING_EMAIL') {
