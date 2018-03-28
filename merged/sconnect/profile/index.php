@@ -2,66 +2,8 @@
 	Profile Page for SConnect
 	Updated on: 03/28/2018 -->
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<?php
-	session_start();
-	if (!isset($_SESSION['userhash'])) {
-		header("Location: ../login.html");
-	}
-	?>
+	<?php include('../data/connection_open.php') ?>
 
-	<?php
-	$servername = "localhost";
-	$username = "root";
-	$password = "";
-	$database = "sconnect-db2";
-
-	$conn = mysqli_connect($servername, $username, $password, $database);
-	if(!$conn) {
-		die("Connection failed: " .mysqli_connect_error());
-	}
-	?>
-
-	<?php 
-	$mysqli = new mysqli($servername, $username, $password, $database);
-	$deg_stmt = $mysqli->prepare("SELECT degree from sconnect_lookup_degree");
-	$deg_stmt->execute();
-	$deg_array = [];
-	foreach ($deg_stmt->get_result() as $row)
-	{
-		$deg_array[] = $row['degree'];
-	}
-	?>
-
-	<?php 
-	$maj_stmt = $mysqli->prepare("SELECT major from sconnect_lookup_major");
-	$maj_stmt->execute();
-	$maj_array = [];
-	foreach ($maj_stmt->get_result() as $row)
-	{
-		$maj_array[] = $row['major'];
-	}
-	?>
-
-	<?php
-	function dropdown($name, array $options, $selected=null)
-	{
-		$dropdown = '<select name="' .$name. '" id="' .$name. '">'."\n";
-		$selected = $selected;
-		foreach ($options as $key => $option) {
-			$select = $selected==$key ? 'selected' : null;
-			$dropdown .= '<option value="' .$key. '"' .$select. '>' .$option. '</option>'."\n";
-		}
-		$dropdown .= '</select>'."\n";
-
-		return $dropdown;
-	}
-
-	?>
-
-	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, intial-scale=1.0">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -69,7 +11,7 @@
 	<script src="../js/profile.js"></script>
 	<link rel="stylesheet" type="text/css" href="../css/profile_page.css">
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-	<title><?php echo $_SESSION['fname'].' '.$_SESSION['lname']; ?></title>
+	<title><?php echo "SConnect " .$_SESSION['fname'].' '.$_SESSION['lname']; ?></title>
 </head>
 <body>
 	<div id="page">
@@ -151,35 +93,52 @@
 								?>
 								<div>
 									<select name="month" id="month">
-										<option value="1"  <?PHP if($_SESSION['dob_mm']==1) echo "selected";?>>January</option>
-										<option value="2"  <?PHP if($_SESSION['dob_mm']==2) echo "selected";?>>February</option>
-										<option value="3"  <?PHP if($_SESSION['dob_mm']==3) echo "selected";?>>March</option>
-										<option value="4"  <?PHP if($_SESSION['dob_mm']==4) echo "selected";?>>April</option>
-										<option value="5"  <?PHP if($_SESSION['dob_mm']==5) echo "selected";?>>May</option>
-										<option value="6"  <?PHP if($_SESSION['dob_mm']==6) echo "selected";?>>June</option>
-										<option value="7"  <?PHP if($_SESSION['dob_mm']==7) echo "selected";?>>July</option>
-										<option value="8"  <?PHP if($_SESSION['dob_mm']==8) echo "selected";?>>August</option>
-										<option value="9"  <?PHP if($_SESSION['dob_mm']==9) echo "selected";?>>September</option>
-										<option value="10" <?PHP if($_SESSION['dob_mm']==10) echo "selected";?>>October</option>
-										<option value="11" <?PHP if($_SESSION['dob_mm']==11) echo "selected";?>>November</option>
-										<option value="12" <?PHP if($_SESSION['dob_mm']==12) echo "selected";?>>December</option>
+										<option value=""  <?PHP if($_SESSION['dob_mm']==null) echo "selected";?>>MM</option>
+										<option value="1"  <?PHP if($_SESSION['dob_mm']=='1') echo "selected";?>>January</option>
+										<option value="2"  <?PHP if($_SESSION['dob_mm']=='2') echo "selected";?>>February</option>
+										<option value="3"  <?PHP if($_SESSION['dob_mm']=='3') echo "selected";?>>March</option>
+										<option value="4"  <?PHP if($_SESSION['dob_mm']=='4') echo "selected";?>>April</option>
+										<option value="5"  <?PHP if($_SESSION['dob_mm']=='5') echo "selected";?>>May</option>
+										<option value="6"  <?PHP if($_SESSION['dob_mm']=='6') echo "selected";?>>June</option>
+										<option value="7"  <?PHP if($_SESSION['dob_mm']=='7') echo "selected";?>>July</option>
+										<option value="8"  <?PHP if($_SESSION['dob_mm']=='8') echo "selected";?>>August</option>
+										<option value="9"  <?PHP if($_SESSION['dob_mm']=='9') echo "selected";?>>September</option>
+										<option value="10" <?PHP if($_SESSION['dob_mm']=='10') echo "selected";?>>October</option>
+										<option value="11" <?PHP if($_SESSION['dob_mm']=='11') echo "selected";?>>November</option>
+										<option value="12" <?PHP if($_SESSION['dob_mm']=='12') echo "selected";?>>December</option>
 									</select>
 
 									<select name="test" id="daytest">
-										<?PHP for($i=1; $i<=31; $i++)
+										<?PHP 
+										if($_SESSION['dob_dd'==null]) {
+											echo "<option value='' selected>DD</option>";
+										}
+										else{
+											echo "<option value=''>DD</option>";
+										}
+										for($i=1; $i<=31; $i++) {
 										if($_SESSION['dob_dd'] == $i)
 											echo "<option value='$i' selected>$i</option>";
 										else
 											echo "<option value='$i'>$i</option>";
+										}
 										?>
 									</select>
 
 									<select name="year" id="year">
-										<?PHP for($i=date("Y")-60; $i<=date("Y")+2; $i++)
+										<?PHP 
+										if($_SESSION['dob_yyyy'==null]) {
+											echo "<option value='' selected>YYYY</option>";
+										}
+										else{
+											echo "<option value=''>YYYY</option>";
+										}
+										for($i=date("Y")-60; $i<=date("Y"); $i++) {
 										if($_SESSION['dob_yyyy'] == $i)
 											echo "<option value='$i' selected>$i</option>";
 										else
 											echo "<option value='$i'>$i</option>";
+										}	
 										?>
 									</select>
 								</div>
@@ -189,5 +148,5 @@
 					</form>
 				</span>
 			</div>
-		</body>
-		</html>
+
+			<?php include("../header_footer/footer.php"); ?>
