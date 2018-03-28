@@ -104,8 +104,8 @@
 
 	if (mysqli_query($sql_connection, $query)) {
     	
-    	session_regenerate_id(); 			
-  		$_SESSION['userhash'] = $userData['userhash'];
+    	session_regenerate_id(); 
+		$_SESSION['userhash'] = $userData['userhash'];
   		$_SESSION['status'] = $userData['status'];
   		$_SESSION['position'] = $userData['position'];
   		$_SESSION['fname'] = $userData['fname'];
@@ -125,7 +125,7 @@
 		$returnObject->success = "true";
 		$returnObject->message = "Password Reset Success! Logging In...";
 		$returnObject->redirect = "true";
-		$returnObject->redirectURL = "../profile/";
+		$returnObject->redirectURL = "../feed/";
 		echo json_encode($returnObject);
 
 		exit();
