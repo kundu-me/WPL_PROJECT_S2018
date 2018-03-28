@@ -29,7 +29,7 @@
 				echo '<h1>'.$_SESSION['fname'].' '.$_SESSION['lname'].'</h1>'
 				?>
 				<p class="title"><?php echo $_SESSION['position'] ?><br> and <br><?php echo $_SESSION['degree'] ?> <br> <?php echo $_SESSION['major'] ?></p>
-				<p>University of Texas at Dallas</p>
+				<p><?php echo $_SESSION['university_domain'] ?></p>
 				<img src="<?php echo '../university_data/logo/' . $_SESSION['university_domain'] . '.jpg'?>" alt="University Logo" style="width: 30%"> 
 				<p><button>Connect</button></p>
 				<?php
