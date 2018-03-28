@@ -59,6 +59,8 @@ function ajaxCallToVerifyForm() {
       data: $("#verify-form").serialize(),
       success: function(result) {
 
+        console.log(result);
+        
         var objResult = JSON.parse(result);
         $("#verify-error-msg").text(objResult['message']);
         if(objResult['redirect'] == "true") {

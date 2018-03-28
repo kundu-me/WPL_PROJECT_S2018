@@ -49,6 +49,8 @@ function ajaxCallToResetPasswordOTPForm() {
       data: $("#otp-form").serialize(),
       success: function(result) {
 
+        console.log(result);
+
         var objResult = JSON.parse(result);
         $("#reset-error-msg").text(objResult['message']);
          $("#otp-button").removeAttr("disabled");
@@ -123,6 +125,7 @@ function ajaxCallToResetPasswordForm() {
       success: function(result) {
 
         console.log(result);
+        
         var objResult = JSON.parse(result);
         $("#reset-error-msg").text(objResult['message']);
         $("#otp-button").removeAttr("disabled");

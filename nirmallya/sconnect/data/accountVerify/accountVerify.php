@@ -1,10 +1,12 @@
-<!--
-    @author: Nirmallya Kundu <nxkundu@gmail.com>
-    @page: Account Verification Data
-    @description: This page verifies the user with the email and OTP
--->
-
 <?php
+
+/**
+  *
+  * @author: Nirmallya Kundu <nxkundu@gmail.com>
+  * @page: Account Verification Data
+  * @description: This page verifies the user with the email and OTP
+  *
+  */
 
 	//Start session
 	session_start();
@@ -51,8 +53,9 @@
  
  	$email_escape = mysqli_real_escape_string($sql_connection, $email);
 
- 	$query = "SELECT password, salt, position, university_domain, fname, lname, status, user_hash_code, OTP 
- 			  FROM sconnect_login WHERE university_email = '$email_escape';";
+ 	$query = "SELECT password, salt, position, university_domain, fname, lname, status, userhash, OTP 
+ 			  FROM sconnect_user
+ 			  WHERE email = '$email_escape';";
 	$result = mysqli_query ($sql_connection, $query);
 
 	if($result->num_rows == 0) {
@@ -131,9 +134,9 @@
 		
 
 		if($updated_status != "") {
-			$query = "UPDATE sconnect_login 
+			$query = "UPDATE sconnect_user 
 					  SET status='$updated_status'
-					  WHERE university_email = '$email_escape';";
+					  WHERE email = '$email_escape';";
 
 			if (mysqli_query($sql_connection, $query)) {
 		    	

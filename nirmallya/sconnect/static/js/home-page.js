@@ -66,6 +66,9 @@ function ajaxCallToLoginForm() {
       url: "data/homepage/login.php",
       data: $("#login-form").serialize(),
       success: function(result) {
+
+        console.log(result);
+
         $("#login-button").removeAttr("disabled");
         var objResult = JSON.parse(result);
         $("#login-error-msg").text(objResult['message']);
@@ -139,7 +142,9 @@ function ajaxCallToSignup() {
       url: "data/homepage/signup.php",
       data: $("#signup-form").serialize(),
       success: function(result) {
+
         console.log(result);
+
         var objResult = JSON.parse(result);
         $("#signup-error-msg").text(objResult['message']);
         if(objResult['redirect'] == "true") {
