@@ -1,12 +1,5 @@
-<?php include('../connection_open.php'); ?>
-
 <?php 
-	$servername = "localhost";
-	$username = "root";
-	$password = "";
-	$database = "sconnect";
-	$mysqli = new mysqli($servername, $username, $password, $database);
-	$deg_stmt = $mysqli->prepare("SELECT degree from sconnect_lookup_degree");
+	$deg_stmt = $sql_connection->prepare("SELECT degree from sconnect_lookup_degree");
 	$deg_stmt->execute();
 	$deg_array = [];
 	foreach ($deg_stmt->get_result() as $row)
@@ -16,7 +9,7 @@
 	?>
 
 	<?php 
-	$maj_stmt = $mysqli->prepare("SELECT major from sconnect_lookup_major");
+	$maj_stmt = $sql_connection->prepare("SELECT major from sconnect_lookup_major");
 	$maj_stmt->execute();
 	$maj_array = [];
 	foreach ($maj_stmt->get_result() as $row)
@@ -39,6 +32,4 @@
 		return $dropdown;
 	}
 
-	?>
-
-<?php include('../connection_close.php'); ?>
+?>

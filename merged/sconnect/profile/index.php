@@ -2,10 +2,14 @@
 	Profile Page for SConnect
 	Updated on: 03/28/2018 -->
 
-	<?php include('../data/profile/profile.php'); ?>
-	<?php include('../header_footer/header.php'); ?>
-	<?php include('../data/connection_open.php') ?>
 	<?php include('../session_verify.php') ?>
+
+	<?php include('../header_footer/header.php'); ?>
+
+	<?php include('../data/connection_open.php') ?> 
+
+	<?php include('../data/profile/profile.php'); ?>
+
 
 	<meta name="viewport" content="width=device-width, intial-scale=1.0">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -15,9 +19,6 @@
 	<link rel="stylesheet" type="text/css" href="../static/css/profile/profile_page.css">
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	<title><?php echo "SConnect " .$_SESSION['fname'].' '.$_SESSION['lname']; ?></title>
-
-</head>
-<body>
 	<div id="page">
 		<span class="left_pane">
 			<div class="card">
