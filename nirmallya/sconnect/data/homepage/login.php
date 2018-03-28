@@ -1,10 +1,12 @@
-<!--
-    @author: Nirmallya Kundu <nxkundu@gmail.com>
-    @page: Login Data
-    @description: This page verifies the user with the email and Password
-    				and logs into the account
--->
 <?php
+
+/**
+  *
+  * @author: Nirmallya Kundu <nxkundu@gmail.com>
+  * @page: Login Data
+  * @description: This page verifies the user with the email and Password
+  *   			  and logs into the account
+  */
 
 	//Start session
 	session_start();
@@ -47,7 +49,9 @@
  
  	$email_escape = mysqli_real_escape_string($sql_connection, $email);
 
- 	$query = "SELECT password, salt, position, university_domain, fname, lname, status, user_hash_code FROM sconnect_login WHERE university_email = '$email_escape';";
+ 	$query = "SELECT password, salt, position, university_domain, fname, lname, status, userhash 
+ 			  FROM sconnect_user 
+ 			  WHERE email = '$email_escape';";
 	$result = mysqli_query ($sql_connection, $query);
 
 ?>
@@ -89,7 +93,7 @@
 
 		// Redirect to news feed page after successful login.
   		session_regenerate_id(); 			
-  		$_SESSION['session_user_hash_code'] = $userData['user_hash_code'];
+  		$_SESSION['session_userhash'] = $userData['userhash'];
   		$_SESSION['session_position'] = $userData['position'];
   		$_SESSION['session_university_domain'] = $userData['university_domain'];
   		$_SESSION['session_fname'] = $userData['fname'];

@@ -1,9 +1,12 @@
-<!--
-    @author: Nirmallya Kundu <nxkundu@gmail.com>
-    @page: Password Reset - Generate OTP Data
-    @description: This page generates the OTP to reset the password
--->
 <?php
+
+/**
+  *
+  * @author: Nirmallya Kundu <nxkundu@gmail.com>
+  * @page: Password Reset - Generate OTP Data
+  * @description: his page generates the OTP to reset the password
+  *
+  */
 
 	//Start session
 	session_start();
@@ -40,8 +43,10 @@
  
  	$email_escape = mysqli_real_escape_string($sql_connection, $email);
 
- 	$query = "SELECT user_hash_code, status 
- 			  FROM sconnect_login WHERE university_email = '$email_escape';";
+ 	$query = "SELECT userhash, status 
+ 			  FROM sconnect_user 
+ 			  WHERE email = '$email_escape';";
+ 			  
 	$result = mysqli_query ($sql_connection, $query);
 
 	if($result->num_rows == 0) {
@@ -74,9 +79,9 @@
 
 		$user_OTP = rand(1000, 9999) . "";
 
-		$query = "UPDATE sconnect_login 
+		$query = "UPDATE sconnect_user 
 					  SET OTP='$user_OTP'
-					  WHERE university_email = '$email_escape';";
+					  WHERE email = '$email_escape';";
 
 		if (mysqli_query($sql_connection, $query)) {
 
