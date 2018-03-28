@@ -79,9 +79,9 @@
 
 		$user_OTP = rand(1000, 9999) . "";
 
-		$query = "UPDATE sconnect_login 
+		$query = "UPDATE sconnect_user 
 					  SET OTP='$user_OTP'
-					  WHERE university_email = '$email_escape';";
+					  WHERE email = '$email_escape';";
 
 		if (mysqli_query($sql_connection, $query)) {
 

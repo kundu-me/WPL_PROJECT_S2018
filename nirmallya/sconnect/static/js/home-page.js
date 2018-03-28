@@ -15,6 +15,12 @@ $(document).ready(function() {
     setInterval(function() {
         showSlides(slideIndex += 1);
     }, 2000);
+
+    $("#signup-password").keypress(function() {
+        
+        var passwordStrength = checkStrength($("#signup-password").val());
+        $("#signup-error-msg").text("Your Password is " + passwordStrength);
+    });
 });
 
 function validateSubmitLoginForm() {
@@ -130,6 +136,18 @@ function validateSignupForm() {
         return false;
     }
 
+    var passwordStrength = checkStrength($("#signup-password").val());
+    if(passwordStrength == "Good" || passwordStrength == "Strong") {
+        
+        $("#signup-error-msg").text("Your Password is " + passwordStrength);
+    }
+    else {
+        $("#signup-password").focus();
+        $("#signup-error-msg").text("Your Password is " + passwordStrength);
+        return false;
+    }
+
+
     $("#signup-error-msg").html("&nbsp;");
     return true;
 }
@@ -161,6 +179,39 @@ function validateEmail(email) {
     var expr = /^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
     return expr.test(email);
 };
+
+function checkStrength(password) {
+    
+    var strength = 0
+    if (password.length < 6) {
+        return "Too Short";
+    }
+    
+    if (password.length > 7) strength += 1
+    
+    // If password contains both lower and uppercase characters, increase strength value.
+    if (password.match(/([a-z].*[A-Z])|([A-Z].*[a-z])/)) strength += 1
+    
+    // If it has numbers and characters, increase strength value.
+    if (password.match(/([a-zA-Z])/) && password.match(/([0-9])/)) strength += 1
+    
+    // If it has one special character, increase strength value.
+    if (password.match(/([!,%,&,@,#,$,^,*,?,_,~])/)) strength += 1
+    
+    // If it has two special characters, increase strength value.
+    if (password.match(/(.*[!,%,&,@,#,$,^,*,?,_,~].*[!,%,&,@,#,$,^,*,?,_,~])/)) strength += 1
+    
+    // If value is less than 2
+    if (strength < 2) {
+        return "Weak";
+    } 
+    else if (strength == 2) {
+        return "Good";
+    } 
+    else {
+        return "Strong";
+    }
+}
 
 function plusSlides(n) {
     showSlides(slideIndex += n);

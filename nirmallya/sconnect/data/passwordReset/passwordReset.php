@@ -97,9 +97,9 @@
 	$user_salt = uniqid();
 	$hashed_password = password_hash($password_escape . $user_salt, PASSWORD_BCRYPT);
 
-	$query = "UPDATE sconnect_login 
+	$query = "UPDATE sconnect_user 
 			  SET status='$updated_status', password='$hashed_password', salt='$user_salt'
-			  WHERE university_email = '$email_escape';";
+			  WHERE email = '$email_escape';";
 
 	if (mysqli_query($sql_connection, $query)) {
     	
