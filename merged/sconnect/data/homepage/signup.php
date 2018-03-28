@@ -87,10 +87,10 @@
  	$hashed_password = password_hash($signup_password_escape . $user_salt, PASSWORD_BCRYPT);
 
 	$query_insert_user = "INSERT INTO sconnect_user (userhash, email, password, salt, position, 
-						  university_domain, fname, lname, status, OTP)
+						  university_domain, fname, lname, status, OTP, profile_image_path, resume_path)
 						  VALUES ('$user_hash_code', '$signup_user_email_escape', '$hashed_password', '$user_salt', 
 						 '$signup_position_escape', '$signup_university_domain_escape', '$signup_fname_escape', 
-						 '$signup_lname_escape', 'PENDING_EMAIL', '$user_OTP')";
+						 '$signup_lname_escape', 'PENDING_EMAIL', '$user_OTP', 'profile_image/sample.jpg', 'resume/sample.pdf')";
 
 	if (mysqli_query($sql_connection, $query_insert_user)) {
     	

@@ -23,17 +23,17 @@
 		<span class="left_pane">
 			<div class="card">
 				<?php
-				echo '<img src="'.$_SESSION['profile_image_path'].'" alt="Jack" style="width: 100%">'
+				echo '<img src="../user_data/' .$_SESSION['profile_image_path'].'" alt="Display Image" style="width: 100%">'
 				?>
 				<?php 
 				echo '<h1>'.$_SESSION['fname'].' '.$_SESSION['lname'].'</h1>'
 				?>
 				<p class="title"><?php echo $_SESSION['position'] ?><br> and <br><?php echo $_SESSION['degree'] ?> <br> <?php echo $_SESSION['major'] ?></p>
 				<p>University of Texas at Dallas</p>
-				<img src="utd.jpg" alt="UTD" style="width: 30%"> 
+				<img src="<?php echo '../university_data/logo/' . $_SESSION['university_domain'] . '.jpg'?>" alt="University Logo" style="width: 30%"> 
 				<p><button>Connect</button></p>
 				<?php
-				echo '<embed src="'.$_SESSION['resume_path'].'" width="200px" height="295px" scale="tofit"></embed>'
+				echo '<embed src="../user_data/' .$_SESSION['resume_path'].'" width="200px" height="295px" scale="tofit"></embed>'
 				?>
 				<p><button>Browse</button></p>
 				
