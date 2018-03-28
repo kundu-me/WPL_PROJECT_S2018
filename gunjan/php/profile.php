@@ -1,10 +1,14 @@
+<!-- @author: Gunjan Tomer
+	Profile Page for SConnect
+	Updated on: 03/28/2018 -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<?php
 	session_start();
 	if (!isset($_SESSION['userhash'])) {
-		header("Location: login.html");
+		header("Location: ../login.html");
 	}
 	?>
 
@@ -62,8 +66,8 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script src="profile.js"></script>
-	<link rel="stylesheet" type="text/css" href="profile_page.css">
+	<script src="../js/profile.js"></script>
+	<link rel="stylesheet" type="text/css" href="../css/profile_page.css">
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	<title><?php echo $_SESSION['fname'].' '.$_SESSION['lname']; ?></title>
 </head>
@@ -147,23 +151,23 @@
 								?>
 								<div>
 									<select name="month" id="month">
-										<option value="1"  <?PHP if($month==1) echo "selected";?>>January</option>
-										<option value="2"  <?PHP if($month==2) echo "selected";?>>February</option>
-										<option value="3"  <?PHP if($month==3) echo "selected";?>>March</option>
-										<option value="4"  <?PHP if($month==4) echo "selected";?>>April</option>
-										<option value="5"  <?PHP if($month==5) echo "selected";?>>May</option>
-										<option value="6"  <?PHP if($month==6) echo "selected";?>>June</option>
-										<option value="7"  <?PHP if($month==7) echo "selected";?>>July</option>
-										<option value="8"  <?PHP if($month==8) echo "selected";?>>August</option>
-										<option value="9"  <?PHP if($month==9) echo "selected";?>>September</option>
-										<option value="10" <?PHP if($month==10) echo "selected";?>>October</option>
-										<option value="11" <?PHP if($month==11) echo "selected";?>>November</option>
-										<option value="12" <?PHP if($month==12) echo "selected";?>>December</option>
+										<option value="1"  <?PHP if($_SESSION['dob_mm']==1) echo "selected";?>>January</option>
+										<option value="2"  <?PHP if($_SESSION['dob_mm']==2) echo "selected";?>>February</option>
+										<option value="3"  <?PHP if($_SESSION['dob_mm']==3) echo "selected";?>>March</option>
+										<option value="4"  <?PHP if($_SESSION['dob_mm']==4) echo "selected";?>>April</option>
+										<option value="5"  <?PHP if($_SESSION['dob_mm']==5) echo "selected";?>>May</option>
+										<option value="6"  <?PHP if($_SESSION['dob_mm']==6) echo "selected";?>>June</option>
+										<option value="7"  <?PHP if($_SESSION['dob_mm']==7) echo "selected";?>>July</option>
+										<option value="8"  <?PHP if($_SESSION['dob_mm']==8) echo "selected";?>>August</option>
+										<option value="9"  <?PHP if($_SESSION['dob_mm']==9) echo "selected";?>>September</option>
+										<option value="10" <?PHP if($_SESSION['dob_mm']==10) echo "selected";?>>October</option>
+										<option value="11" <?PHP if($_SESSION['dob_mm']==11) echo "selected";?>>November</option>
+										<option value="12" <?PHP if($_SESSION['dob_mm']==12) echo "selected";?>>December</option>
 									</select>
 
 									<select name="test" id="daytest">
 										<?PHP for($i=1; $i<=31; $i++)
-										if($day == $i)
+										if($_SESSION['dob_dd'] == $i)
 											echo "<option value='$i' selected>$i</option>";
 										else
 											echo "<option value='$i'>$i</option>";
@@ -171,8 +175,8 @@
 									</select>
 
 									<select name="year" id="year">
-										<?PHP for($i=date("Y"); $i<=date("Y")+2; $i++)
-										if($year == $i)
+										<?PHP for($i=date("Y")-60; $i<=date("Y")+2; $i++)
+										if($_SESSION['dob_yyyy'] == $i)
 											echo "<option value='$i' selected>$i</option>";
 										else
 											echo "<option value='$i'>$i</option>";
