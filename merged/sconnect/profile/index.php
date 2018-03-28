@@ -2,6 +2,7 @@
 	Profile Page for SConnect
 	Updated on: 03/28/2018 -->
 
+	<?php include('../data/profile/profile.php'); ?>
 	<?php include('../header_footer/header.php'); ?>
 	<?php include('../data/connection_open.php') ?>
 	<?php include('../session_verify.php') ?>
