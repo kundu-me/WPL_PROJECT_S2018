@@ -81,17 +81,13 @@
 					</div>
 				</li>
 				<li>
-					<button type="button" id="add_course" onclick="document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block'">Add new course</button>
+					<button type="button" id="add_course" onclick="document.getElementById('lightbox').style.display='block';document.getElementById('fade').style.display='block'">Add new course</button>
 				</li>
-				<div id="light" class="white_content">
-					<form name="course_add_form" method="post" action="otp_submit.php">
-						<label id="OTP_label">Enter OTP provided by faculty</label>
-						<input type="text" name="OTP_text" class="OTP_textbox" id="OPT_box">
-						<input type="submit" id="OTP_submit_button" value="Verify">
-						<button type="button" onclick="document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'">Close</button>
+				<div id="lightbox" class="white_content">
+					<?php include('course_box.php'); ?>
 					</div>
 					<div id="fade" class="black_overlay"></div>
-				</form>
+				
 								<!-- <script >
 									var course_name_js = <?php echo json_encode($course_name, JSON_HEX_TAG); ?>;
 									var course_code_js = <?php echo json_encode($course_code, JSON_HEX_TAG); ?>;
