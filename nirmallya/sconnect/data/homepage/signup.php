@@ -1,9 +1,12 @@
-<!--
-    @author: Nirmallya Kundu <nxkundu@gmail.com>
-    @page: Signup Data
-    @description: This page inserts the new user data into the DataBase
--->
 <?php
+
+/**
+  *
+  * @author: Nirmallya Kundu <nxkundu@gmail.com>
+  * @page: Signup Data
+  * @description: This page inserts the new user data into the DataBase
+  *
+  */
 
 	//Start session
 	session_start();
@@ -54,7 +57,9 @@
 
  	$signup_user_email_escape = mysqli_real_escape_string($sql_connection, $signup_user_email);
 
- 	$query = "SELECT user_hash_code FROM sconnect_login WHERE university_email = '$signup_user_email_escape';";
+ 	$query = "SELECT userhash 
+ 			  FROM sconnect_user 
+ 			  WHERE email = '$signup_user_email_escape';";
 	$result = mysqli_query ($sql_connection, $query);
 
 	if($result->num_rows !=0) {
@@ -81,10 +86,11 @@
 
  	$hashed_password = password_hash($signup_password_escape . $user_salt, PASSWORD_BCRYPT);
 
-	$query_insert_user = "INSERT INTO sconnect_login (user_hash_code, university_email, password, salt, position, 
-		university_domain, fname, lname, status, OTP)
-		VALUES ('$user_hash_code', '$signup_user_email_escape', '$hashed_password', '$user_salt', 
-		'$signup_position_escape', '$signup_university_domain_escape', '$signup_fname_escape', '$signup_lname_escape', 'PENDING_EMAIL', '$user_OTP')";
+	$query_insert_user = "INSERT INTO sconnect_user (userhash, email, password, salt, position, 
+						  university_domain, fname, lname, status, OTP)
+						  VALUES ('$user_hash_code', '$signup_user_email_escape', '$hashed_password', '$user_salt', 
+						 '$signup_position_escape', '$signup_university_domain_escape', '$signup_fname_escape', 
+						 '$signup_lname_escape', 'PENDING_EMAIL', '$user_OTP')";
 
 	if (mysqli_query($sql_connection, $query_insert_user)) {
     	
