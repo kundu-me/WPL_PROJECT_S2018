@@ -1,0 +1,35 @@
+/**
+	@author: Koulick Sankar Paul <koulick89@gmail.com>
+    @author: Abhishek Dutta <abhi06548@yahoo.com>
+    @page: Addition of a class by a faculty 
+    @description: This page allows a faculty member to add a new class to register students
+  **/
+
+.text-align-right {
+		text-align: right;
+	}
+
+.failure-msg {
+	font-size: 24px;
+	font-style: italic;
+	color: red;
+}
+
+select:invalid { 
+	color: gray; 
+}
+
+#generateOTP, #btnSubmit, #btnCopy, #btnClose {
+	padding: 0px 4px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	border-radius: 8px;		
+	cursor: pointer;
+	margin: 0px 2px;
+}
+
+.btnDisable {
+	color: gray;
+	cursor: not-allowed;
+}
