@@ -5,6 +5,7 @@
     @description: This page allows a faculty member to add a new class to register students
 -->
 
+<?php include('../session_verify_faculty.php'); ?>
 <?php include('../header_footer/header.php'); ?>
 <script src="../static/js/facultyAddClass/facultyAddClass.js"></script>
 <link rel="stylesheet"  href="../static/css/facultyAddClass.css">

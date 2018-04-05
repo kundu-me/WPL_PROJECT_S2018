@@ -8,10 +8,10 @@
   *
   */
 
-$sql_servername = "localhost";
-$sql_username = "root";
-$sql_password = "";
-$sql_database = "sconnect-db2";
+$sql_servername = "kundu.me";
+$sql_username = "kundujwg_sc";
+$sql_password = "Pass@1234";
+$sql_database = "kundujwg_sconnect_db1";
 
 // Create connection
 $sql_connection = mysqli_connect($sql_servername, $sql_username, $sql_password, $sql_database);

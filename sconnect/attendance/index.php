@@ -5,6 +5,7 @@
     @description: This page handles the creation of daily attendance sheet and OTP-generation (for student use) by faculty
 -->
 
+<?php include('../session_verify_faculty.php'); ?>
 <?php include('../header_footer/header.php'); ?>
 <script src="../static/js/attendance/attendance.js"></script>
 <link rel="stylesheet" href="../static/css/attendance/attendance.css">
@@ -145,7 +146,7 @@
     </div>
 	
 	<br>
-	<table class="container" id="attendanceTable" style="text-align: left;"> <!--Dynamic population of div element on button click -->
+	<table class="container" id="attendanceTable" style="text-align: left;" border="1"> <!--Dynamic population of div element on button click -->
     </table>
 	
 	<div class="col-lg-12 col-lg-3">

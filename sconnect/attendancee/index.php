@@ -5,6 +5,7 @@
         @description: This page handles the daily attendance given by a student
     -->
 
+    <?php include('../session_verify_student.php'); ?>
     <?php include('../header_footer/header.php'); ?>
     <script src="../static/js/attendancee/attendance.js"></script>
     <link rel="stylesheet" href="../static/css/attendancee/attendance.css">

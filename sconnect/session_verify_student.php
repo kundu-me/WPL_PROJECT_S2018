@@ -1,12 +1,24 @@
 <?php
 	session_start();
 	if (!isset($_SESSION['userhash'])) {
-		header("Location: http://www.sconnect.xyz");
+		
+		session_unset();
+
+		session_destroy();
+
+		header("location: http://www.sconnect.xyz");
+
 		exit();
 	}
 
-	if (!isset($_SESSION['position']) == "student") {
-		header("Location: http://www.sconnect.xyz");
+	if ($_SESSION['position'] != "student") {
+		
+		session_unset();
+
+		session_destroy();
+
+		header("location: http://www.sconnect.xyz");
+
 		exit();
 	}
 ?>

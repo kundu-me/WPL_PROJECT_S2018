@@ -1,0 +1,39 @@
+[05-Apr-2018 22:28:03 Etc/GMT] PHP Fatal error:  Call to undefined function password_hash() in /home/kundujwg/public_html/sconnect/data/homepage/signup.php on line 87
+[05-Apr-2018 22:28:39 Etc/GMT] PHP Notice:  Undefined index: signup-email-id in /home/kundujwg/public_html/sconnect/data/homepage/signup.php on line 18
+[05-Apr-2018 22:28:39 Etc/GMT] PHP Notice:  Undefined index: signup-email-domain in /home/kundujwg/public_html/sconnect/data/homepage/signup.php on line 19
+[05-Apr-2018 22:28:39 Etc/GMT] PHP Notice:  Undefined index: signup-fname in /home/kundujwg/public_html/sconnect/data/homepage/signup.php on line 20
+[05-Apr-2018 22:28:39 Etc/GMT] PHP Notice:  Undefined index: signup-lname in /home/kundujwg/public_html/sconnect/data/homepage/signup.php on line 21
+[05-Apr-2018 22:28:39 Etc/GMT] PHP Notice:  Undefined index: signup-password in /home/kundujwg/public_html/sconnect/data/homepage/signup.php on line 22
+[05-Apr-2018 22:28:39 Etc/GMT] PHP Notice:  Undefined index: signup-position in /home/kundujwg/public_html/sconnect/data/homepage/signup.php on line 23
+[05-Apr-2018 22:29:14 Etc/GMT] PHP Fatal error:  Call to undefined function password_hash() in /home/kundujwg/public_html/sconnect/data/homepage/signup.php on line 87
+[05-Apr-2018 22:29:25 Etc/GMT] PHP Notice:  Undefined index: signup-email-id in /home/kundujwg/public_html/sconnect/data/homepage/signup.php on line 18
+[05-Apr-2018 22:29:25 Etc/GMT] PHP Notice:  Undefined index: signup-email-domain in /home/kundujwg/public_html/sconnect/data/homepage/signup.php on line 19
+[05-Apr-2018 22:29:25 Etc/GMT] PHP Notice:  Undefined index: signup-fname in /home/kundujwg/public_html/sconnect/data/homepage/signup.php on line 20
+[05-Apr-2018 22:29:25 Etc/GMT] PHP Notice:  Undefined index: signup-lname in /home/kundujwg/public_html/sconnect/data/homepage/signup.php on line 21
+[05-Apr-2018 22:29:25 Etc/GMT] PHP Notice:  Undefined index: signup-password in /home/kundujwg/public_html/sconnect/data/homepage/signup.php on line 22
+[05-Apr-2018 22:29:25 Etc/GMT] PHP Notice:  Undefined index: signup-position in /home/kundujwg/public_html/sconnect/data/homepage/signup.php on line 23
+[05-Apr-2018 22:30:43 Etc/GMT] PHP Fatal error:  Call to undefined function password_hash() in /home/kundujwg/public_html/sconnect/data/homepage/signup.php on line 87
+[05-Apr-2018 22:30:55 Etc/GMT] PHP Notice:  Undefined index: signup-email-id in /home/kundujwg/public_html/sconnect/data/homepage/signup.php on line 18
+[05-Apr-2018 22:30:55 Etc/GMT] PHP Notice:  Undefined index: signup-email-domain in /home/kundujwg/public_html/sconnect/data/homepage/signup.php on line 19
+[05-Apr-2018 22:30:55 Etc/GMT] PHP Notice:  Undefined index: signup-fname in /home/kundujwg/public_html/sconnect/data/homepage/signup.php on line 20
+[05-Apr-2018 22:30:55 Etc/GMT] PHP Notice:  Undefined index: signup-lname in /home/kundujwg/public_html/sconnect/data/homepage/signup.php on line 21
+[05-Apr-2018 22:30:55 Etc/GMT] PHP Notice:  Undefined index: signup-password in /home/kundujwg/public_html/sconnect/data/homepage/signup.php on line 22
+[05-Apr-2018 22:30:55 Etc/GMT] PHP Notice:  Undefined index: signup-position in /home/kundujwg/public_html/sconnect/data/homepage/signup.php on line 23
+[05-Apr-2018 22:31:54 Etc/GMT] PHP Fatal error:  Call to undefined function password_hash() in /home/kundujwg/public_html/sconnect/data/homepage/signup.php on line 87
+[05-Apr-2018 22:32:01 Etc/GMT] PHP Notice:  Undefined index: signup-email-id in /home/kundujwg/public_html/sconnect/data/homepage/signup.php on line 18
+[05-Apr-2018 22:32:01 Etc/GMT] PHP Notice:  Undefined index: signup-email-domain in /home/kundujwg/public_html/sconnect/data/homepage/signup.php on line 19
+[05-Apr-2018 22:32:01 Etc/GMT] PHP Notice:  Undefined index: signup-fname in /home/kundujwg/public_html/sconnect/data/homepage/signup.php on line 20
+[05-Apr-2018 22:32:01 Etc/GMT] PHP Notice:  Undefined index: signup-lname in /home/kundujwg/public_html/sconnect/data/homepage/signup.php on line 21
+[05-Apr-2018 22:32:01 Etc/GMT] PHP Notice:  Undefined index: signup-password in /home/kundujwg/public_html/sconnect/data/homepage/signup.php on line 22
+[05-Apr-2018 22:32:01 Etc/GMT] PHP Notice:  Undefined index: signup-position in /home/kundujwg/public_html/sconnect/data/homepage/signup.php on line 23
+[05-Apr-2018 22:36:21 Etc/GMT] PHP Fatal error:  Call to undefined function password_verify() in /home/kundujwg/public_html/sconnect/data/homepage/login.php on line 78
+[05-Apr-2018 22:36:26 Etc/GMT] PHP Notice:  Undefined index: login-email in /home/kundujwg/public_html/sconnect/data/homepage/login.php on line 18
+[05-Apr-2018 22:36:26 Etc/GMT] PHP Notice:  Undefined index: login-password in /home/kundujwg/public_html/sconnect/data/homepage/login.php on line 19
+[05-Apr-2018 22:37:35 Etc/GMT] PHP Fatal error:  Call to undefined function password_hash() in /home/kundujwg/public_html/sconnect/data/homepage/signup.php on line 87
+[05-Apr-2018 22:37:39 Etc/GMT] PHP Notice:  Undefined index: signup-email-id in /home/kundujwg/public_html/sconnect/data/homepage/signup.php on line 18
+[05-Apr-2018 22:37:39 Etc/GMT] PHP Notice:  Undefined index: signup-email-domain in /home/kundujwg/public_html/sconnect/data/homepage/signup.php on line 19
+[05-Apr-2018 22:37:39 Etc/GMT] PHP Notice:  Undefined index: signup-fname in /home/kundujwg/public_html/sconnect/data/homepage/signup.php on line 20
+[05-Apr-2018 22:37:39 Etc/GMT] PHP Notice:  Undefined index: signup-lname in /home/kundujwg/public_html/sconnect/data/homepage/signup.php on line 21
+[05-Apr-2018 22:37:39 Etc/GMT] PHP Notice:  Undefined index: signup-password in /home/kundujwg/public_html/sconnect/data/homepage/signup.php on line 22
+[05-Apr-2018 22:37:39 Etc/GMT] PHP Notice:  Undefined index: signup-position in /home/kundujwg/public_html/sconnect/data/homepage/signup.php on line 23
+[05-Apr-2018 22:41:02 Etc/GMT] PHP Fatal error:  Call to undefined function password_hash() in /home/kundujwg/public_html/sconnect/data/homepage/signup.php on line 87

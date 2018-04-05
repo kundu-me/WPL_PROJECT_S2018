@@ -1,8 +1,14 @@
 
-	<?php
+<?php
 	session_start();
 	if (!isset($_SESSION['userhash'])) {
-		header("Location: http://www.sconnect.xyz");
+		
+		session_unset();
+
+		session_destroy();
+
+		header("location: http://www.sconnect.xyz");
+
 		exit();
 	}
-	?>
+?>

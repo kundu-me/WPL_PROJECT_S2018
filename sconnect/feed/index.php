@@ -5,8 +5,8 @@
                   Need to Update
 -->
 
+<?php include('../session_verify.php'); ?>
 <?php include('../header_footer/header.php'); ?>
-<script src="../static/js/accountVerify/accountVerify.js"></script>
 <div class="row marketing left-right-com-div" style="margin-top: 15px;">
    <div class="row header">
       <div class="col-sm-12 col-md-12 col-lg-12" style="text-align: center;">
