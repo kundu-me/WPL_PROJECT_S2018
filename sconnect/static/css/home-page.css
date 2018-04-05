@@ -338,3 +338,14 @@ img {vertical-align: middle;}
   from {opacity: .4}
   to {opacity: 1}
 }
+
+.attendance-absent-text {
+  color: red;
+}
+
+.data-top-down {
+
+  transform: 
+  rotate(315deg);
+  height: 130px;
+}
