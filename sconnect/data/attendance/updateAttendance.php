@@ -24,7 +24,7 @@
 		$errflag = true;
 	}
  
- 	$tableRows = array("<th><td>Student</td><td>Time</td></th>");
+ 	$tableRows = array("<tr><td>Student</td><td>Time</td></tr>");
 	
 	//If there are input validations, redirect back to the login form
 	if($errflag) {
