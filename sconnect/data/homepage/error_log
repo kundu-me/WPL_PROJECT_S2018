@@ -37,3 +37,28 @@
 [05-Apr-2018 22:37:39 Etc/GMT] PHP Notice:  Undefined index: signup-password in /home/kundujwg/public_html/sconnect/data/homepage/signup.php on line 22
 [05-Apr-2018 22:37:39 Etc/GMT] PHP Notice:  Undefined index: signup-position in /home/kundujwg/public_html/sconnect/data/homepage/signup.php on line 23
 [05-Apr-2018 22:41:02 Etc/GMT] PHP Fatal error:  Call to undefined function password_hash() in /home/kundujwg/public_html/sconnect/data/homepage/signup.php on line 87
+[05-Apr-2018 23:31:32 Etc/GMT] PHP Fatal error:  Call to undefined function password_verify() in /home/kundujwg/public_html/sconnect/data/homepage/login.php on line 78
+[05-Apr-2018 23:31:53 Etc/GMT] PHP Fatal error:  Call to undefined function password_verify() in /home/kundujwg/public_html/sconnect/data/homepage/login.php on line 78
+[05-Apr-2018 23:36:34 Etc/GMT] PHP Fatal error:  Call to undefined function password_verify() in /home/kundujwg/public_html/sconnect/data/homepage/login.php on line 78
+[11-Apr-2018 00:08:41 Etc/GMT] PHP Fatal error:  Call to undefined function password_verify() in /home/kundujwg/public_html/sconnect/data/homepage/login.php on line 78
+[11-Apr-2018 00:10:18 Etc/GMT] PHP Fatal error:  Call to undefined function password_verify() in /home/kundujwg/public_html/sconnect/data/homepage/login.php on line 78
+[11-Apr-2018 00:10:30 Etc/GMT] PHP Notice:  Undefined index: login-email in /home/kundujwg/public_html/sconnect/data/homepage/login.php on line 18
+[11-Apr-2018 00:10:30 Etc/GMT] PHP Notice:  Undefined index: login-password in /home/kundujwg/public_html/sconnect/data/homepage/login.php on line 19
+[11-Apr-2018 00:20:00 Etc/GMT] PHP Fatal error:  Call to undefined function password_hash() in /home/kundujwg/public_html/sconnect/data/homepage/signup.php on line 87
+[11-Apr-2018 00:20:09 Etc/GMT] PHP Notice:  Undefined index: signup-email-id in /home/kundujwg/public_html/sconnect/data/homepage/signup.php on line 18
+[11-Apr-2018 00:20:09 Etc/GMT] PHP Notice:  Undefined index: signup-email-domain in /home/kundujwg/public_html/sconnect/data/homepage/signup.php on line 19
+[11-Apr-2018 00:20:09 Etc/GMT] PHP Notice:  Undefined index: signup-fname in /home/kundujwg/public_html/sconnect/data/homepage/signup.php on line 20
+[11-Apr-2018 00:20:09 Etc/GMT] PHP Notice:  Undefined index: signup-lname in /home/kundujwg/public_html/sconnect/data/homepage/signup.php on line 21
+[11-Apr-2018 00:20:09 Etc/GMT] PHP Notice:  Undefined index: signup-password in /home/kundujwg/public_html/sconnect/data/homepage/signup.php on line 22
+[11-Apr-2018 00:20:09 Etc/GMT] PHP Notice:  Undefined index: signup-position in /home/kundujwg/public_html/sconnect/data/homepage/signup.php on line 23
+[11-Apr-2018 00:53:30 Etc/GMT] PHP Fatal error:  Call to undefined function password_verify() in /home/kundujwg/public_html/sconnect/data/homepage/login.php on line 78
+[11-Apr-2018 00:53:50 Etc/GMT] PHP Notice:  Undefined index: login-email in /home/kundujwg/public_html/sconnect/data/homepage/login.php on line 18
+[11-Apr-2018 00:53:50 Etc/GMT] PHP Notice:  Undefined index: login-password in /home/kundujwg/public_html/sconnect/data/homepage/login.php on line 19
+[11-Apr-2018 00:55:58 Etc/GMT] PHP Notice:  Undefined index: login-email in /home/kundujwg/public_html/sconnect/data/homepage/login.php on line 18
+[11-Apr-2018 00:55:58 Etc/GMT] PHP Notice:  Undefined index: login-password in /home/kundujwg/public_html/sconnect/data/homepage/login.php on line 19
+[11-Apr-2018 01:18:15 Etc/GMT] PHP Fatal error:  Call to undefined function password_verify() in /home/kundujwg/public_html/sconnect/data/homepage/login.php on line 79
+[11-Apr-2018 01:18:23 Etc/GMT] PHP Notice:  Undefined index: login-password in /home/kundujwg/public_html/sconnect/data/homepage/login.php on line 20
+[11-Apr-2018 01:18:56 Etc/GMT] PHP Fatal error:  Call to undefined function password_verify() in /home/kundujwg/public_html/sconnect/data/homepage/login.php on line 79
+[11-Apr-2018 01:19:02 Etc/GMT] PHP Notice:  Undefined index: login-password in /home/kundujwg/public_html/sconnect/data/homepage/login.php on line 20
+[11-Apr-2018 01:20:21 Etc/GMT] PHP Fatal error:  Call to undefined function password_verify() in /home/kundujwg/public_html/sconnect/data/homepage/login.php on line 79
+[11-Apr-2018 01:20:28 Etc/GMT] PHP Fatal error:  Call to undefined function password_verify() in /home/kundujwg/public_html/sconnect/data/homepage/login.php on line 79

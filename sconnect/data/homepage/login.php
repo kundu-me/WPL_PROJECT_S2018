@@ -10,7 +10,7 @@
 
 	//Start session
 	session_start();
- 
+
 	//Validation error flag
 	$errflag = false;
  
@@ -115,7 +115,7 @@
 		$returnObject->success = "true";
 		$returnObject->message = "OK! Loggin In...";
 		$returnObject->redirect = "true";
-		$returnObject->redirectURL = "profile/";
+		$returnObject->redirectURL = "feed/";
 		echo json_encode($returnObject);	
 	}
 	else if($userData['status'] == 'PENDING_EMAIL') {

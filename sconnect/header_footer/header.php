@@ -16,22 +16,81 @@
     <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css">
 
 	<link rel="stylesheet" href="../static/css/home-page.css">
+    <script src="../static/js/home-page.js"></script>
 </head>
 <body>
 	<?php include('../data/connection_open.php'); ?>
 
 	<div class="row marketing">
-	   <div class="row header">
-	      <div class="col-sm-12 col-md-12 col-lg-12">
-	         <table class="table-responsive cursor-pointer">
-	            <tbody>
-	               <tr>
-	                  <td><img class="img-responsive sconnect-logo-img" src="../static/img/sconnect-logo-3.jpg" alt="sconnect-logo"></td>
-	                  <td><span class="sconnect-header-logo">SConnect</span></td>
-	               </tr>
-	            </tbody>
-	         </table>
-	      </div>
-	   </div>
+		<div class="row header">
+		  <div class="col-sm-12 col-md-12 col-lg-3">
+		     <table class="table-responsive cursor-pointer">
+		        <tbody>
+		           <tr>
+		              <td><img class="img-responsive sconnect-logo-img" src="../static/img/sconnect-logo-3.jpg" alt="sconnect-logo"></td>
+		              <td><span class="sconnect-header-logo">SConnect</span></td>
+		           </tr>
+		        </tbody>
+		     </table>
+		  </div>
+		  <div class="col-sm-12 col-md-12 col-lg-6">
+		     <div>
+	           <table class="table-responsive login-table">
+	              <tbody class="align-right">
+	                 <tr>
+	                    <td>
+	                       <div class="input-group">
+						      <input type="text" class="form-control" placeholder="Search" name="search" style="width: 500px">
+						      <div class="input-group-btn">
+						        <button class="btn btn-default"><i class="glyphicon glyphicon-search"></i></button>
+						      </div>
+						    </div>
+	                    </td>
+	                 </tr>
+	              </tbody>
+	           </table>
+		     </div>
+		  </div>
+		  <div class="col-sm-12 col-md-12 col-lg-3">
+		  	<div id="">
+				<a class="a-header-href" href="<?php echo $_SESSION['position'] == 'faculty'? '../attendance' : '../attendancee' ?>">A</a>
+				<a class="a-header-href" href="../message">M</a>
+				<a class="a-header-href" href="">*</a>
+				<a class="a-header-href">?</a>
+				&nbsp;&nbsp;
+				<a class="a-header-logout">Logout</a>
+			</div>
+			</div>
+		  </div>
+		</div>
 	</div>
+	<style type="text/css">
+		.a-header-href {
+		    background-color: white;
+		    border: none;
+		    color: black;
+		    padding: 15px;
+		    text-align: center;
+		    text-decoration: none;
+		    display: inline-block;
+		    font-size: 16px;
+		    margin: 4px 2px;
+		    border-radius: 50%;
+		    cursor: pointer;
+		}
+
+		.a-header-logout {
+		    background-color: white;
+		    border: none;
+		    color: black;
+		    padding: 5px;
+		    text-align: center;
+		    text-decoration: none;
+		    display: inline-block;
+		    font-size: 16px;
+		    margin: 4px 2px;
+		    cursor: pointer;
+		    text-align: right;
+		}
+	</style>
 
