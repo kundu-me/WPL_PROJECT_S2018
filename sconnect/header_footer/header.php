@@ -74,7 +74,7 @@
 		    text-align: center;
 		    text-decoration: none;
 		    display: inline-block;
-		    font-size: 16px;
+		    /*font-size: 16px;*/
 		    margin: 4px 2px;
 		    border-radius: 50%;
 		    cursor: pointer;
@@ -88,10 +88,33 @@
 		    text-align: center;
 		    text-decoration: none;
 		    display: inline-block;
-		    font-size: 16px;
+		    /*font-size: 16px;*/
 		    margin: 4px 2px;
 		    cursor: pointer;
 		    text-align: right;
 		}
 	</style>
+	<script type="text/javascript">
+		$(document).ready(function() {
+
+			$("#searchQueryButton").click(function() {
+
+				if($("#searchQuery").val() == '') {
+					return;
+				}
+      			self.location = "../searchProfile/?q=" +  $("#searchQuery").val();
+    		});
+	    
+
+		    $("#searchQuery").keypress(function(e) {
+		      if(e.keyCode == 13) {
+		        
+		        if($("#searchQuery").val() == '') {
+					return;
+				}
+      			self.location = "../searchProfile/?q=" +  $("#searchQuery").val();
+		      }
+		    });
+		});
+	</script>
 
