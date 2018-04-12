@@ -16,7 +16,7 @@
     <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css">
 
 	<link rel="stylesheet" href="../static/css/home-page.css">
-    <script src="../static/js/home-page.js"></script>
+    <script src="../static/js/home-page-loggedin.js"></script>
 </head>
 <body>
 	<?php include('../data/connection_open.php'); ?>
@@ -40,9 +40,9 @@
 	                 <tr>
 	                    <td>
 	                       <div class="input-group">
-						      <input type="text" class="form-control" placeholder="Search" name="search" style="width: 500px">
+						      <input type="text" class="form-control" placeholder="Search" name="search" id="searchQuery" style="width: 500px">
 						      <div class="input-group-btn">
-						        <button class="btn btn-default"><i class="glyphicon glyphicon-search"></i></button>
+						        <button class="btn btn-default" id="searchQueryButton"><i class="glyphicon glyphicon-search"></i></button>
 						      </div>
 						    </div>
 	                    </td>
@@ -58,7 +58,7 @@
 				<a class="a-header-href" href="">*</a>
 				<a class="a-header-href">?</a>
 				&nbsp;&nbsp;
-				<a class="a-header-logout">Logout</a>
+				<a class="a-header-logout" href="../session_logout.php">Logout</a>
 			</div>
 			</div>
 		  </div>
