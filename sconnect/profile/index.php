@@ -14,9 +14,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="../static/css/profile/profile_page.css">
 	<script type="text/javascript" src="profile.js"></script>
-<!-- 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
--->	<title><?php echo "SConnect " .$_SESSION['fname'].' '.$_SESSION['lname']; ?></title>
+<title><?php echo "SConnect " .$_SESSION['fname'].' '.$_SESSION['lname']; ?></title>
 <div id="page">
+	<div class="col-sm-12 col-md-12 col-lg-3">
 	<span class="left_pane">
 		<div class="card container">
 			<?php
@@ -52,6 +52,8 @@
 			</form>
 		</div>
 	</span>
+</div>
+	<div class="col-sm-12 col-md-12 col-lg-9" style="text-align: center;">
 	<span class="container-fluid text-center">
 		<form class="card_main">
 			<div id="toggleDiv" class="hover">
@@ -63,7 +65,11 @@
 <p class="tooltip">Show privacy options</p>
 </div>
 <div class="container">
-	<div class="row">
+	<div class="row" style="text-align: center;">
+		<span class="sconnect-profile-header">Profile - <?php echo " " . $_SESSION['fname'] . " " . $_SESSION['lname'] ?> 
+	</div>
+	<div class="row marketing">
+
 		<div class="degree_div col-lg-12 col-lg-2">
 			<label id="degree">Degree: </label>
 			<i class="fa fa-wrench wrench" id="degree_hide"></i>
@@ -188,6 +194,10 @@
 	</div>
 	</form>
 </span>
+</div>
+<!-- </form>
+</span>
+</div> -->
 </div>
 
 <?php include("../header_footer/footer.php"); ?>

@@ -10,8 +10,8 @@
 .card_main {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     max-width: 100%;
-    margin: 5px;
-    margin-left: 100px;
+/*    margin: 5px;
+    margin-left: 100px;*/
     text-align: left;
     border: 5px;
     padding: 5px;
@@ -23,7 +23,7 @@
 }
 
 #page {
-    margin-left: 200px;
+    /*margin-left: 200px;*/
 }
 
 .card button{
@@ -64,7 +64,7 @@ button:hover, a:hover {
 .left_pane {
     float: left;
     width: 300px;
-    margin-left: -200px;
+/*    margin-left: -200px;*/
     opacity: 0.8
     background-color: #FFF;
 }
@@ -104,7 +104,7 @@ span ul {
     width: 45%;
 }
 
-th {
+/*th {
     padding: 15px;
     height: 50px;
     text-align: left;
@@ -114,7 +114,7 @@ td {
     padding: 15px;
     height: 25px;
     vertical-align: bottom;
-}
+}*/
 
 #update {
     position: absolute;
@@ -140,13 +140,13 @@ li button.relative {
     float: right;
 }
 
-tr.header {
+/*tr.header {
     font-weight: bold;
-}
+}*/
 
-tr.alt {
+/*tr.alt {
     background-color: orange;
-}
+}*/
 
 .black_overlay{
     display: none;
@@ -282,7 +282,11 @@ input:checked + .slider:before {
 }
 
 
-
+.sconnect-profile-header {
+  font-size: 20px;
+  font-weight: bold;
+  color: black;
+}
 /* Rounded sliders */
 /*.slider.round {
   border-radius: 34px;
