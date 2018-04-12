@@ -19,10 +19,10 @@
 	?>
 
 	<?php
-	function dropdown($name, array $options, $selected=null)
+	function dropdown($name, array $options, $selected)
 	{
 		$dropdown = '<select name="' .$name. '" id="' .$name. '">'."\n";
-		$selected = $selected;
+		//$selected = $selected;
 		foreach ($options as $key => $option) {
 			$select = $selected==$key ? 'selected' : null;
 			$dropdown .= '<option value="' .$key. '"' .$select. '>' .$option. '</option>'."\n";
@@ -31,5 +31,5 @@
 
 		return $dropdown;
 	}
-
 ?>
+
