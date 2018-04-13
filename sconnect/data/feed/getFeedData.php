@@ -49,7 +49,8 @@
 
  	$query = "SELECT feedhash, text_data, photo_path, video_path, privacy, 
  			  university_domain, userhash_to, userhash_from, date_time_yyyy_mm_dd_hh_mm, status
- 			  FROM sconnect_feed;
+ 			  FROM sconnect_feed
+ 			  ORDER BY date_time_yyyy_mm_dd_hh_mm";
 
 	$result = mysqli_query ($sql_connection, $query);
 
@@ -76,6 +77,8 @@
 		$feed['video_path'] = $row['video_path'];
 		$feed['privacy'] = $row['privacy'];
 		$feed['university_domain'] = $row['university_domain'];
+		$feed['userhash_to'] = $row['userhash_to'];
+		$feed['userhash_from'] = $row['userhash_from'];
 		$feed['date_time_yyyy_mm_dd_hh_mm'] = $row['date_time_yyyy_mm_dd_hh_mm'];
 		$feed['status'] = $row['status'];
 

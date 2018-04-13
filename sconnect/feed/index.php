@@ -42,7 +42,7 @@
 	</span>
     </div>
 
-     <div class="col-sm-12 col-md-12 col-lg-8" style="text-align: center;">
+     <div class="col-sm-12 col-md-12 col-lg-8 search-feed-divs" style="text-align: center;">
        <div id="newPost">
 			<textarea title="newPostText" placeholder="What's on your mind?" id="newPostTextArea" rows="8" cols="100"></textarea>
 			<div id="action_bar">
@@ -59,9 +59,24 @@
 				<input id="submitPost" type="submit"/>
 			</div>
 		</div>
-		<div id="feed">
-			
+		
+
+		<div class="col-sm-12 col-md-12 col-lg-12" style="text-align: center;" id="search-feed-divs">
+			<!-- <div class="row marketing search-feed-div">
+		        <div class="col-sm-12 col-md-12 col-lg-3" style="text-align: left;">
+		          <span><img class="feed-user-profile-image" src="../user_data/profile_image/sample.jpg"></span>
+		        </div>
+		        <div class="col-sm-12 col-md-12 col-lg-9" style="text-align: left;">
+		         <span class="feed-user-name">a</span>
+		         <br>
+		         <span class="feed-user-data">a</span>
+		         <br>
+		         <br>
+		         <span class="feed-text-data">a</span>
+		        </div>
+		    </div> -->
 		</div>
+
     </div>
 
      <div class="col-sm-12 col-md-12 col-lg-2" style="text-align: center;">
@@ -71,4 +86,44 @@
     </div>
  </div>
 </div>
+<style type="text/css">
+	
+	.search-feed-div {
+    padding-left: 20px;
+    padding-top: 10px;
+    margin-top: 20px;
+    border: 2px;
+    background: white;
+    height: 150px;
+    cursor: pointer;
+  }
+  .search-feed-divs {
+    overflow-y: scroll;
+  }
+  .feed-user-profile-image {
+    width:120px;
+    height:120px;
+    vertical-align: middle;
+    padding-top: 10px;
+  }
+  .feed-user-name {
+
+    color: blue;
+    text-decoration: underline;
+    font-weight: bold;
+    font-size: 18px;
+  }
+  .feed-user-data {
+
+    color: black;
+    font-size: 12px;
+    font-style: italic;
+  }
+  .feed-text-data {
+
+    color: black;
+    font-style: italic;
+    font-size: 16px;
+  }
+</style>
 <?php include('../header_footer/footer.php'); ?>

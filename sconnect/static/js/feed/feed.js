@@ -11,6 +11,10 @@ jQuery(document).ready(function () {
 	jQuery("#submitPost").click(function (e) {
 		var textPost = $("#newPostTextArea").val();
 
+		if(textPost == '') {
+			return;
+		}
+
 		var d = new Date();
 		yyyy = d.getFullYear();
 		mm = ((d.getMonth()+1) < 10 ? '0' : '') + (d.getMonth()+1);
@@ -22,19 +26,80 @@ jQuery(document).ready(function () {
 		insertPost(textPost, currentDateTime);
 	});
 
-	function insertPost(textPost, currentDateTime) {
-		$.ajax({
-	      type: "POST",
-	      async: true,
-	      url: "../data/feed/insertPost.php",
-	      data: {textPost: textPost, currentDateTime: currentDateTime},
-	      success: function(result) {
-
-	        console.log(result);
-	        var objResult = JSON.parse(result);
-	        console.log(objResult);
-	      }
-    	});
-	}
+	getFeedPost();
 
 });
+
+function insertPost(textPost, currentDateTime) {
+	$.ajax({
+      type: "POST",
+      async: true,
+      url: "../data/feed/insertPost.php",
+      data: {textPost: textPost, currentDateTime: currentDateTime},
+      success: function(result) {
+
+        console.log(result);
+        var objResult = JSON.parse(result);
+        console.log(objResult);
+
+        location.reload();
+      }
+	});
+}
+
+function getFeedPost() {
+
+    $.ajax({
+      type: "POST",
+      url: "../data/feed/getFeedData.php",
+      data: { user: '' },
+      success: function(result) {
+
+        console.log(result);
+        var objResult = JSON.parse(result);
+
+        if(objResult['success'] == 'false') {
+
+          var feed =   '<div class="row marketing search-feed-div">' +
+            '<div class="col-sm-12 col-md-12 col-lg-3" style="text-align: left;">' + 
+            '<span><img class="feed-user-profile-image" src="../user_data/profile_image/sample.jpg"></span>' + 
+            '</div>' + 
+            '<div class="col-sm-12 col-md-12 col-lg-9" style="text-align: left;">' + 
+            '<span class="feed-user-name">a</span>' + 
+            '<br>' + 
+            '<span class="feed-user-data">a</span>' + 
+            '<br>' + 
+            '<br>' + 
+            '<span class="feed-text-data">a</span>' + 
+            '</div>' + 
+            '</div>';
+
+          $("#search-feed-divs").empty().append(feed);
+        }
+
+        var searchFeeds = JSON.parse(objResult['message']);
+        console.log(searchFeeds);
+
+        for(var key in searchFeeds) {
+
+          var searchFeed = searchFeeds[key];
+
+          var feed =   '<div class="row marketing search-feed-div">' +
+            '<div class="col-sm-12 col-md-12 col-lg-3" style="text-align: left;">' + 
+            '<span><img class="feed-user-profile-image" src="../user_data/profile_image/sample.jpg"></span>' + 
+            '</div>' + 
+            '<div class="col-sm-12 col-md-12 col-lg-9" style="text-align: left;">' + 
+            '<span class="feed-user-name">' + searchFeed['userhash_from'] + '</span>' + 
+            '<br>' + 
+            '<span class="feed-user-data">' + 'utdallas Faculty' + '</span>' + 
+            '<br>' + 
+            '<br>' + 
+            '<span class="feed-text-data">' + searchFeed['text_data'] + '</span>' + 
+            '</div>' + 
+            '</div>';
+
+          $("#search-feed-divs").append(feed);
+        }
+      }
+    });
+  }
