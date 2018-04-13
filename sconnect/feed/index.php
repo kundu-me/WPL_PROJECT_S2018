@@ -15,7 +15,7 @@
 <div class="row marketing left-right-com-div" style="margin-top: 15px;">
    <!-- <div class="row header">
    </div> -->
-    <div class="col-sm-12 col-md-12 col-lg-2" style="text-align: center;">
+    <div class="col-sm-12 col-md-12 col-lg-3" style="text-align: center;">
        <span class="left_pane">
 		<div class="card">
 			<?php
@@ -42,7 +42,7 @@
 	</span>
     </div>
 
-     <div class="col-sm-12 col-md-12 col-lg-8 search-feed-divs" style="text-align: center;">
+     <div class="col-sm-12 col-md-12 col-lg-6 search-feed-divs" style="text-align: center;">
        <div id="newPost">
 			<textarea title="newPostText" placeholder="What's on your mind?" id="newPostTextArea" rows="8" cols="100"></textarea>
 			<div id="action_bar">
@@ -79,7 +79,7 @@
 
     </div>
 
-     <div class="col-sm-12 col-md-12 col-lg-2" style="text-align: center;">
+     <div class="col-sm-12 col-md-12 col-lg-3" style="text-align: center;">
        <div>
        	News
        </div>
