@@ -80,17 +80,6 @@
 
     searchProfile();
 
-    $("#searchQueryButton").unbind("click");
-    $("#searchQuery").unbind("keypress");
-
-    var searchParams = new URLSearchParams(window.location.search);
-    if(searchParams.has('q')) {
-
-      var q = searchParams.get('q');
-      $("#searchQuery").val(q);
-      searchProfile();
-    }
-
     $("#searchQueryButton").click(function() {
       searchProfile();
     });

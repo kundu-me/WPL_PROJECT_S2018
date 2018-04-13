@@ -117,10 +117,10 @@ td {
 }*/
 
 #update {
-    position: absolute;
-    bottom: 50px;
-    left: 500px;
-    width: 10%;
+/*    position: absolute;
+*/    bottom: 50px;
+/*    left: 500px;
+*/    width: 10%;
     border: none;
     outline: 0;
     display: inline-block;
@@ -136,9 +136,9 @@ td {
     width: 100%
 }
 
-li button.relative {
+/*li button.relative {
     float: right;
-}
+}*/
 
 /*tr.header {
     font-weight: bold;

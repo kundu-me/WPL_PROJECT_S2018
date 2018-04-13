@@ -1,7 +1,8 @@
 <?php 
+	include('../data/connection_open.php');
 	session_start();
 	// $fileName = $_FILES['new_resume']['name'];
-	$link = mysqli_connect('localhost', 'root', '', 'sconnect') or die('Error '.mysql_error($link));
+	//$link = mysqli_connect('localhost', 'root', '', 'sconnect') or die('Error '.mysql_error($link));
 	// $target = "../user_data/resume/";		
 	// $fileTarget = $target.$fileName;	
 	// $tempFileName = $_FILES["new_resume"]["tmp_name"];
@@ -41,7 +42,7 @@
 			echo "The file " .basename($_FILES["resume_upload"]["name"]). "has been uploaded.";
 			echo "Your file <html><b><i>".basename($_FILES["resume_upload"]["name"])."</i></b></html> has been successfully uploaded";		
 		$query = "UPDATE sconnect_user SET resume_path = '$target_file' WHERE userhash = '$user_hash'";
-		$link->query($query) or die("Error : ".mysqli_error($link));
+		$sql_connection->query($query) or die("Error : ".mysqli_error($link));
 		}
 
 		else {
@@ -55,6 +56,6 @@
 	*	If file was successfully uploaded in the destination folder
 	*/
 
-	mysqli_close($link);
+	mysqli_close($sql_connection);
 
 ?>

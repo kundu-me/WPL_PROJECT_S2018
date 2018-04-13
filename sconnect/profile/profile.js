@@ -34,12 +34,13 @@
 			$.ajax({
 				type:'POST',
 				url:'edit.php',
-				dataType: json,
-				data:{'degree': degree, 'major': major, 'dob_month': dob_month, 
-					'dob_day': dob_day, 'dob_year': dob_year},
+				data:{degree: degree, major: major, dob_month: dob_month, 
+					dob_day: dob_day, dob_year: dob_year},
 				success:function(result){
 					console.log(result);
-					alert('Update successful');
+					var objResult = JSON.parse(result);
+					console.log(objResult);
+					// alert('Update successful');
 				},
 				error: function(jqxhr, status, exception) {
 					alert('Exception:', exception);
