@@ -53,8 +53,9 @@
 		  </div>
 		  <div class="col-sm-12 col-md-12 col-lg-3">
 		  	<div id="">
+		  		<a class="a-header-href" href="../message">M</a>
 				<a class="a-header-href" href="<?php echo $_SESSION['position'] == 'faculty'? '../attendance' : '../attendancee' ?>">A</a>
-				<a class="a-header-href" href="../message">M</a>
+				<a class="a-header-href" href="../profile">P</a>
 				<a class="a-header-href" href="">*</a>
 				<a class="a-header-href">?</a>
 				&nbsp;&nbsp;
@@ -73,7 +74,6 @@
 		    text-align: center;
 		    text-decoration: none;
 		    display: inline-block;
-		    font-size: 16px;
 		    margin: 4px 2px;
 		    border-radius: 50%;
 		    cursor: pointer;
@@ -87,7 +87,6 @@
 		    text-align: center;
 		    text-decoration: none;
 		    display: inline-block;
-		    font-size: 16px;
 		    margin: 4px 2px;
 		    cursor: pointer;
 		    text-align: right;
