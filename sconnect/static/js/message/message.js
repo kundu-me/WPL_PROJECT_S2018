@@ -70,10 +70,18 @@
 
 			if ((objResult.message == "userhash_to missing") || (objResult.message == "userhash_to missing") ||
 				(objResult.message == "Failed to insert in the message table")) {
+				jQuery("#lblmessage").text("Failed to send the message!!");
 				console.log(objResult.message);
 			
 				return;
 			}
+			else {
+				jQuery("#lblmessage").text("Message successfully sent!!!");
+				jQuery("#btnSubmit").attr("disabled", true); 
+				jQuery("#btnSubmit").addClass("btnDisable");
+
+			}
+			
 		}
 		});
 	}
@@ -85,7 +93,8 @@
 		ajaxCallToFetchMsgList();
 		jQuery("#messageShow").hide(); //hide the div element for message display at the beginning (on page laod)
 		jQuery("#messageNew").show(); //hide the div element for compose new message
-
+		jQuery("#messageNew #mailFrom").val('s3@utdallas.edu'); //put session value for email
+ 
 		
 		//**************** highlight text function on scrolling message-list using keyboard up-down arrow keys *******//
 		$(document).keydown(function (e) {
@@ -128,7 +137,8 @@
 			}
 			
 			if(jQuery("#messageNew").show()){
-				
+
+				jQuery("#lblmessage").text("");
 				jQuery("#messageNew").hide(); 
 				jQuery("#messageShow").show();
 			}			
@@ -149,8 +159,19 @@
 		//Compose message click functionality //
 		jQuery("#btnNew").click(function (e1) {
 			e1.preventDefault();
+			jQuery("#lblmessage").text("");
+
 			jQuery("#messageShow").hide(); //hide the table element displaying fetched course details based on OTP provided
 			jQuery("#messageNew").show(); //hide the div element for OTP intake and submit
+					
+			if (jQuery("#btnSubmit").hasClass("btnDisable")){
+				jQuery("#btnSubmit").attr("disabled", false); 
+				jQuery("#btnSubmit").removeClass("btnDisable");
+				jQuery("#messageNew #mailTo").val('');
+				jQuery("#messageNew #mailSub").val('');
+				jQuery("#messageNew #input").val('');
+				jQuery("#messageNew #mailTo").focus();
+			}
 
 			jQuery("#messageNew #mailFrom").val('s3@utdallas.edu');
 			jQuery("#messageNew #mailTo").focus();

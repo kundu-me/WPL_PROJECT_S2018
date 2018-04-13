@@ -53,11 +53,11 @@
 		  </div>
 		  <div class="col-sm-12 col-md-12 col-lg-3">
 		  	<div id="">
-		  		<a class="a-header-href" href="../message">M</a>
-				<a class="a-header-href" href="<?php echo $_SESSION['position'] == 'faculty'? '../attendance' : '../attendancee' ?>">A</a>
-				<a class="a-header-href" href="../profile">P</a>
-				<a class="a-header-href" href="">*</a>
-				<a class="a-header-href">?</a>
+				<a class="a-header-href" href="../message" title='Message'>M</a>
+				<a class="a-header-href" href="<?php echo $_SESSION['position'] == 'faculty'? '../attendance' : '../attendancee' ?>" title='Attendance'>A</a>
+				<a class="a-header-href" href="../profile" title='Profile'>P</a>
+				<a class="a-header-href" href="" title='Settings'>*</a>
+				<a class="a-header-href" title='Help Me'>?</a>
 				&nbsp;&nbsp;
 				<a class="a-header-logout" href="../session_logout.php">Logout</a>
 			</div>
@@ -74,6 +74,7 @@
 		    text-align: center;
 		    text-decoration: none;
 		    display: inline-block;
+		    /*font-size: 16px;*/
 		    margin: 4px 2px;
 		    border-radius: 50%;
 		    cursor: pointer;
@@ -87,12 +88,12 @@
 		    text-align: center;
 		    text-decoration: none;
 		    display: inline-block;
+		    /*font-size: 16px;*/
 		    margin: 4px 2px;
 		    cursor: pointer;
 		    text-align: right;
 		}
 	</style>
-
 	<script type="text/javascript">
 		$(document).ready(function() {
 
@@ -116,5 +117,4 @@
 		    });
 		});
 	</script>
-
 

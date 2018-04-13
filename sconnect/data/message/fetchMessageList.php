@@ -70,17 +70,17 @@
 			//Check for incoming or outgoing message based on userhash_to/from //
 			
 			if ($messageDetails['userhash_from'] == $userhash) {
-				array_push($messageList, "<tr id='msgEach'><td class='field1Size'><a href='#'>" . $row['date_time'] . "</a></td><td class='field2Size'><span id='msgicon'><i class='fa fa-caret-square-o-up' title='Outgoing msg'></i></span><a href='#'>"
+				array_push($messageList, "<tr id='msgEach'><td class='field1Size'><a href='#'>" . $row['date_time'] . "</a></td><td class='field2Size'><span id='msgicon'><i class='fa fa-caret-square-o-up fa-lg' title='Outgoing msg'></i></span><a href='#'>"
 					. $row['subject'] . "</a><span id='msgindex'>" . $row['message_id'] . "</span></td></tr>");
 			}
 			else {
 				
 				if($messageDetails['status'] == "Unread"){  //Check for unread messages to be shown bold in mail-list //
-					array_push($messageList, "<tr id='msgEach'><td class='field1Size'><a href='#' class='messageBold'>" . $row['date_time'] . "</a></td><td class='field2Size'><span id='msgicon'><i class='fa fa-caret-square-o-down' title='Incoming msg'></i></span><a href='#' class='messageBold'>"
+					array_push($messageList, "<tr id='msgEach'><td class='field1Size'><a href='#' class='messageBold'>" . $row['date_time'] . "</a></td><td class='field2Size'><span id='msgicon'><i class='fa fa-caret-square-o-down fa-lg' title='Incoming msg'></i></span><a href='#' class='messageBold'>"
 						. $row['subject'] . "</a><span id='msgindex'>" . $row['message_id'] . "</span></td></tr>");
 				}
 				else {
-					array_push($messageList, "<tr id='msgEach'><td class='field1Size'><a href='#'>" . $row['date_time'] . "</a></td><td class='field2Size'><span id='msgicon'><i class='fa fa-caret-square-o-down' title='Incoming msg'></i></span><a href='#'>"
+					array_push($messageList, "<tr id='msgEach'><td class='field1Size'><a href='#'>" . $row['date_time'] . "</a></td><td class='field2Size'><span id='msgicon'><i class='fa fa-caret-square-o-down fa-lg' title='Incoming msg'></i></span><a href='#'>"
 						. $row['subject'] . "</a><span id='msgindex'>" . $row['message_id'] . "</span></td></tr>");
 				}
 			}
