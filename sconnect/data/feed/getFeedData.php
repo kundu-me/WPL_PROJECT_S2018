@@ -50,7 +50,7 @@
  	$query = "SELECT feedhash, text_data, photo_path, video_path, privacy, 
  			  university_domain, userhash_to, userhash_from, date_time_yyyy_mm_dd_hh_mm, status
  			  FROM sconnect_feed
- 			  ORDER BY date_time_yyyy_mm_dd_hh_mm";
+ 			  ORDER BY date_time_yyyy_mm_dd_hh_mm DESC";
 
 	$result = mysqli_query ($sql_connection, $query);
 
