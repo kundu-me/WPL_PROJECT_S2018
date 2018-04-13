@@ -93,3 +93,28 @@
 		}
 	</style>
 
+	<script type="text/javascript">
+		$(document).ready(function() {
+
+			$("#searchQueryButton").click(function() {
+
+				if($("#searchQuery").val() == '') {
+					return;
+				}
+      			self.location = "../searchProfile/?q=" +  $("#searchQuery").val();
+    		});
+	    
+
+		    $("#searchQuery").keypress(function(e) {
+		      if(e.keyCode == 13) {
+		        
+		        if($("#searchQuery").val() == '') {
+					return;
+				}
+      			self.location = "../searchProfile/?q=" +  $("#searchQuery").val();
+		      }
+		    });
+		});
+	</script>
+
+
