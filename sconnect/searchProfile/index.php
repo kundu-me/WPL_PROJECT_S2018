@@ -6,6 +6,7 @@
 -->
 
 <?php include('../header_footer/header.php'); ?>
+<script src="https://cdn.jsdelivr.net/mark.js/7.0.0/jquery.mark.min.js"></script>
 <div class="row marketing left-right-com-div" style="margin-top: 15px;">
     <div class="col-sm-12 col-md-12 col-lg-3" style="text-align: center;">
        Profile
@@ -72,13 +73,51 @@
   .user-info {
     padding-top: 20px;
   }
+  .search-feed-div {
+    padding-left: 20px;
+    padding-top: 10px;
+    margin-top: 20px;
+    border: 2px;
+    background: white;
+    height: 150px;
+    cursor: pointer;
+  }
+  .search-feed-divs {
+    overflow-y: scroll;
+  }
+  .feed-user-profile-image {
+    width:120px;
+    height:120px;
+    vertical-align: middle;
+    padding-top: 10px;
+  }
+  .feed-user-name {
+
+    color: blue;
+    text-decoration: underline;
+    font-weight: bold;
+    font-size: 18px;
+  }
+  .feed-user-data {
+
+    color: black;
+    font-size: 12px;
+    font-style: italic;
+  }
+  .feed-text-data {
+
+    color: black;
+    font-style: italic;
+    font-size: 16px;
+  }
+  .mark {
+    background: orange;
+  }
 </style>
 
 <script type="text/javascript">
 
   $(document).ready(function(){
-
-    searchProfile();
 
     $("#searchQueryButton").unbind("click");
     $("#searchQuery").unbind("keypress");
@@ -89,20 +128,24 @@
       var q = searchParams.get('q');
       $("#searchQuery").val(q);
       searchProfile();
+      searchFeed();
     }
 
     $("#searchQueryButton").click(function() {
       searchProfile();
+      searchFeed();
     });
 
     $("#searchQueryButton").click(function() {
       searchProfile();
+      searchFeed();
     });
     
 
     $("#searchQuery").keypress(function(e) {
       if(e.keyCode == 13) {
         searchProfile();
+        searchFeed();
       }
     });
   });
@@ -116,6 +159,7 @@
       type: "POST",
       url: "../data/searchProfile/searchProfile.php",
       data: { searchQuery: $("#searchQuery").val() },
+      async: true,
       success: function(result) {
 
         $("#search-profile-divs").empty();
@@ -131,6 +175,7 @@
                           '</div>' ;
 
           $("#search-profile-divs").empty().append(profile);
+          return;
         }
 
         var searchUsers = JSON.parse(objResult['message']);
@@ -156,9 +201,62 @@
 
           $("#search-profile-divs").append(profile);
         }
+
+        $("#search-profile-divs").unmark().mark($("#searchQuery").val());
       }
     });
   }
+
+  function searchFeed() {
+
+    if($("#searchQuery").val() == '') {
+      return;
+    }
+    $.ajax({
+      type: "POST",
+      url: "../data/feed/getFeedData.php",
+      data: { searchQuery: $("#searchQuery").val() },
+      async: true,
+      success: function(result) {
+
+        console.log(result);
+        var objResult = JSON.parse(result);
+
+        if(objResult['success'] == 'false') {
+
+          return;
+        }
+
+        var searchFeeds = JSON.parse(objResult['message']);
+        console.log(searchFeeds);
+
+        for(var key in searchFeeds) {
+
+          var searchFeed = searchFeeds[key];
+
+          var feed =   '<div class="row marketing search-feed-div">' +
+            '<div class="col-sm-12 col-md-12 col-lg-3" style="text-align: left;">' + 
+            '<span><img class="feed-user-profile-image" src="../user_data/profile_image/sample.jpg"></span>' + 
+            '</div>' + 
+            '<div class="col-sm-12 col-md-12 col-lg-9" style="text-align: left;">' + 
+            '<span class="feed-user-name">' + searchFeed['user_from_name'] + ' (' + searchFeed['userhash_from'] + ')</span>' + 
+            '<br>' + 
+            '<span class="feed-user-data">' + searchFeed['user_from_university_domain'] + ' ' + searchFeed['user_from_position'] + '</span>' + 
+            '<br>' + 
+            '<br>' + 
+            '<span class="feed-text-data">' + searchFeed['text_data'] + '</span>' + 
+            '</div>' + 
+            '</div>';
+
+          $("#search-profile-divs").append(feed);
+        }
+
+        $("#search-profile-divs").unmark().mark($("#searchQuery").val());
+      }
+    });
+  }
+
+
 
   function viewProfile(userhash) {
     alert(userhash);

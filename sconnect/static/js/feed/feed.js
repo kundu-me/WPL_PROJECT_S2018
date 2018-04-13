@@ -52,7 +52,7 @@ function getFeedPost() {
     $.ajax({
       type: "POST",
       url: "../data/feed/getFeedData.php",
-      data: { user: '' },
+      data: { searchQuery: '' },
       success: function(result) {
 
         console.log(result);

@@ -15,7 +15,7 @@
 	$errflag = false;
  
 	//Get the POST values
-	//$searchQuery = $_POST['searchQuery'];
+	$searchQuery = $_POST['searchQuery'];
 	//$university_domain = $_SESSION['university_domain'];
 	//$userhash = $_SESSION['userhash'];
  
@@ -57,6 +57,13 @@
  			  FROM sconnect_feed as feed
  			  INNER JOIN sconnect_user as user_from
  			  WHERE feed.userhash_from = user_from.userhash
+ 			  AND 
+ 			  (
+ 			   feed.text_data LIKE '%$searchQuery%' OR 
+ 			   feed.university_domain LIKE '%$searchQuery%' OR
+ 			   user_from.fname LIKE '%$searchQuery%' OR
+ 			   user_from.lname LIKE '%$searchQuery%'
+ 			   )
  			  ORDER BY feed.date_time_yyyy_mm_dd_hh_mm DESC";
 
 	$result = mysqli_query ($sql_connection, $query);
