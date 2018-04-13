@@ -4,26 +4,19 @@
     @description: This page will display as lightbox when clicked on Messages button on profile header.
 	              It handles the total list of sent/receipt messages for the user alongwith sending new message function
 -->
-<!DOCTYPE html>
-<html lang="en">
-	
-		<meta charset="UTF-8">
-		<title>Message One2One Interface</title>
-
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-		
-	<!-- jQuery library -->
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <!-- Latest compiled JavaScript -->
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-		<script src="message.js"></script>
-		<link rel="stylesheet"  href="message.css">
+<?php include('../header_footer/header.php'); ?>
+		<script src="../static/js/message/message.js"></script>
+		<link rel="stylesheet"  href="../static/css/message/message.css">
 		
 	<!-- php include('./session_verify.php') -->
 	<?php include('../data/connection_open.php') ?> 
 
 		
+
+    <div class="col-sm-12 col-md-12 col-lg-1" style="text-align: center;">
+    </div>
+
+    <div class="col-sm-12 col-md-12 col-lg-10">
 	<div class="container col-lg-12" id="msgContainer"> <!--Div element to display all incoming and outgoing messages for the user -->
 		<div class="row">
 			<div class="col-lg-12 col-lg-3">
@@ -131,16 +124,19 @@
 						</div>
 					</div>
 					<div class="row">
-						<div class="col-lg-12 col-lg-7">
+						<div class="col-lg-12 col-lg-9">
 						</div>
-						<div class="col-lg-12 col-lg-3">
-							<h3><input type="submit" value="Send Message" id="btnSubmit"></h3>
+						<div class="col-lg-12 col-lg-1">
+							<h3><input type="submit" value="Send" id="btnSubmit"></h3>
 						</div>
 					</div>
 				</div>
 
 			</div>
 		</div>
+    </div>
+</div>
+    <div class="col-sm-12 col-md-12 col-lg-1" style="text-align: center;">
     </div>
 
 </html>
