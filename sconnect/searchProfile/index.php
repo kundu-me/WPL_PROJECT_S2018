@@ -127,16 +127,19 @@
 
       var q = searchParams.get('q');
       $("#searchQuery").val(q);
+      $("#search-profile-divs").empty();
       searchProfile();
       searchFeed();
     }
 
     $("#searchQueryButton").click(function() {
+      $("#search-profile-divs").empty();
       searchProfile();
       searchFeed();
     });
 
     $("#searchQueryButton").click(function() {
+      $("#search-profile-divs").empty();
       searchProfile();
       searchFeed();
     });
@@ -144,6 +147,7 @@
 
     $("#searchQuery").keypress(function(e) {
       if(e.keyCode == 13) {
+        $("#search-profile-divs").empty();
         searchProfile();
         searchFeed();
       }
@@ -162,7 +166,6 @@
       async: true,
       success: function(result) {
 
-        $("#search-profile-divs").empty();
         console.log(result);
         var objResult = JSON.parse(result);
 
@@ -174,7 +177,7 @@
                           '</div>' + 
                           '</div>' ;
 
-          $("#search-profile-divs").empty().append(profile);
+          $("#search-profile-divs").append(profile);
           return;
         }
 
@@ -224,6 +227,13 @@
 
         if(objResult['success'] == 'false') {
 
+          var feed =   '<div class="row marketing search-profile-div">' +
+                          '<div class="col-sm-12 col-md-12 col-lg-12" style="text-align: center;">' + 
+                          '<span class="user-name">No Feed Found</span>' +
+                          '</div>' + 
+                          '</div>' ;
+
+          $("#search-profile-divs").append(feed);
           return;
         }
 
