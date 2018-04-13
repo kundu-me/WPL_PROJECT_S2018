@@ -11,12 +11,6 @@
 	<!-- php include('./session_verify.php') -->
 	<?php include('../data/connection_open.php') ?> 
 
-		
-
-    <div class="col-sm-12 col-md-12 col-lg-1" style="text-align: center;">
-    </div>
-
-    <div class="col-sm-12 col-md-12 col-lg-10">
 	<div class="container col-lg-12" id="msgContainer"> <!--Div element to display all incoming and outgoing messages for the user -->
 		<div class="row">
 			<div class="col-lg-12 col-lg-3">
@@ -80,7 +74,7 @@
 					</div>
 					<div class="row">
 						<div class="col-lg-12 col-lg-2">
-							<h3>Subject</h3>
+							<h3>Sub</h3>
 						</div>
 						<div class="col-lg-12 col-lg-10">
 							<h3><input type="text" id="mailSub" name="Mail Subject" class="col-lg-10" autocomplete="off"><h3>
@@ -112,7 +106,7 @@
 					</div>
 					<div class="row">
 						<div class="col-lg-12 col-lg-2">
-							<h3>Subject</h3>
+							<h3>Sub</h3>
 						</div>
 						<div class="col-lg-12 col-lg-10">
 							<h3><input type="text" id="mailSub" name="Mail Subject" class="col-lg-10" autocomplete="off"><h3>
@@ -134,9 +128,6 @@
 
 			</div>
 		</div>
-    </div>
-</div>
-    <div class="col-sm-12 col-md-12 col-lg-1" style="text-align: center;">
     </div>
 
 </html>
