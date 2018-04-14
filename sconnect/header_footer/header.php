@@ -20,6 +20,25 @@
 </head>
 <body>
 	<?php include('../data/connection_open.php'); ?>
+	<?php include('../session_verify.php'); ?>
+
+	<span id="session-variable">
+		<input type="hidden" id="session-userhash" value="<?php echo $_SESSION['userhash'] ?>">
+		<input type="hidden" id="session-email" value="<?php echo $_SESSION['email'] ?>">
+		<input type="hidden" id="session-status" value="<?php echo $_SESSION['status'] ?>">
+		<input type="hidden" id="session-position" value="<?php echo $_SESSION['position'] ?>">
+		<input type="hidden" id="session-fname" value="<?php echo $_SESSION['fname'] ?>">
+		<input type="hidden" id="session-mname" value="<?php echo $_SESSION['mname'] ?>">
+		<input type="hidden" id="session-lname" value="<?php echo $_SESSION['lname'] ?>">
+		<input type="hidden" id="session-profile_image_path" value="<?php echo $_SESSION['profile_image_path'] ?>">
+		<input type="hidden" id="session-resume_path" value="<?php echo $_SESSION['resume_path'] ?>">
+		<input type="hidden" id="session-dob_mm" value="<?php echo $_SESSION['dob_mm'] ?>">
+		<input type="hidden" id="session-dob_dd" value="<?php echo $_SESSION['dob_dd'] ?>">
+		<input type="hidden" id="session-dob_yyyy" value="<?php echo $_SESSION['dob_yyyy'] ?>">
+		<input type="hidden" id="session-degree" value="<?php echo $_SESSION['degree'] ?>">
+		<input type="hidden" id="session-major" value="<?php echo $_SESSION['major'] ?>">
+		<input type="hidden" id="session-university_domain" value="<?php echo $_SESSION['university_domain'] ?>">
+	</span>
 
 	<div class="row marketing">
 		<div class="row header">

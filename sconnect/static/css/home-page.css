@@ -349,3 +349,129 @@ img {vertical-align: middle;}
   rotate(315deg);
   height: 130px;
 }
+
+.delete-button {
+  font-size: 15px;
+}
+
+.search-feed-div {
+    padding-left: 20px;
+    padding-top: 10px;
+    margin-top: 20px;
+    border: 2px;
+    background: white;
+    height: 150px;
+    cursor: pointer;
+  }
+  .search-feed-divs {
+    overflow-y: scroll;
+  }
+  .feed-user-profile-image {
+    width:120px;
+    height:120px;
+    vertical-align: middle;
+    padding-top: 10px;
+  }
+  .feed-user-name {
+
+    color: blue;
+    text-decoration: underline;
+    font-weight: bold;
+    font-size: 18px;
+  }
+  .feed-user-data {
+
+    color: black;
+    font-size: 12px;
+    font-style: italic;
+  }
+  .feed-text-data {
+
+    color: black;
+    font-style: italic;
+    font-size: 16px;
+  }
+
+  .search-profile-div {
+    padding-left: 20px;
+    padding-top: 10px;
+    margin-top: 20px;
+    border: 2px;
+    background: white;
+    height: 150px;
+    cursor: pointer;
+  }
+  .search-profile-divs {
+    overflow-y: scroll;
+  }
+  .user-profile-image {
+    width:120px;
+    height:120px;
+    vertical-align: middle;
+    padding-top: 10px;
+  }
+  .user-name {
+
+    color: blue;
+    text-decoration: underline;
+    font-weight: bold;
+    font-size: 18px;
+  }
+  .user-position {
+
+    color: black;
+    font-style: italic;
+    font-size: 16px;
+    text-transform: uppercase;
+  }
+  .user-university {
+
+    color: black;
+    font-style: italic;
+    font-size: 16px;
+    text-transform: uppercase;
+  }
+  .user-info {
+    padding-top: 20px;
+  }
+  .search-feed-div {
+    padding-left: 20px;
+    padding-top: 10px;
+    margin-top: 20px;
+    border: 2px;
+    background: white;
+    height: 150px;
+    cursor: pointer;
+  }
+  .search-feed-divs {
+    overflow-y: scroll;
+  }
+  .feed-user-profile-image {
+    width:120px;
+    height:120px;
+    vertical-align: middle;
+    padding-top: 10px;
+  }
+  .feed-user-name {
+
+    color: blue;
+    text-decoration: underline;
+    font-weight: bold;
+    font-size: 18px;
+  }
+  .feed-user-data {
+
+    color: black;
+    font-size: 12px;
+    font-style: italic;
+  }
+  .feed-text-data {
+
+    color: black;
+    font-style: italic;
+    font-size: 16px;
+  }
+  
+  mark {
+    background-color: #FFD700;
+  }

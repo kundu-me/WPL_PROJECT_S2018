@@ -110,8 +110,9 @@
     font-style: italic;
     font-size: 16px;
   }
-  .mark {
-    background: orange;
+  
+  mark {
+    background-color: #FFD700;
   }
 </style>
 
@@ -244,19 +245,32 @@
 
           var searchFeed = searchFeeds[key];
 
-          var feed =   '<div class="row marketing search-feed-div">' +
-            '<div class="col-sm-12 col-md-12 col-lg-3" style="text-align: left;">' + 
-            '<span><img class="feed-user-profile-image" src="../user_data/profile_image/sample.jpg"></span>' + 
-            '</div>' + 
-            '<div class="col-sm-12 col-md-12 col-lg-9" style="text-align: left;">' + 
-            '<span class="feed-user-name">' + searchFeed['user_from_name'] + ' (' + searchFeed['userhash_from'] + ')</span>' + 
-            '<br>' + 
-            '<span class="feed-user-data">' + searchFeed['user_from_university_domain'] + ' ' + searchFeed['user_from_position'] + '</span>' + 
-            '<br>' + 
-            '<br>' + 
-            '<span class="feed-text-data">' + searchFeed['text_data'] + '</span>' + 
-            '</div>' + 
-            '</div>';
+          var feed = '<div class="row marketing search-feed-div" id="' + searchFeed['feedhash'] + '">' +
+                     '<div class="col-sm-12 col-md-12 col-lg-3" style="text-align: left;">' + 
+                     '<span><img class="feed-user-profile-image" src="../user_data/profile_image/sample.jpg"></span>' + 
+                     '</div>' + 
+                     '<div class="col-sm-12 col-md-12 col-lg-8" style="text-align: left;">' + 
+                     '<span class="feed-user-name">' + searchFeed['user_from_name'] + ' (' + searchFeed['userhash_from'] + ')</span>' + 
+                     '<br>' + 
+                     '<span class="feed-user-data">' + searchFeed['user_from_university_domain'] + ' ' + searchFeed['user_from_position'] + '</span>' + 
+                     '<br>' + 
+                     '<br>' + 
+                     '<span class="feed-text-data">' + searchFeed['text_data'] + '</span>' + 
+                     '</div>' +
+                     '<div class="col-sm-12 col-md-12 col-lg-1">';
+
+          if($("#session-position").val() == "admin") {
+
+            feed += '<button class="delete-button" onclick="deleteFeed(\'' + searchFeed['feedhash'] + '\')" title="Delete Post">' +
+                    '<i class="fa fa-trash-o"></i></button>';
+          }
+          else if($("#session-userhash").val() == searchFeed['userhash_from']) {
+            
+            feed += '<button class="delete-button" onclick="deleteFeed(\'' + searchFeed['feedhash'] + '\')" title="Delete Post">' + 
+                    '<i class="fa fa-trash-o"></i></button>';
+          }
+          
+          feed += '</div>';
 
           $("#search-profile-divs").append(feed);
         }
