@@ -11,8 +11,7 @@
 	$errflag = false;
  
 	//Get the POST values
-	//$userhash = $_SESSION['userhash'];
-	$userhash = '5ac6a94271639';
+	$userhash = $_SESSION['userhash'];
 	
 	//Input Validations
 	if($userhash == '') {
