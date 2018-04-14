@@ -13,7 +13,7 @@
 	<div class="container col-lg-12" id="msgContainer"> <!--Div element to display all incoming and outgoing messages for the user -->
 		<div class="row">
 			<div class="col-lg-12 col-lg-3">
-				<h3 style="color:#fff"><?php echo $_SESSION['fname'] . ' ' . $_SESSION['lname'] ?></h3> 
+				<h3 style="color:#fff"><?php echo 'Welcome, '. $_SESSION['fname'] . ' ' . $_SESSION['lname'] ?></h3> 
 			</div>
 			<div class="col-lg-12 col-lg-7">
 				<h3><p>

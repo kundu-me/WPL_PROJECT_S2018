@@ -93,7 +93,7 @@
 		ajaxCallToFetchMsgList();
 		jQuery("#messageShow").hide(); //hide the div element for message display at the beginning (on page laod)
 		jQuery("#messageNew").show(); //hide the div element for compose new message
-		jQuery("#messageNew #mailFrom").val(jQuery("#session-email")); //put session value for email
+		jQuery("#messageNew #mailFrom").val(jQuery("#session-email").val()); //put session value for email
  
 		
 		//**************** highlight text function on scrolling message-list using keyboard up-down arrow keys *******//
@@ -173,7 +173,7 @@
 				jQuery("#messageNew #mailTo").focus();
 			}
 
-			jQuery("#messageNew #mailFrom").val('s3@utdallas.edu');
+			jQuery("#messageNew #mailFrom").val(jQuery('#session-email').val());
 			jQuery("#messageNew #mailTo").focus();
 
 		});
