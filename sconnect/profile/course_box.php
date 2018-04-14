@@ -1,9 +1,9 @@
 <?php
 //Database credentials
-$dbHost     = 'localhost';
-$dbUsername = 'root';
-$dbPassword = '';
-$dbName     = 'sconnect';
+$dbHost     = "kundu.me";
+$dbUsername = "kundujwg_sc";
+$dbPassword = "Pass@1234";
+$dbName     = "kundujwg_sconnect_db1";
 
 //Connect and select the database
 $db = new mysqli($dbHost, $dbUsername, $dbPassword, $dbName);

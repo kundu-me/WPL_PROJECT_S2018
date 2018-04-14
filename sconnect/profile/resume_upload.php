@@ -11,20 +11,20 @@
 	// $result = move_uploaded_file($fileName,$fileTarget);
 	// echo "Result: " .$result;
 
-
+	$user_hash = $_SESSION['userhash'];
 	$target_dir = "../user_data/resume/";
-	$target_file = $target_dir . basename($_FILES["resume_upload"]["name"]);
+	//$target_file = $target_dir . basename($_FILES["resume_upload"]["name"]);
+	$target_file = $target_dir . $user_hash. ".pdf";
 	$uploadOk = 1;
 	$fileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
-	$user_hash = $_SESSION['userhash'];
 
 	if(file_exists($target_file)) {
 		echo "Sorry, the file already exists.";
 		$uploadOk = 0;
-	}
+	}s
 
 	if($_FILES["resume_upload"]["size"] > 500000) {
-		echo "Sorry, the file is too large.";
+		echo "Sorry, the file is too large.";s
 		$uploadOk = 0;
 	}
 

@@ -1,4 +1,5 @@
 <?php 
+
 	$deg_stmt = $sql_connection->prepare("SELECT degree from sconnect_lookup_degree");
 	$deg_stmt->execute();
 	$deg_array = [];
