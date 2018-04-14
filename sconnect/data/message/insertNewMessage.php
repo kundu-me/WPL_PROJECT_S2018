@@ -10,8 +10,7 @@
 	$errflag = false;
  
 	//Get the SESSION values
-	//$userhash_from = $_SESSION['userhash'];
-	$userhash_from = '5ac6a94271639';
+	$userhash_from = $_SESSION['userhash'];
 
 	//Get the POST values
 	$mailTo = $_POST['mailTo'];
