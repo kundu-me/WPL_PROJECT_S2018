@@ -99,7 +99,7 @@ function validateResetPasswordForm() {
     if($("#reset-password").val() == "") {
         
         $("#reset-password").focus();
-        $("#reset-error-msg").text("Please Enter your email");
+        $("#reset-error-msg").text("Please Enter your password");
         return false;
     }
 
