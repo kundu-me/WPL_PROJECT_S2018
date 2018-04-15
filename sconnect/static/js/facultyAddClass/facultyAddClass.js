@@ -7,16 +7,16 @@
 
 //function to reset input and focus on first field on every page refrssh
 function resetInput() {
-	jQuery("#CourseID").focus();
+	jQuery("#courseID").focus();
 }
 
 //function to disable form-elements on Create-Class button click
 function formDisable() {
-	jQuery("#CourseID").attr("disabled", true); 
-	jQuery("#CourseID").addClass("btnDisable");
+	jQuery("#courseID").attr("disabled", true); 
+	jQuery("#courseID").addClass("btnDisable");
 	
-	jQuery("#CourseName").attr("disabled", true); 
-	jQuery("#CourseName").addClass("btnDisable");
+	jQuery("#courseName").attr("disabled", true); 
+	jQuery("#courseName").addClass("btnDisable");
 	
 	jQuery("#session").attr("disabled", true);
 	jQuery("#session").addClass("btnDisable");
@@ -103,7 +103,6 @@ jQuery(document).ready(function () {
         }
 		
 		formDisable(); //disable form elements on successful form validation and submission
-		//$("#results").text($('#formData').serialize());
 		
 		//Show last div for OTP generation when form is validated, and copy the OTP text//
 		jQuery(".container:last").show();

@@ -1,6 +1,6 @@
 <!--
-    @author: Koulick Sankar Paul <koulick89@gmail.com>
     @author: Abhishek Dutta <abhi06548@yahoo.com>
+	@author: Koulick Sankar Paul <koulick89@gmail.com>
     @page: Addition of a class by a faculty 
     @description: This page allows a faculty member to add a new class to register students
 -->
@@ -21,7 +21,7 @@
             <br>
 			<div class="row">
                 <div class="col-lg-12 col-lg-3">
-                    <h3>Course Code and Section</h3>
+                    <h3>Course Code</h3>
                 </div>
                 <div class="col-lg-12 col-lg-9">
                     <h3><input type="text" id="courseID" name="Course ID" placeholder ="eg: CS 6001.001" class="col-lg-6" autocomplete="off"></h3>
@@ -46,7 +46,7 @@
 						<option value="" disabled selected hidden>Choose a term..</option>
 						<option value="Fall">Fall</option>
 						<option value="Spring">Spring</option>
-						<option value="Summer">Summer</option>
+						<option value="Summer">Summer</option>						
 					</select></h3>
                 </div>
             </div>
@@ -56,7 +56,7 @@
                     <h3>Academic Year</h3>
                 </div>
                 <div class="col-lg-12 col-lg-9">
-                    <h3><select id="year" name="Year" class="col-lg-6" autocomplete="off">
+                    <h3><select id="year" name="Year" class="col-lg-6" autocomplete="off" style="margin-bottom:15px">
 						<option value="2018" selected>2018</option>
 						<option value="2019">2019</option>
 					</select></h3>
@@ -66,11 +66,11 @@
 			<div class="row">
                 <div class="col-lg-12 col-lg-3">
                     <!-- <h3>Class Roster (.csv only)</h3> -->
-                    <h3>Class Roster (please paste the email ids here)</h3>
+                    <h3>Class Roster <i>(please paste email-ids here)</i></h3>
                 </div>
                 <div class="col-lg-12 col-lg-9">
                     <!-- <h3><input type="file" id="classRoster" name="class_roster" accept=".xlsx" autocomplete="off"></h3> -->
-                    <textarea rows="4" cols="50" id="classRoster" name="class_roster" autocomplete="off"></textarea>
+                    <textarea rows="3" cols="49" id="classRoster" name="class_roster" autocomplete="off"></textarea>
                 </div>
             </div>
 			
@@ -98,9 +98,6 @@
 	</form> 
 
 	<br>
-	<p id="results" class="col-lg-12"></p>
-
-	<br>
     <div class="container"><!--Div element to show failure message for form validation -->
             <div class="row">
                 <div class="col-lg-12 col-lg-3">
@@ -115,14 +112,14 @@
 	
     <div class="container"> <!--Dynamic population of div element on button click -->
             <div class="row">
-				<h4><p id="instructions" class="col-lg-12">Please use the provided One-time Password for signing into <span id="courseID-1"></span> course for <span id="courseTerm-1"></span>.</p></h4>
+				<p id="instructions" class="col-lg-12"><strong>Please use the provided One-time Password for signing into <span id="courseID-1"></span> course for <span id="courseTerm-1"></span>.</strong></p>
 				<div id="divOTP" class="col-lg-12 col-lg-3">
 					<h3><input type="text" id="otp" name="One-time Pwd" value="" class="col-lg-12" disabled autocomplete="off"></h3>
 				</div>
-				<div class="col-lg-12 col-lg-2">
+				<div class="col-lg-12 col-lg-1">
 					<h3><button id="btnCopy">Copy</button></h3>
 				</div>
-				<div class="col-lg-12 col-lg-7">
+				<div class="col-lg-12 col-lg-8">
 					<h3><button id="btnClose">Close</button></h3>
 				</div>
             </div>
