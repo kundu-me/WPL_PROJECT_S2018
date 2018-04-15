@@ -5,8 +5,8 @@
     @description: This page handles the creation of daily attendance sheet and OTP-generation (for student use) by faculty
 -->
 
-<?php include('../session_verify_faculty.php'); ?>
 <?php include('../header_footer/header.php'); ?>
+<?php include('../session_verify_faculty.php'); ?>
 <script src="../static/js/attendance/attendance.js"></script>
 <link rel="stylesheet" href="../static/css/attendance/attendance.css">
 

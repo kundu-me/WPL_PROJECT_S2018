@@ -4,8 +4,8 @@
     @description: This page verifies the user with the email and OTP
 -->
 
-<?php include('../session_verify_faculty.php'); ?>
 <?php include('../header_footer/header.php'); ?>
+<?php include('../session_verify_faculty.php'); ?>
 <script src="../static/js/attendanceTable/attendanceTable.js"></script>
 
 <div class="row marketing left-right-com-div" style="margin-top: 15px;">
