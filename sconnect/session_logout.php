@@ -6,7 +6,7 @@
 
 	session_destroy();
 
-	header("location: http://www.sconnect.xyz");
+	header("location: http://www.sconnect.kundu.me");
 
 	exit();
 
