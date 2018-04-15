@@ -4,17 +4,12 @@
 
 	<?php include('../header_footer/header.php'); ?>
 
-<!-- 	<?php include('../session_verify.php') ?>
- -->
-<!-- 	<?php include('../data/connection_open.php') ?> 
- -->
 	<?php include('../data/profile/profile.php'); ?>
 
-
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="../static/css/profile/profile_page.css">
+	
 	<script type="text/javascript" src="profile.js"></script>
-	<title><?php echo "SConnect " .$_SESSION['fname'].' '.$_SESSION['lname']; ?></title>
+
 	<div id="page">
 		<div class="col-sm-12 col-md-12 col-lg-3">
 			<span class="left_pane">
