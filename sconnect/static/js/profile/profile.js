@@ -1,10 +1,10 @@
 $(document).ready(function() {
 	$('.striped tr:even').addClass('alt');
 
-	function showLightBox(){
-		document.getElementById('lightbox').style.display='block';
-		document.getElementById('fade').style.display='block'
-}
+// 	function showLightBox(){
+// 		document.getElementById('lightbox').style.display='block';
+// 		document.getElementById('fade').style.display='block'
+// }
 });
 
 

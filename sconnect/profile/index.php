@@ -117,7 +117,8 @@
 								</div>
 							</div>
 							<div class="row">
-								<button type="button" id="add_course" onclick="showLightBox()">Add new course</button>
+								<button type="button" id="add_course" onclick="document.getElementById('lightbox').style.display='block';
+		document.getElementById('fade').style.display='block'">Add new course</button>
 							</div>
 							<div id="lightbox" class="white_content">
 								<?php include('course_box.php'); ?>
