@@ -4,10 +4,10 @@
 
 	<?php include('../header_footer/header.php'); ?>
 
-	<?php include('../session_verify.php') ?>
-
-	<?php include('../data/connection_open.php') ?> 
-
+<!-- 	<?php include('../session_verify.php') ?>
+ -->
+<!-- 	<?php include('../data/connection_open.php') ?> 
+ -->
 	<?php include('../data/profile/profile.php'); ?>
 
 
