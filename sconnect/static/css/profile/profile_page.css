@@ -51,16 +51,6 @@ l
     font-size: 18px;
 }
 
-/*a {
-    text-decoration: none;
-    font-size: 22px;
-    color: black;
-}*/
-
-/*button:hover, a:hover {
-    opacity: 0.7;
-}*/
-
 .left_pane {
     float: left;
     width: 300px;
@@ -79,18 +69,6 @@ l
     max-width: 100%;
 }
 
-/*span li label {
-    margin-right: 40px;
-}
-
-span li {
-    padding: 5px;
-}
-
-span ul {
-    list-style-type: none;
-}*/
-
 #radiof {
     margin-left: 50px;
 }
@@ -103,18 +81,6 @@ span ul {
 #courses {
     width: 45%;
 }
-
-/*th {
-    padding: 15px;
-    height: 50px;
-    text-align: left;
-}
-
-td {
-    padding: 15px;
-    height: 25px;
-    vertical-align: bottom;
-}*/
 
 #update {
 /*    position: absolute;
@@ -135,18 +101,6 @@ td {
 .card embed {
     width: 100%
 }
-
-/*li button.relative {
-    float: right;
-}*/
-
-/*tr.header {
-    font-weight: bold;
-}*/
-
-/*tr.alt {
-    background-color: orange;
-}*/
 
 .black_overlay{
     display: none;
@@ -191,9 +145,6 @@ td {
 #dob-div {
     overflow: hidden;
 }
-
-
-
 
 
 /* The switch - the box around the slider */
@@ -287,11 +238,3 @@ input:checked + .slider:before {
   font-weight: bold;
   color: black;
 }
-/* Rounded sliders */
-/*.slider.round {
-  border-radius: 34px;
-}
-
-.slider.round:before {
-  border-radius: 50%;
-}*/

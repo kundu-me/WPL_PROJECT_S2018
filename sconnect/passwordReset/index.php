@@ -4,7 +4,7 @@
     @description: This page enables the user to reset the password
 -->
 
-<?php include('../header_footer/header.php'); ?>
+<?php include('../header_footer_home/header.php'); ?>
 <script src="../static/js/passwordReset/passwordReset.js"></script>
 
 <div class="row marketing left-right-com-div" style="margin-top: 15px;">
@@ -73,4 +73,4 @@
       </div>
    </div>
 </div>
-<?php include('../header_footer/footer.php'); ?>
+<?php include('../header_footer_home/footer.php'); ?>
