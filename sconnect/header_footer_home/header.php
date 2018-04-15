@@ -20,7 +20,6 @@
 </head>
 <body>
 	<?php include('../data/connection_open.php'); ?>
-	<?php include('../session_verify.php'); ?>
 
 
 	<div class="row marketing">
