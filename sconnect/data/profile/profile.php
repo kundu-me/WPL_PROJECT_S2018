@@ -3,9 +3,10 @@
 	$deg_stmt = $sql_connection->prepare("SELECT degree from sconnect_lookup_degree");
 	$deg_stmt->execute();
 	$deg_array = [];
-	foreach ($deg_stmt->get_result() as $row)
+	$deg_stmt->bind_result($deg_fetched);
+	while ($deg_stmt->fetch())
 	{
-		$deg_array[] = $row['degree'];
+		$deg_array[] = $deg_fetched;
 	}
 	?>
 
@@ -13,9 +14,10 @@
 	$maj_stmt = $sql_connection->prepare("SELECT major from sconnect_lookup_major");
 	$maj_stmt->execute();
 	$maj_array = [];
-	foreach ($maj_stmt->get_result() as $row)
+	$maj_stmt->bind_result($maj_fetched);
+	while ($maj_stmt->fetch())
 	{
-		$maj_array[] = $row['major'];
+		$maj_array[] = $maj_fetched;
 	}
 	?>
 
