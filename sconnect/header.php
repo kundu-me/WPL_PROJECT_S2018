@@ -26,7 +26,7 @@
 		  <div class="col-sm-12 col-md-12 col-lg-6">
 		     <table class="table-responsive cursor-pointer">
 		        <tbody>
-		           <tr>
+		           <tr onclick="javascript:location.href='www.sconnect.kundu.me'">
 		              <td><img class="img-responsive sconnect-logo-img" src="static/img/sconnect-logo-3.jpg" alt="sconnect-logo"></td>
 		              <td><span class="sconnect-header-logo">SConnect</span></td>
 		           </tr>
