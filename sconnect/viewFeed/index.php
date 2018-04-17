@@ -13,30 +13,7 @@
    <!-- <div class="row header">
    </div> -->
     <div class="col-sm-12 col-md-12 col-lg-3" style="text-align: center;">
-       <span class="left_pane">
-		<div class="card">
-			<?php
-			if($_SESSION['profile_image_path']==null) {
-				$_SESSION['profile_image_path'] = 'sample.jpg';
-			}
-			echo '<img src="../user_data/' .$_SESSION['profile_image_path'].'" alt="Display Image" style="width: 100%">'
-			?>
-			<?php 
-			echo '<h1>'.$_SESSION['fname'].' '.$_SESSION['lname'].'</h1>'
-			?>
-			<p class="title"><?php echo $_SESSION['position'] ?><br> and <br><?php echo $_SESSION['degree'] ?> <br> <?php echo $_SESSION['major'] ?></p>
-			<p><?php echo $_SESSION['university_domain'] ?></p>
-			<img src="<?php echo '../university_data/logo/' . $_SESSION['university_domain'] . '.jpg'?>" alt="University Logo" style="width: 30%"> 
-			<p><button>Connect</button></p>
-			<?php
-			if($_SESSION['resume_path']==null) {
-				$_SESSION['resume_path'] = 'sample.pdf';
-			}
-			echo '<embed src="../user_data/' .$_SESSION['resume_path'].'" width="200px" height="295px" scale="tofit"></embed>'
-			?>
-			<p><button>Browse</button></p>
-		</div>
-	</span>
+       
     </div>
 
      <div class="col-sm-12 col-md-12 col-lg-6 search-feed-divs" style="text-align: center;">
