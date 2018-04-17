@@ -2,19 +2,17 @@
 	Profile Page for SConnect
 	Updated on: 03/28/2018 -->
 
-	<?php include('../session_verify.php') ?>
-
 	<?php include('../header_footer/header.php'); ?>
 
 	<?php include('../data/connection_open.php') ?> 
 
-	<?php include('../data/view_profile/view_profile.php'); ?>
+	<?php include('../data/viewProfile/viewProfile.php'); ?>
 
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="../static/css/profile/profile_page.css">
-	<script type="text/javascript" src="profile.js"></script>
-	<title><?php echo "SConnect " .$fname.' '.$lname; ?></title>
+<!-- 	<script type="text/javascript" src="../static/js/profile/profile.js"></script>
+ -->	<title><?php echo "SConnect " .$fname.' '.$lname; ?></title>
 	<div id="page">
 		<div class="col-sm-12 col-md-12 col-lg-3">
 			<span class="left_pane">
@@ -28,7 +26,7 @@
 					<?php 
 					echo '<h1>'.$fname.' '.$lname.'</h1>'
 					?>
-					<p class="title"><?php echo $position ?><br> and <br><?php echo $degree ?> <br> <?php echo $major ?></p>
+					<p class="title"><?php echo $position ?><br><?php echo $degree ?> <br> <?php echo $major ?></p>
 					<p><?php echo $university_domain ?></p>
 					<img src="<?php echo '../university_data/logo/' . $university_domain . '.jpg'?>" alt="University Logo" style="width: 30%"> 
 					<p><button>Connect</button></p>
@@ -43,16 +41,16 @@
 		</div>
 		<div class="col-sm-12 col-md-12 col-lg-8" style="text-align: left;">
 			<span class="container-fluid text-center">
-				<form class="card_main">
-				</div>
-				<div class="container">
-					<div class="row" style="text-align: center;">
-						<span class="sconnect-profile-header">Profile - <?php echo " " . $fname . " " . $lname ?> 
+				<div class="card_main">
+					<div class="container">
+						<div class="row" style="text-align: center;">
+							<span class="sconnect-profile-header">Profile - <?php echo " " . $fname . " " . $lname ?> 
+							</span>
 						</div>
 						<div class="row marketing">
 
 							<div class="degree_div col-lg-12 col-lg-2">
-								<label id="degree">Degree: <?php echo $degree ?></label>
+								<label id="degree">Degree: <?php echo " " . $degree ?></label>
 							</div>
 						</div>
 						<div class="row">
@@ -87,5 +85,8 @@
 							</div>	
 						</div>
 					</div>
+				</div>
+			</span>
+		</div>
 
-					<?php include("../header_footer/footer.php"); ?>
+		<?php include("../header_footer/footer.php"); ?>
