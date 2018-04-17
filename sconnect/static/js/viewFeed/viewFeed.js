@@ -7,11 +7,12 @@
 
 jQuery(document).ready(function () {
 
-	getFeedPost();
+  $("#search-feed-divs").empty();
+	getFeedPost(true);
 
 });
 
-function getFeedPost() {
+function getFeedPost(isAll) {
 
     $.ajax({
       type: "POST",
@@ -45,7 +46,10 @@ function getFeedPost() {
         var activities = JSON.parse(objResult['activities']);
         var comments = JSON.parse(objResult['comments']);
 
-        console.log(searchFeeds);
+        if(isAll == false) {
+          updateComments(comments);
+          return;
+        }
 
         var searchFeed = searchFeeds[$("#feedhash").val()];
         var currFeedhash = searchFeed['feedhash'];
@@ -104,11 +108,24 @@ function getFeedPost() {
          feed += '<div class="col-sm-12 col-md-12 col-lg-1" style="text-align: right;"><span></span></div>';
          feed += '</div>';
 
-        if(comments != undefined && comments != null) {
+         feed += '<div id="allCommentsDiv"></div>';
+        $("#search-feed-divs").append(feed);
+        updateComments(comments);
+      }
+    });
+  }
+
+  function updateComments(comments) {
+
+
+    var feed = '';
+    if(comments != undefined && comments != null) {
 
           for(var commenthashKey in comments) {
 
             var comment = comments[commenthashKey];
+
+            console.log(comment);
 
              feed += '<div class="row marketing search-comment-div">';
 
@@ -127,9 +144,8 @@ function getFeedPost() {
           }
         }
 
-        $("#search-feed-divs").append(feed);
-      }
-    });
+        $("#allCommentsDiv").empty().append(feed);
+
   }
 
   function insertCommentOnEnter(event) {
@@ -164,7 +180,11 @@ function getFeedPost() {
         var objResult = JSON.parse(result);
         console.log(objResult);
 
-        location.reload();
+        //location.reload();
+        if(objResult['success'] == "true") {
+          getFeedPost(false);
+          $("#newComment").val("");
+        }
       }
   });
 }
