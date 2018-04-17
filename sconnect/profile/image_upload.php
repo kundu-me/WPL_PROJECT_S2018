@@ -11,24 +11,24 @@
 	// echo "Result: " .$result;
 
 
+	$user_hash = $_SESSION['userhash'];
 	$target_dir = "../user_data/profile_image/";
-	$target_file = $target_dir . basename($_FILES["image_upload"]["name"]);
+	$target_file = $target_dir . $user_hash;
 	$uploadOk = 1;
 	$fileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
-	$user_hash = $_SESSION['userhash'];
 
-	if(file_exists($target_file)) {
-		echo "Sorry, the file already exists.";
-		$uploadOk = 0;
-	}
+	// if(file_exists($target_file)) {
+	// 	echo "Sorry, the file already exists.";
+	// 	$uploadOk = 0;
+	// }
 
 	else if($_FILES["image_upload"]["size"] > 500000) {
 		echo "Sorry, the file is too large.";
 		$uploadOk = 0;
 	}
 
-	elseif($fileType != "jpg" && $fileType != "png") {
-			echo "Sorry, only jpg and png formats are allowed.";
+	elseif($fileType != "jpg") {
+			echo "Sorry, only jpg formats are allowed.";
 			$uploadOk = 0;
 	}
 

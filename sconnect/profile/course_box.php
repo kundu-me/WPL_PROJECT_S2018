@@ -1,15 +1,17 @@
 <?php
-//Database credentials
-$dbHost     = "kundu.me";
-$dbUsername = "kundujwg_sc";
-$dbPassword = "Pass@1234";
-$dbName     = "kundujwg_sconnect_db1";
+// //Database credentials
+// $dbHost     = "kundu.me";
+// $dbUsername = "kundujwg_sc";
+// $dbPassword = "Pass@1234";
+// $dbName     = "kundujwg_sconnect_db1";
 
-//Connect and select the database
-$db = new mysqli($dbHost, $dbUsername, $dbPassword, $dbName);
+// //Connect and select the database
+// $db = new mysqli($dbHost, $dbUsername, $dbPassword, $dbName);
 
-if ($db->connect_error) {
-    die("Connection failed: " . $db->connect_error);
+include('../data/connection_open.php');
+
+if ($sql_connection->connect_error) {
+    die("Connection failed: " . $sql_connection->connect_error);
 }
 
 ?>
@@ -19,8 +21,14 @@ if ($db->connect_error) {
 <head>
 	<meta charset="UTF-8">
 	<title>Add New Course Interface</title>
-
-	
+	<script type="text/javascript" src="../static/js/profile/course_box.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../static/css/profile/course_box.css">
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 
 <body>
@@ -36,7 +44,7 @@ if ($db->connect_error) {
 		<div class="row">
 			<h4><p id="instructions" class="col-lg-12">Select Session/Course-ID and enter correct OTP received in mail to verify course detail</p></h4>
 			<?php 
-			$query = $db->query("SELECT * FROM sconnect_courses_offered GROUP BY session ORDER BY session ASC");
+			$query = $sql_connection->query("SELECT * FROM sconnect_courses_offered GROUP BY session ORDER BY session ASC");
 			$rowCount = $query->num_rows;
 			?>
 			<div class="col-lg-12 col-lg-2">

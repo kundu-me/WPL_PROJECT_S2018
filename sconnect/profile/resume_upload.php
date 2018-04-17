@@ -18,22 +18,22 @@
 	$uploadOk = 1;
 	$fileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 
-	if(file_exists($target_file)) {
-		echo "Sorry, the file already exists.";
-		$uploadOk = 0;
-	}s
+	// if(file_exists($target_file)) {
+	// 	echo "Sorry, the file already exists.";
+	// 	$uploadOk = 0;
+	// }
 
-	if($_FILES["resume_upload"]["size"] > 500000) {
-		echo "Sorry, the file is too large.";s
-		$uploadOk = 0;
-	}
+	// if($_FILES["resume_upload"]["size"] > 500000) {
+	// 	echo "Sorry, the file is too large.";
+	// 	$uploadOk = 0;
+	// }
 
 	if($fileType != "pdf") {
 			echo "Sorry, only pdf format resumes are allowed.";
 			$uploadOk = 0;
 	}
 
-	if($uploadOk == 0) {
+	else if($uploadOk == 0) {
 		echo "Sorry, your file was not uploaded.";
 	}
 
