@@ -17,8 +17,7 @@
 	$errflag = false;
  
 	//Get the POST values
-	//$userhash = $_SESSION['userhash'];
-	$userhash = 'ss';
+	$userhash = $_SESSION['userhash'];
 	$coursehash = $_POST['coursehash'];
 
  

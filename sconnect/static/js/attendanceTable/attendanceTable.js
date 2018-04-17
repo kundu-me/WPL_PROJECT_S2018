@@ -16,7 +16,7 @@ function ajaxCallToLoadData() {
     $.ajax({
       type: "POST",
       url: "../data/attendanceTable/attendanceTable.php",
-      data: {coursehash:'5abc091ed0d0e'},
+      data: {coursehash: $("#coursehash").val()},
       async:true,
       success: function(result) {
 

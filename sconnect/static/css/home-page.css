@@ -49,6 +49,14 @@ body {
   min-width: 300px;
 }
 
+.input-comment {
+  outline: 0;
+  border-width: 1px 1px 1px 1px;
+  border-color: #ff9400;
+  font-size: 14px;
+  width: 100%;
+}
+
 .signup-file-choose {
   margin-top: 30px;
   margin-left: 15px;
@@ -372,6 +380,13 @@ img {vertical-align: middle;}
     vertical-align: middle;
     padding-top: 10px;
   }
+
+  .comment-user-profile-image {
+    width:70px;
+    height:70px;
+    vertical-align: middle;
+  }
+
   .feed-user-name {
 
     color: blue;
@@ -379,6 +394,15 @@ img {vertical-align: middle;}
     font-weight: bold;
     font-size: 18px;
   }
+
+   .comment-user-name {
+
+    color: blue;
+    text-decoration: underline;
+    font-weight: bold;
+    font-size: 14px;
+  }
+
   .feed-user-data {
 
     color: black;
@@ -443,9 +467,28 @@ img {vertical-align: middle;}
     height: 150px;
     cursor: pointer;
   }
-  .search-feed-divs {
-    overflow-y: scroll;
+
+  .search-activity-div {
+    padding-left: 20px;
+    padding-top: 0px;
+    margin-top: 0px;
+    border: 2px;
+    background: white;
+    height: 30px;
+    cursor: pointer;
+    text-align: center;
   }
+
+  .search-comment-div {
+    padding-left: 20px;
+    padding-top: 7px;
+    margin-top: 5px;
+    height: 90px;
+    border: 2px;
+    background: white;
+    cursor: pointer;
+  }
+ 
   .feed-user-profile-image {
     width:120px;
     height:120px;
@@ -470,6 +513,15 @@ img {vertical-align: middle;}
     color: black;
     font-style: italic;
     font-size: 16px;
+  }
+
+  .user-comment-spans {
+    margin-left: 30px;
+  }
+
+  .icon-like-dislike {
+    font-size: 2.3em;
+    margin-bottom: 10px;
   }
   
   mark {

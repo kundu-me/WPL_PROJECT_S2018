@@ -9,6 +9,8 @@
 <script src="../static/js/attendanceTable/attendanceTable.js"></script>
 
 <div class="row marketing left-right-com-div" style="margin-top: 15px;">
+  <input type="hidden" name="coursehash" id="coursehash" value="<?php echo $_GET['q'] ?>">
+  
    <div class="row header">
       <div class="col-sm-12 col-md-12 col-lg-12" style="text-align: center;">
          <span class="sconnect-header">Attendance Table</span>
