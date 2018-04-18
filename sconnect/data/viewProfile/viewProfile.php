@@ -1,6 +1,6 @@
 <?php
 
-	$user_hash = $_SESSION['userhash'];
+	$user_hash = $_GET['q'];
 
 	$init_query = "SELECT * FROM sconnect_user WHERE userhash = '$user_hash'";
 	
