@@ -1,9 +1,27 @@
 	jQuery(document).ready(function () {
 
+		$('#get_image').hide();
+		$('#upload_image').hide();
+		$('#image_browse_div').click(function() {
+			$('#get_image').toggle(1000,function(){})
+			$('#upload_image').toggle(1000, function(){})
+		});
+
+		$('#get_resume').hide();
+		$('#upload_resume').hide();
+		$('#resume_browse_div').click(function() {
+			$('#get_resume').toggle(1000,function(){})
+			$('#upload_resume').toggle(1000, function(){})
+		});
+
 		$('.striped tr:even').addClass('alt');
 		
 		document.getElementById('get_resume').onclick = function() {
 			document.getElementById('my_resume').click();
+		};
+
+		document.getElementById('get_image').onclick = function() {
+			document.getElementById('my_image').click();
 		};
 
 		$(".fa-wrench").hide();
@@ -60,6 +78,44 @@
 		$(".fa-wrench").hover(function() {
 			$("toogle_info_div").hide();
 			$("toggle_info_div").show();
+		});
+
+		$('#upload_resume').on('click', function() {
+			var file_data = $('#my_resume').prop('files')[0];
+			var form_data = new FormData();
+			form_data.append('resume', file_data);
+			alert(form_data);
+			$.ajax({
+				url: 'resume_upload.php',
+				dataType: 'text',
+				cache: false,
+				contentType: false,
+				processData: false,
+				data: form_data,
+				type: 'post',
+				success: function(php_script_response) {
+					alert(php_script_response);
+				}
+			});
+		});
+
+		$('#upload_image').on('click', function() {
+			var file_data = $('#my_image').prop('files')[0];
+			var form_data = new FormData();
+			form_data.append('dp', file_data);
+			alert(form_data);
+			$.ajax({
+				url: 'image_upload.php',
+				dataType: 'text',
+				cache: false,
+				contentType: false,
+				processData: false,
+				data: form_data,
+				type: 'post',
+				success: function(php_script_response) {
+					alert(php_script_response);
+				}
+			});
 		});
 
 

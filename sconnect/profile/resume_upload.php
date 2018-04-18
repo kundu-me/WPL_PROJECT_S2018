@@ -38,9 +38,9 @@
 	}
 
 	else {
-		if(move_uploaded_file($_FILES["resume_upload"]["tmp_name"], $target_file)) {
-			echo "The file " .basename($_FILES["resume_upload"]["name"]). "has been uploaded.";
-			echo "Your file <html><b><i>".basename($_FILES["resume_upload"]["name"])."</i></b></html> has been successfully uploaded";		
+		if(move_uploaded_file($_FILES["resume"]["tmp_name"], $target_file)) {
+			// echo "The file " .basename($_FILES["resume_upload"]["name"]). "has been uploaded.";
+			echo "Your file <html><b><i>".basename($_FILES["resume"]["name"])."</i></b></html> has been successfully uploaded";		
 		$query = "UPDATE sconnect_user SET resume_path = '$target_file' WHERE userhash = '$user_hash'";
 		$sql_connection->query($query) or die("Error : ".mysqli_error($link));
 		}

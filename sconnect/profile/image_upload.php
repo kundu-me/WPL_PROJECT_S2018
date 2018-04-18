@@ -1,7 +1,9 @@
 <?php 
 	session_start();
 	// $fileName = $_FILES['new_resume']['name'];
-	$link = mysqli_connect('localhost', 'root', '', 'sconnect') or die('Error '.mysql_error($link));
+
+
+	$sql_connection = mysqli_connect('localhost', 'root', '', 'sconnect') or die('Error '.mysql_error($sql_connection));
 	// $target = "../user_data/resume/";		
 	// $fileTarget = $target.$fileName;	
 	// $tempFileName = $_FILES["new_resume"]["tmp_name"];
@@ -13,7 +15,7 @@
 
 	$user_hash = $_SESSION['userhash'];
 	$target_dir = "../user_data/profile_image/";
-	$target_file = $target_dir . $user_hash;
+	$target_file = $target_dir . $user_hash. ".jpg";
 	$uploadOk = 1;
 	$fileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 
@@ -22,12 +24,12 @@
 	// 	$uploadOk = 0;
 	// }
 
-	else if($_FILES["image_upload"]["size"] > 500000) {
+	if($_FILES["dp"]["size"] > 500000) {
 		echo "Sorry, the file is too large.";
 		$uploadOk = 0;
 	}
 
-	elseif($fileType != "jpg") {
+	else if($fileType != "jpg") {
 			echo "Sorry, only jpg formats are allowed.";
 			$uploadOk = 0;
 	}
@@ -37,11 +39,11 @@
 	}
 
 	else {
-		if(move_uploaded_file($_FILES["image_upload"]["tmp_name"], $target_file)) {
-			echo "The file " .basename($_FILES["image_upload"]["name"]). "has been uploaded.";
-			echo "Your file <html><b><i>".basename($_FILES["image_upload"]["name"])."</i></b></html> has been successfully uploaded";		
+		if(move_uploaded_file($_FILES["dp"]["tmp_name"], $target_file)) {
+			echo "The file " .basename($_FILES["dp"]["name"]). "has been uploaded.";
+			echo "Your file <html><b><i>".basename($_FILES["dp"]["name"])."</i></b></html> has been successfully uploaded";		
 		$query = "UPDATE sconnect_user SET profile_image_path = '$target_file' WHERE userhash = '$user_hash'";
-		$link->query($query) or die("Error : ".mysqli_error($link));
+		$sql_connection->query($query) or die("Error : ".mysqli_error($sql_connection));
 		}
 
 		else {
@@ -55,6 +57,6 @@
 	*	If file was successfully uploaded in the destination folder
 	*/
 
-	mysqli_close($link);
+	mysqli_close($sql_connection);
 
 ?>
