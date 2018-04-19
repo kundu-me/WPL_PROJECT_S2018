@@ -76,7 +76,7 @@ l
     margin-left: 50px;
 }
 
-#courses td, th{
+#courses td, #courses th{
     border: 1px solid black;
     border-collapse: collapse;
 }
