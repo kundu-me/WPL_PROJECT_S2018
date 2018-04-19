@@ -13,7 +13,7 @@
    <!-- <div class="row header">
    </div> -->
     <div class="col-sm-12 col-md-12 col-lg-3" style="text-align: center;">
-       
+       <?php include('../card_left/index.php'); ?>
     </div>
 
      <div class="col-sm-12 col-md-12 col-lg-6 search-feed-divs" style="text-align: center;">
@@ -26,9 +26,7 @@
     </div>
 
      <div class="col-sm-12 col-md-12 col-lg-3" style="text-align: center;">
-       <div>
-       	News
-       </div>
+       <?php include('../card_right/index.php'); ?>
     </div>
  </div>
 </div>

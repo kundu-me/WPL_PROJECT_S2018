@@ -9,7 +9,7 @@
 <script src="https://cdn.jsdelivr.net/mark.js/7.0.0/jquery.mark.min.js"></script>
 <div class="row marketing left-right-com-div" style="margin-top: 15px;">
     <div class="col-sm-12 col-md-12 col-lg-3" style="text-align: center;">
-       Profile
+       <?php include('../card_left/index.php'); ?>
     </div>
 
      <div class="col-sm-12 col-md-12 col-lg-6 search-profile-divs" style="text-align: center;" id= "search-profile-divs">
@@ -25,7 +25,7 @@
     </div>
 
      <div class="col-sm-12 col-md-12 col-lg-3" style="text-align: center;">
-       News
+       <?php include('../card_right/index.php'); ?>
     </div>
 </div>
 <?php include('../header_footer/footer.php'); ?>
