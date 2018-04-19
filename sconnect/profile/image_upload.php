@@ -24,7 +24,7 @@
 	// 	$uploadOk = 0;
 	// }
 
-	if($_FILES["dp"]["size"] > 500000) {
+	if($_FILES["dp"]["size"] > 5000000) {
 		echo "Sorry, the file is too large.";
 		$uploadOk = 0;
 	}

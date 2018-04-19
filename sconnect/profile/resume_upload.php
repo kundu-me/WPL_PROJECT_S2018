@@ -23,10 +23,10 @@
 	// 	$uploadOk = 0;
 	// }
 
-	// if($_FILES["resume_upload"]["size"] > 500000) {
-	// 	echo "Sorry, the file is too large.";
-	// 	$uploadOk = 0;
-	// }
+	if($_FILES["resume"]["size"] > 5000000) {
+		echo "Sorry, the file is too large.";
+		$uploadOk = 0;
+	}
 
 	if($fileType != "pdf") {
 			echo "Sorry, only pdf format resumes are allowed.";
