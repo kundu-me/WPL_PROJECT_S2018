@@ -20,10 +20,10 @@
 	//$userhash = $_SESSION['userhash'];
  
 	//Input Validations
-	if($searchQuery == '') {
-		$errmsg_arr[] = 'searchQuery missing';
-		$errflag = true;
-	}
+	// if($searchQuery == '') {
+	// 	$errmsg_arr[] = 'searchQuery missing';
+	// 	$errflag = true;
+	// }
 	// if($university_domain == '') {
 	// 	$errmsg_arr[] = 'university_domain missing';
 	// 	$errflag = true;
