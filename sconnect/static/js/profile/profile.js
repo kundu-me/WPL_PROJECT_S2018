@@ -58,10 +58,10 @@
 				url:'edit.php',
 				data:{degree: degree_val, major: major_val, dob_month: dob_month_val, 
 					dob_day: dob_day_val, dob_year: dob_year_val},
-				success:function(result){
-					console.log(result);
-					var objResult = JSON.parse(result);
-					console.log(objResult);
+					success:function(result){
+						console.log(result);
+						var objResult = JSON.parse(result);
+						console.log(objResult);
 					// alert('Update successful');
 				},
 				error: function(jqxhr, status, exception) {
@@ -84,7 +84,7 @@
 			var file_data = $('#my_resume').prop('files')[0];
 			var form_data = new FormData();
 			form_data.append('resume', file_data);
-			alert(form_data);
+			//alert(form_data);
 			$.ajax({
 				url: 'resume_upload.php',
 				dataType: 'text',
@@ -103,7 +103,7 @@
 			var file_data = $('#my_image').prop('files')[0];
 			var form_data = new FormData();
 			form_data.append('dp', file_data);
-			alert(form_data);
+			//alert(form_data);
 			$.ajax({
 				url: 'image_upload.php',
 				dataType: 'text',
@@ -156,3 +156,12 @@
 	var droppingDiv = document.getElementById("dragDiv");
 	//droppingDiv.addEventListener('dragOver', domagic, false);
 	//droppingDiv.addEventListener('drop', startReadFromDrag, false);
+
+	function open_window() {
+		window.open("../facultyAddClass/index.php");
+	}
+
+	function open_course_box() {
+		document.getElementById('lightbox').style.display='block';
+		document.getElementById('fade').style.display='block';
+	}

@@ -1,17 +1,10 @@
 <?php
 //Database credentials
-// $dbHost     = 'localhost';
-// $dbUsername = 'root';
-// $dbPassword = '';
-// $dbName     = 'sconnect';
-
-// //Connect and select the database
-// $db = new mysqli($dbHost, $dbUsername, $dbPassword, $dbName);
 
 include('../data/connection_open.php');
 
 if ($sql_connection->connect_error) {
-    die("Connection failed: " . $sql_connection->connect_error);
+	die("Connection failed: " . $sql_connection->connect_error);
 }
 
 ?>
@@ -43,19 +36,25 @@ if ($sql_connection->connect_error) {
 		</div>
 
 		<br>
-			<h4><p id="instructions" class="col-lg-12">Select who should be able to see this information.</p></h4>
-			<div class="col-lg-12 col-lg-2">
-				<div class="row">
-				<label>Everyone</label>
+		<h4><p id="instructions" class="col-lg-12">Select who should be able to see this information.</p></h4>
+		<div class="col-lg-12 col-lg-2">
+			<div class="row marketing">
 				<input type="radio" name="everyone" value="everyone">
-				</div>
-				<div class="row">
-				<label>Just me</label>
-				<input type="radio" name="self" value="Just me">
-				</div>
+				<label>Everyone</label>
 			</div>
+			<div class="row marketing">
+				<input type="radio" name="same_domain" value="same_domain">
 
-			<h3><button type="button" id="close_button" onclick="document.getElementById('settings_lightbox').style.display='none';document.getElementById('fade').style.display='none'">X</button></h3>
+				<label>Anyone from <?php echo $_SESSION['university_domain'] ?></label>
+			</div>
+			<div class="row marketing">
+				<input type="radio" name="self" value="Just me">
+
+				<label>Just me</label>
+			</div>
+		</div>
+
+		<h3><button type="button" id="close_button" onclick="document.getElementById('settings_lightbox').style.display='none';document.getElementById('fade').style.display='none'">X</button></h3>
 	</div>
 
 

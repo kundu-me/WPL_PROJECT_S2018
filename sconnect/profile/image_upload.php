@@ -1,17 +1,7 @@
 <?php 
 	session_start();
-	// $fileName = $_FILES['new_resume']['name'];
-
 
 	$sql_connection = mysqli_connect('localhost', 'root', '', 'sconnect') or die('Error '.mysql_error($sql_connection));
-	// $target = "../user_data/resume/";		
-	// $fileTarget = $target.$fileName;	
-	// $tempFileName = $_FILES["new_resume"]["tmp_name"];
-	// //$fileDescription = $_POST['Description'];	
-	// echo "First check " .$fileName. "file target: " .$fileTarget;
-	// $result = move_uploaded_file($fileName,$fileTarget);
-	// echo "Result: " .$result;
-
 
 	$user_hash = $_SESSION['userhash'];
 	$target_dir = "../user_data/profile_image/";
@@ -40,8 +30,8 @@
 
 	else {
 		if(move_uploaded_file($_FILES["dp"]["tmp_name"], $target_file)) {
-			echo "The file " .basename($_FILES["dp"]["name"]). "has been uploaded.";
-			echo "Your file <html><b><i>".basename($_FILES["dp"]["name"])."</i></b></html> has been successfully uploaded";		
+			// echo "The file " .basename($_FILES["dp"]["name"]). "has been uploaded.";
+			echo "Your file ".basename($_FILES["dp"]["name"])." has been successfully uploaded";		
 		$query = "UPDATE sconnect_user SET profile_image_path = '$target_file' WHERE userhash = '$user_hash'";
 		$sql_connection->query($query) or die("Error : ".mysqli_error($sql_connection));
 		}
