@@ -56,6 +56,7 @@ function parseStudentIdList() {
 	return parsedStudentIds;
 }
 
+
 jQuery(document).ready(function () {
 
     resetInput();
@@ -75,20 +76,27 @@ jQuery(document).ready(function () {
 
         var courseID = jQuery("#courseID").val();
         var courseName = jQuery("#courseName").val();
+		var classRoster = jQuery("#classRoster").val();
 		var otpGen = jQuery("#otp_generate").val();
 
 		//form validation failure routine----------------------------------------------------------------------------------
-        if((courseID == "" || courseID.length == 0) || (courseName == "" || courseName.length == 0) || 
-			(otpGen == "" || otpGen.length == 0 || otpGen.length > 4)) {
+        if((courseID == "" || courseID.length == 0) || (courseName == "" || courseName.length == 0) || (!$('#session').val()) ||
+			(classRoster == "" || classRoster.length == 0) ||(otpGen == "" || otpGen.length == 0 || otpGen.length > 4)) {
 
-            jQuery("#lblSuccess").text("Provide values in mandatory fields: Course Code and Section, Course Name and OTP-only 4 digits");
+            jQuery("#lblSuccess").text("Provide values in mandatory fields: Course Code, Course Name, Class-Roster and OTP-only 4 digits");
             jQuery("#divSuccess").addClass("failure-msg");
 
             if(courseID == "" || courseID.length == 0) {
-                jQuery("#CourseID").focus();
+                jQuery("#courseID").focus();
             }
             else if(courseName == "" || courseName.length == 0) {
-                jQuery("#CourseName").focus();
+                jQuery("#courseName").focus();
+            }
+			else if(!$('#session').val()) {
+                jQuery("#session").focus();
+            }
+			else if(classRoster == "" || classRoster.length == 0) {
+                jQuery("#classRoster").focus();
             }
 			else if(otpGen == "" || otpGen.length == 0) {
                 jQuery("#otp_generate").focus();
@@ -96,8 +104,24 @@ jQuery(document).ready(function () {
 
 			return;
         }
+		else {            // Parse email-id list check for valid email input //
+			var studentList = jQuery("#classRoster").val().split(",");
+			var mailformat = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+
+			for (var i = 0; i < studentList.length; i++) {
+				if (!studentList[i].match(mailformat)) {
+					jQuery("#lblSuccess").text("Parse error occured! Provide correct student email-id in Class-Roster");
+					jQuery("#divSuccess").addClass("failure-msg");
+					jQuery("#classRoster").focus();
+					return;
+				}
+			}
+			
+		}
+
 		//form validation failure routine ends--------------------------------------------------------------------------------
-        
+	
+		
 		if(jQuery("#divSuccess").hasClass("failure-msg")) {
             jQuery("#divSuccess").removeClass("failure-msg");
         }

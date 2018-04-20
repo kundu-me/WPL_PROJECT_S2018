@@ -1,0 +1,6 @@
+Change Apache server's php.ini file to support large image and video files:
+
+upload_max_filesize = 20M
+post_max_size = 20M
+
+N.B.: Can be changed to other values, if needed.

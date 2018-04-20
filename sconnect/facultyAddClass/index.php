@@ -66,11 +66,11 @@
 			<div class="row">
                 <div class="col-lg-12 col-lg-3">
                     <!-- <h3>Class Roster (.csv only)</h3> -->
-                    <h3>Class Roster <i>(please paste email-ids here)</i></h3>
+                    <h3>Class Roster <i>(please print email-ids here)</i></h3>
                 </div>
                 <div class="col-lg-12 col-lg-9">
                     <!-- <h3><input type="file" id="classRoster" name="class_roster" accept=".xlsx" autocomplete="off"></h3> -->
-                    <textarea rows="3" cols="49" id="classRoster" name="class_roster" autocomplete="off"></textarea>
+                    <textarea rows="3" cols="49" id="classRoster" name="class_roster" placeholder ="eg: s1@utdallas.edu,s2@utdallas.edu.." autocomplete="off"></textarea>
                 </div>
             </div>
 			

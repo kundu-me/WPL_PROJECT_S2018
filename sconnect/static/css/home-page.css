@@ -425,7 +425,19 @@ img {vertical-align: middle;}
     height: 150px;
     cursor: pointer;
   }
+
+.right-search-profile-div {
+    padding: 10px;
+    background: white;
+    cursor: pointer;
+  }
+
   .search-profile-divs {
+    overflow-y: scroll;
+  }
+
+  .right-search-profile-divs {
+    background: white;
     overflow-y: scroll;
   }
   .user-profile-image {
@@ -434,6 +446,13 @@ img {vertical-align: middle;}
     vertical-align: middle;
     padding-top: 10px;
   }
+
+  .right-user-profile-image {
+    width:70px;
+    height:70px;
+    vertical-align: middle;
+  }
+
   .user-name {
 
     color: blue;

@@ -25,7 +25,7 @@
     </div>
 
      <div class="col-sm-12 col-md-12 col-lg-3" style="text-align: center;">
-       <?php include('../card_right/index.php'); ?>
+       
     </div>
 </div>
 <?php include('../header_footer/footer.php'); ?>
