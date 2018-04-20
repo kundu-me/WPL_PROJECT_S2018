@@ -1,7 +1,7 @@
 <?php
 //Database credentials
 
-include('../data/connection_open.php');
+//include('../data/connection_open.php');
 
 if ($sql_connection->connect_error) {
 	die("Connection failed: " . $sql_connection->connect_error);
@@ -37,22 +37,95 @@ if ($sql_connection->connect_error) {
 
 		<br>
 		<h4><p id="instructions" class="col-lg-12">Select who should be able to see this information.</p></h4>
-		<div class="col-lg-12 col-lg-2">
-			<div class="row marketing">
-				<input type="radio" name="everyone" value="everyone">
+		<form id="settings_form">
+		<div class="row marketing">
+			<div class="col-lg-12 col-lg-2">
+				<label>Degree: </label>
+			</div>
+		<div class="col-lg-12 col-lg-4">
+			<div class="row">
+				<input type="radio" id="everyone" name="degree_view" value="everyone" <?php echo ($degree_view==0)?'checked':'' ?>>
 				<label>Everyone</label>
 			</div>
 			<div class="row marketing">
-				<input type="radio" name="same_domain" value="same_domain">
+				<input type="radio" id="same_domain" name="degree_view" value="same_domain" <?php echo ($degree_view==1)?'checked':'' ?>>
 
 				<label>Anyone from <?php echo $_SESSION['university_domain'] ?></label>
 			</div>
 			<div class="row marketing">
-				<input type="radio" name="self" value="Just me">
+				<input type="radio" id="self" name="degree_view" value="self"<?php echo ($degree_view==2)?'checked':'' ?>>
 
 				<label>Just me</label>
 			</div>
+			</div>
 		</div>
+		<div class="row marketing">
+			<div class="col-lg-12 col-lg-2">
+				<label>Major: </label>
+			</div>
+		<div class="col-lg-12 col-lg-4">
+			<div class="row">
+				<input type="radio" id="everyone" name="major_view" value="everyone" <?php echo ($major_view==0)?'checked':'' ?>>
+				<label>Everyone</label>
+			</div>
+			<div class="row marketing">
+				<input type="radio" id="same_domain" name="major_view" value="same_domain" <?php echo ($major_view==1)?'checked':'' ?>>
+
+				<label>Anyone from <?php echo $_SESSION['university_domain'] ?></label>
+			</div>
+			<div class="row marketing">
+				<input type="radio" id="self" name="major_view" value="self" <?php echo ($major_view==2)?'checked':'' ?>>
+
+				<label>Just me</label>
+			</div>
+			</div>
+		</div>
+		<div class="row marketing">
+			<div class="col-lg-12 col-lg-2">
+				<label>Courses enrolled in: </label>
+			</div>
+		<div class="col-lg-12 col-lg-4">
+			<div class="row">
+				<input type="radio" id="everyone" name="courses_view" value="everyone" <?php echo ($courses_view==0)?'checked':'' ?>>
+				<label>Everyone</label>
+			</div>
+			<div class="row marketing">
+				<input type="radio" id="same_domain" name="courses_view" value="same_domain" <?php echo ($courses_view==1)?'checked':'' ?>>
+
+				<label>Anyone from <?php echo $_SESSION['university_domain'] ?></label>
+			</div>
+			<div class="row marketing">
+				<input type="radio" id="self" name="courses_view" value="self" <?php echo ($courses_view==2)?'checked':'' ?>>
+
+				<label>Just me</label>
+			</div>
+			</div>
+		</div>
+		<div class="row marketing">
+			<div class="col-lg-12 col-lg-2">
+				<label>Date of Birth: </label>
+			</div>
+		<div class="col-lg-12 col-lg-4">
+			<div class="row">
+				<input type="radio" id="everyone" name="dob_view" value="everyone" <?php echo ($dob_view==0)?'checked':'' ?>>
+				<label>Everyone</label>
+			</div>
+			<div class="row marketing">
+				<input type="radio" id="same_domain" name="dob_view" value="same_domain" <?php echo ($dob_view==1)?'checked':'' ?>>
+
+				<label>Anyone from <?php echo $_SESSION['university_domain'] ?></label>
+			</div>
+			<div class="row marketing">
+				<input type="radio" id="self" name="dob_view" value="self" <?php echo ($dob_view==2)?'checked':'' ?>>
+
+				<label>Just me</label>
+			</div>
+			</div>
+		</div>
+		<div>
+			<input type="submit" id="save_settings" name="save_settings" value="Save settings" align="center">
+		</div>
+	</form>
 
 		<h3><button type="button" id="close_button" onclick="document.getElementById('settings_lightbox').style.display='none';document.getElementById('fade').style.display='none'">X</button></h3>
 	</div>
