@@ -3,8 +3,8 @@
   * @author: Nirmallya Kundu<nxkundu@gmail.com>
   *
   */
-var courseData;
-function  resetInput() {
+	var courseData;
+	function  resetInput() {
 		jQuery("#CourseID").focus();
     }
 	
@@ -88,12 +88,19 @@ function  resetInput() {
 
 			openAttendance();
 			
+			//Timer runout show when attendance is opened //
+			var minutes = 60 * 1,//$("#attnTimeout").val(),
+			display = document.querySelector('#timerShow');
+			startTimer(minutes, display);
+			
+			
 			//Show last div for OTP generation when form validated and copy //
 			jQuery("#closeAttn").show();
 			jQuery("div.container:last").show();
 			jQuery("#courseID-1").text($("#CourseID option:selected").text()); 
 			jQuery("#date_dd_mm_yyyy").text(date.getDate() + "/"+ (date.getMonth()+1) +"/"+ date.getFullYear());
 			jQuery("#otp").val(otpGen);
+			
 			
 			//create attendance table dynamically
 			jQuery("table.container").show();
@@ -103,6 +110,7 @@ function  resetInput() {
 
         });
 				
+		
 		jQuery("#close_attnd").click(function (e2) {
 			e2.preventDefault();
 			var r = confirm("Do you really wish to close attendance now!!");
@@ -110,8 +118,8 @@ function  resetInput() {
 
 				closeAttendance();
 
-				jQuery("#timer").attr("disabled", true); 
-				jQuery("#timer").addClass("btnDisable");			
+				jQuery("#attnTimeout").attr("disabled", true); 
+				jQuery("#attnTimeout").addClass("btnDisable");			
 
 				jQuery("#closeAttn").attr("disabled", true); 
 				jQuery("#closeAttn").addClass("btnDisable");
@@ -119,7 +127,7 @@ function  resetInput() {
 				jQuery("#btnCopy").attr("disabled", true); 
 				jQuery("#btnCopy").addClass("btnDisable");
 				
-				jQuery("#btnExport").show();
+				//jQuery("#btnExport").show();
 				// $('html, body').animate({
 				// 		scrollTop: $("#btnExport").offset().top
 				// }, 2000);
@@ -147,6 +155,8 @@ function  resetInput() {
 		$("#CourseID").change(function(){
 			updateCourseDetails();
 		});
+		
+		
 
     });
 
@@ -155,7 +165,7 @@ function  resetInput() {
  	var coursehash = $("#CourseID").val();
  	var OTP = $("#otp_generate").val();
  	var lec = $("#lec").val();
- 	var timeout = $("#attn-timeout").val();
+ 	var timeout = $("#attnTimeout").val();
 
  	$.ajax({
       type: "POST",
@@ -200,6 +210,41 @@ function  resetInput() {
       }
     });
  }
+
+ function startTimer(duration, display) {
+    var start = Date.now(),
+        diff,
+        minutes,
+        seconds;
+    function timer() {
+        // get the number of seconds that have elapsed since 
+        // startTimer() was called
+        diff = duration - (((Date.now() - start) / 1000) | 0);
+
+        // does the same job as parseInt truncates the float
+        minutes = (diff / 60) | 0;
+        seconds = (diff % 60) | 0;
+
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+
+        display.textContent = minutes + ":" + seconds; 
+		if (minutes == 0 && seconds == 0) {
+			clearInterval(timerId);
+			$("#close_attnd").trigger('click');
+			return;
+		}
+        if (diff <= 0) {
+            // add one second so that the count down starts at the full duration
+            // example 05:00 not 04:59
+            start = Date.now() + 1000;
+        }
+    };
+
+    // we don't want to wait a full second before the timer starts
+	timer();
+    var timerId = setInterval(timer, 1000);
+}
 
  function closeAttendance() {
 

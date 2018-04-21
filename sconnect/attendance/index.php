@@ -30,7 +30,7 @@
                     <h3>Course Code</h3>
                 </div>
                 <div class="col-lg-12 col-lg-9">
-                    <h3><select id="CourseID" name="Course ID" class="col-lg-6" required autocomplete="off">
+                    <h3><select id="CourseID" name="Course ID" class="col-lg-7" required autocomplete="off">
 						<option value="" disabled selected hidden>Select from course list..</option>
 					</select>
                     <input type="hidden" id="attendancehash" name="attendancehash">
@@ -44,7 +44,7 @@
                     <h3>Course Name</h3>
                 </div>
                 <div class="col-lg-12 col-lg-9">
-                    <h3><input type="text" id="CourseName" name="Course Name" class="col-lg-6" disabled="disabled" autocomplete="off"><h3>
+                    <h3><input type="text" id="CourseName" name="Course Name" class="col-lg-7" disabled="disabled" autocomplete="off"><h3>
                 </div>
             </div>
 
@@ -53,7 +53,7 @@
                     <h3>Academic Session</h3>
                 </div>
                 <div class="col-lg-12 col-lg-9">
-					 <h3><input type="text" id="session" name="Session" class="col-lg-6" disabled="disabled" autocomplete="off"></h3>
+					 <h3><input type="text" id="session" name="Session" class="col-lg-7" disabled="disabled" autocomplete="off"></h3>
                 </div>
             </div>
 			
@@ -62,7 +62,7 @@
                     <h3>Academic Year</h3>
                 </div>
                 <div class="col-lg-12 col-lg-9">
-                    <h3><input type="text" id="year" name="Year" class="col-lg-6" disabled="disabled" autocomplete="off"></h3>
+                    <h3><input type="text" id="year" name="Year" class="col-lg-7" disabled="disabled" autocomplete="off"></h3>
                 </div>
             </div>
 
@@ -71,7 +71,7 @@
                     <h3>Lecture#</h3>
                 </div>
                 <div class="col-lg-12 col-lg-9">
-                    <h3><input type="text" id="lec" name="lec" class="col-lg-6" placeholder="eg: Lec1" autocomplete="off"></h3>
+                    <h3><input type="text" id="lec" name="lec" class="col-lg-7" placeholder="eg: Lec1" autocomplete="off"></h3>
                 </div>
             </div>
 			
@@ -80,7 +80,7 @@
                     <h3>Attendance for</h3>
                 </div>
                 <div class="col-lg-12 col-lg-9">
-                    <h3><input type="text" id="date" name="Date" class="col-lg-6" disabled="disabled" autocomplete="off"></h3>
+                    <h3><input type="text" id="date" name="Date" class="col-lg-7" disabled="disabled" autocomplete="off"></h3>
                 </div>
             </div>
 			
@@ -89,27 +89,26 @@
                     <h3>OTP (4-digit code)</h3>
                 </div>
                 <div class="col-lg-12 col-lg-9" style="text-align: left;">
-                    <h3><input type="text" id="otp_generate" name="OTP" placeholder ="eg: 1234" class="col-lg-6" autocomplete="off"></h3>
+                    <h3><input type="text" id="otp_generate" name="OTP" placeholder ="eg: 1234" class="col-lg-7" autocomplete="off"></h3>
 					<h3><button id="generateOTP">Generate OTP</button></h3>
                 </div>
             </div>
 
             <br>
             <div class="row">
-                <div class="col-lg-12 col-lg-1">
-					<h3>Timer</h3>
-				</div>
-				<div class="col-lg-12 col-lg-2">
-					<h3><select id="attn-timeout" name="Timer" autocomplete="off">
-						<option value="15">15 mins</option>
-						<option value="30">30 mins</option>
-						<option value="45">45 mins</option>
-					</select></h3>
+                <div class="col-lg-12 col-lg-3">
+					<h3>Timer&nbsp;&nbsp;<select id="attnTimeout" name="Timer" autocomplete="off">
+								<option value="15">15 mins</option>
+								<option value="30">30 mins</option>
+								<option value="45">45 mins</option>
+							</select>
+					</h3>
                 </div>
-                <div class="col-lg-12 col-lg-4">
-                    <h3><input type="submit" value="Open Attendance" id="btnSubmit"></h3>
+                <div class="col-lg-12 col-lg-6">
+					<h3><span id ="timerShow" class="col-lg-4"></span>
+						<input type="submit" value="Open Attendance" id="btnSubmit" class="col-lg-6" style="text-align: center;"></h3>
                 </div>
-                <div id="closeAttn" class="col-lg-12 col-lg-5" style="text-align: left;">
+                <div id="closeAttn" class="col-lg-12 col-lg-3" style="text-align: left;">
                     <h3><input type="submit" value="Close Attendance" id="close_attnd"></h3>
                 </div>
             </div>
@@ -134,12 +133,10 @@
 				<div id="divOTP" class="col-lg-12 col-lg-3">
 					<h3><input type="text" id="otp" name="One-time Pwd" value="" class="col-lg-12" disabled autocomplete="off"></h3>
 				</div>
-				<div class="col-lg-12 col-lg-2">
-					<h3><button id="btnCopy">Copy</button></h3>
+				<div class="col-lg-12 col-lg-9">
+					<h3><button id="btnCopy" class="col-lg-2" style="text-align: center;">Copy</button></h3>
 				</div>
-				<div class="col-lg-12 col-lg-7">
-					<!-- <h3><button id="btnClose">Close</button></h3> -->
-				</div>
+
             </div>
     </div>
 	
