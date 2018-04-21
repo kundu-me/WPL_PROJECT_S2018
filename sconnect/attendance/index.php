@@ -27,7 +27,7 @@
             <br>
 			<div class="row">
                 <div class="col-lg-12 col-lg-3">
-                    <h3>Course</h3>
+                    <h3>Course Code</h3>
                 </div>
                 <div class="col-lg-12 col-lg-9">
                     <h3><select id="CourseID" name="Course ID" class="col-lg-6" required autocomplete="off">
@@ -71,7 +71,7 @@
                     <h3>Lecture#</h3>
                 </div>
                 <div class="col-lg-12 col-lg-9">
-                    <h3><input type="text" id="lec" name="lec" class="col-lg-6" autocomplete="off"></h3>
+                    <h3><input type="text" id="lec" name="lec" class="col-lg-6" placeholder="eg: Lec1" autocomplete="off"></h3>
                 </div>
             </div>
 			
@@ -128,11 +128,9 @@
             </div>
     </div>
 	
-	<br>
     <div class="container"> <!--Dynamic population of div element on button click -->
             <div class="row">
-				<h4><p id="instructions" class="col-lg-12">Please use this One-time Password to give attendance on <span id="courseID-1"></span>
-					<!-- course for the date: <span id="date_dd_mm_yyyy"></span></p></h4> -->
+				<p id="instructions" class="col-lg-12"><strong>Please use this One-time Password to give attendance on <span id="courseID-1"></span></strong></p>
 				<div id="divOTP" class="col-lg-12 col-lg-3">
 					<h3><input type="text" id="otp" name="One-time Pwd" value="" class="col-lg-12" disabled autocomplete="off"></h3>
 				</div>

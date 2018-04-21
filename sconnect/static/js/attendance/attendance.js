@@ -11,9 +11,21 @@ function  resetInput() {
 	function formDisable() {
 		jQuery("#CourseID").attr("disabled", true); 
 		jQuery("#CourseID").addClass("btnDisable");
+
+		jQuery("#CourseName").attr("disabled", true); 
+		jQuery("#CourseName").addClass("btnDisable");
+
+		jQuery("#session").attr("disabled", true); 
+		jQuery("#session").addClass("btnDisable");
+
+		jQuery("#year").attr("disabled", true); 
+		jQuery("#year").addClass("btnDisable");
 		
 		jQuery("#date").attr("disabled", true); 
 		jQuery("#date").addClass("btnDisable");
+		
+		jQuery("#lec").attr("disabled", true); 
+		jQuery("#lec").addClass("btnDisable");		
 		
 		jQuery("#otp_generate").attr("disabled", true); 	
 		jQuery("#otp_generate").addClass("btnDisable");
@@ -48,14 +60,18 @@ function  resetInput() {
 
 			var courseID = jQuery("#CourseID").val();
 			var otpGen = jQuery("#otp_generate").val();
+			var lec = jQuery("#lec").val();
 
-            if((!$('#CourseID').val()) || (otpGen == "" || otpGen.length == 0 || otpGen.length > 4)) {
+            if((!$('#CourseID').val()) || (lec == "" || lec.length == 0) || (otpGen == "" || otpGen.length == 0 || otpGen.length > 4)) {
 
-                jQuery("#lblSuccess").text("Provide/generate value in mandatory field CourseID and OTP - 4 digit only ");
+                jQuery("#lblSuccess").text("Provide/generate value in mandatory field CourseID, Lecture and OTP - 4 digit only ");
                 jQuery("#divSuccess").addClass("failure-msg");
 
 				if(!$('#CourseID').val()) {
                     jQuery("#CourseID").focus();
+                }				
+				else if(lec == "" || lec.length == 0) {
+                    jQuery("#lec").focus();
                 }
 				else if(otpGen == "" || otpGen.length == 0) {
                     jQuery("#otp_generate").focus();
