@@ -120,7 +120,7 @@
 					<h3><button id="btnCopy">Copy</button></h3>
 				</div>
 				<div class="col-lg-12 col-lg-8">
-					<h3><button id="btnClose">Close</button></h3>
+					<h3><button id="btnClose" onclick="javascript:location.href='../feed'">Close</button></h3>
 				</div>
             </div>
     </div>
