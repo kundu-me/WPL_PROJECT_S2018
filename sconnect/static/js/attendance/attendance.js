@@ -89,7 +89,7 @@
 			openAttendance();
 			
 			//Timer runout show when attendance is opened //
-			var minutes = 60 * 1,//$("#attnTimeout").val(),
+			var minutes = 60 * $("#attnTimeout").val(),
 			display = document.querySelector('#timerShow');
 			startTimer(minutes, display);
 			
@@ -132,6 +132,9 @@
 				// 		scrollTop: $("#btnExport").offset().top
 				// }, 2000);
 			}
+			else {
+				jQuery("#attnTimeout").focus();						
+			}
 
 		});
 
@@ -154,6 +157,12 @@
 
 		$("#CourseID").change(function(){
 			updateCourseDetails();
+		});
+		
+		$("#attnTimeout").change(function(){
+			var minutes = 60 * $("#attnTimeout").val(),
+			display = document.querySelector('#timerShow');
+			startTimer(minutes, display);
 		});
 		
 		
@@ -211,6 +220,7 @@
     });
  }
 
+ // Timer display function for attendance timeout //
  function startTimer(duration, display) {
     var start = Date.now(),
         diff,
@@ -234,6 +244,12 @@
 			$("#close_attnd").trigger('click');
 			return;
 		}
+		
+		$("#close_attnd").click(function () {
+			clearInterval(timerId);
+			return;
+		});
+		
         if (diff <= 0) {
             // add one second so that the count down starts at the full duration
             // example 05:00 not 04:59
