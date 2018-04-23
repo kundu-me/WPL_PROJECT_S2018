@@ -46,9 +46,9 @@
 			var session = jQuery("#session option:selected").val();
 			var CourseID = jQuery("#CourseID option:selected").val();
 			var otp = jQuery("#otp_received").val();
-			console.log(session);
-			console.log(CourseID);
-			console.log(otp);
+			//console.log(session);
+			//console.log(CourseID);
+			//console.log(otp);
 			//OTP validation failure routine----------------------------------------------------------------------------------
 			if((!$('#session').val()) || (!$('#CourseID').val()) || (otp == "" || otp.length == 0 || otp.length > 4)) {
 				jQuery("#lblSuccess").text("Provide correct values in above fields (OTP should be 4 digits only)");
@@ -95,40 +95,31 @@
 					dataType:'json',
 					data: ({session: session, CourseID: CourseID, otp_received: otp }),
 					success: function(result) {
-						console.log(result);
-						$.each(result, function(idx, data){
-							alert(result.success);
-							if(result.success == "true"){
-								$("#CourseName").val(result.course_name);
-								$("#session_verified").val(session);
-								$("#year").val(result.course_year);
-							}
-						});
-            			$('#courses > tbody').append("<tr><td>Crew Development Studies</td><td>AP 6344</td><td>Spring 2018</td></tr>");
-            		},
-            		error : function() {
-            			console.log("error");
+						console.log(result.courseDetails);
+						console.log(session);
+						jQuery('#session_verified').val(session);
+            			jQuery('#year').val(result.courseDetails['year']);
+            			jQuery('#CourseName').val(result.courseDetails['course_name']);
+						}
+            			
+            		});
 
-            		}
-
-            	// jQuery('#session_verified').text($('#session'));
-            	// jQuery('#year').val($('#year'));
-            	// jQuery('#CourseName').val($('course_name'));
-            });
-			}
-
-		});
+            }
+			});
 
 		//Copy button click functionality ------------------------------------
 		jQuery("#btnSubmit").click(function (e1) {
 			e1.preventDefault();
 			//form post......................//
 			
-			if(true) {  //student details not found//
-				jQuery("#lblSuccess").text("Student detail could not be validated against Class roster uploaded");
-				jQuery("#divSuccess").addClass("failure-msg");
-				return;
-			}
+			// if(true) {  //student details not found//
+			// 	jQuery("#lblSuccess").text("Student detail could not be validated against Class roster uploaded");
+			// 	jQuery("#divSuccess").addClass("failure-msg");
+			// 	return;
+			// }
+
+			$('#courses > tbody').append("<tr><td>" + jQuery('#CourseName').val() + "</td><td>" + jQuery("#CourseID").val() + "</td><td>" + $('#session').val() + " " + $('#year').val() + "</td></tr>");
+
 		});
 	});
 

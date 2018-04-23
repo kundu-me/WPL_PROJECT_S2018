@@ -1,14 +1,6 @@
 <?php
-//Database credentials
-
-//include('../data/connection_open.php');
-
-if ($sql_connection->connect_error) {
-	die("Connection failed: " . $sql_connection->connect_error);
-}
-
+	include('settings_fetch.php');
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,9 +24,9 @@ if ($sql_connection->connect_error) {
 		<div class="row">
 			<div class="col-lg-12 col-lg-12">
 				<h2><i>Profile - Configure Privacy Settings</i></h2>
+				<a href='../passwordReset/' style="float: right;">Reset password</a>
 			</div>
 		</div>
-
 		<br>
 		<h4><p id="instructions" class="col-lg-12">Select who should be able to see this information.</p></h4>
 		<form id="settings_form">
@@ -44,16 +36,16 @@ if ($sql_connection->connect_error) {
 			</div>
 		<div class="col-lg-12 col-lg-4">
 			<div class="row">
-				<input type="radio" id="everyone" name="degree_view" value="everyone" <?php echo ($degree_view==0)?'checked':'' ?>>
+				<input type="radio" id="everyone" name="degree_view" value="0" <?php echo ($degree_view==0)?'checked':'' ?>>
 				<label>Everyone</label>
 			</div>
 			<div class="row marketing">
-				<input type="radio" id="same_domain" name="degree_view" value="same_domain" <?php echo ($degree_view==1)?'checked':'' ?>>
+				<input type="radio" id="same_domain" name="degree_view" value="1" <?php echo ($degree_view==1)?'checked':'' ?>>
 
 				<label>Anyone from <?php echo $_SESSION['university_domain'] ?></label>
 			</div>
 			<div class="row marketing">
-				<input type="radio" id="self" name="degree_view" value="self"<?php echo ($degree_view==2)?'checked':'' ?>>
+				<input type="radio" id="self" name="degree_view" value="2"<?php echo ($degree_view==2)?'checked':'' ?>>
 
 				<label>Just me</label>
 			</div>
@@ -65,16 +57,16 @@ if ($sql_connection->connect_error) {
 			</div>
 		<div class="col-lg-12 col-lg-4">
 			<div class="row">
-				<input type="radio" id="everyone" name="major_view" value="everyone" <?php echo ($major_view==0)?'checked':'' ?>>
+				<input type="radio" id="everyone" name="major_view" value="0" <?php echo ($major_view==0)?'checked':'' ?>>
 				<label>Everyone</label>
 			</div>
 			<div class="row marketing">
-				<input type="radio" id="same_domain" name="major_view" value="same_domain" <?php echo ($major_view==1)?'checked':'' ?>>
+				<input type="radio" id="same_domain" name="major_view" value="1" <?php echo ($major_view==1)?'checked':'' ?>>
 
 				<label>Anyone from <?php echo $_SESSION['university_domain'] ?></label>
 			</div>
 			<div class="row marketing">
-				<input type="radio" id="self" name="major_view" value="self" <?php echo ($major_view==2)?'checked':'' ?>>
+				<input type="radio" id="self" name="major_view" value="2" <?php echo ($major_view==2)?'checked':'' ?>>
 
 				<label>Just me</label>
 			</div>
@@ -86,16 +78,16 @@ if ($sql_connection->connect_error) {
 			</div>
 		<div class="col-lg-12 col-lg-4">
 			<div class="row">
-				<input type="radio" id="everyone" name="courses_view" value="everyone" <?php echo ($courses_view==0)?'checked':'' ?>>
+				<input type="radio" id="everyone" name="courses_view" value="0" <?php echo ($courses_view==0)?'checked':'' ?>>
 				<label>Everyone</label>
 			</div>
 			<div class="row marketing">
-				<input type="radio" id="same_domain" name="courses_view" value="same_domain" <?php echo ($courses_view==1)?'checked':'' ?>>
+				<input type="radio" id="same_domain" name="courses_view" value="1" <?php echo ($courses_view==1)?'checked':'' ?>>
 
 				<label>Anyone from <?php echo $_SESSION['university_domain'] ?></label>
 			</div>
 			<div class="row marketing">
-				<input type="radio" id="self" name="courses_view" value="self" <?php echo ($courses_view==2)?'checked':'' ?>>
+				<input type="radio" id="self" name="courses_view" value="2" <?php echo ($courses_view==2)?'checked':'' ?>>
 
 				<label>Just me</label>
 			</div>
@@ -107,23 +99,23 @@ if ($sql_connection->connect_error) {
 			</div>
 		<div class="col-lg-12 col-lg-4">
 			<div class="row">
-				<input type="radio" id="everyone" name="dob_view" value="everyone" <?php echo ($dob_view==0)?'checked':'' ?>>
+				<input type="radio" id="everyone" name="dob_view" value="0" <?php echo ($dob_view==0)?'checked':'' ?>>
 				<label>Everyone</label>
 			</div>
 			<div class="row marketing">
-				<input type="radio" id="same_domain" name="dob_view" value="same_domain" <?php echo ($dob_view==1)?'checked':'' ?>>
+				<input type="radio" id="same_domain" name="dob_view" value="1" <?php echo ($dob_view==1)?'checked':'' ?>>
 
 				<label>Anyone from <?php echo $_SESSION['university_domain'] ?></label>
 			</div>
 			<div class="row marketing">
-				<input type="radio" id="self" name="dob_view" value="self" <?php echo ($dob_view==2)?'checked':'' ?>>
+				<input type="radio" id="self" name="dob_view" value="2" <?php echo ($dob_view==2)?'checked':'' ?>>
 
 				<label>Just me</label>
 			</div>
 			</div>
 		</div>
 		<div>
-			<input type="submit" id="save_settings" name="save_settings" value="Save settings" align="center">
+			<input type="submit" id="save_settings" name="save_settings" value="Save settings" align="center" style="float: center;">
 		</div>
 	</form>
 

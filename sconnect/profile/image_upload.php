@@ -1,10 +1,12 @@
 <?php 
 	session_start();
 
-	$sql_connection = mysqli_connect('localhost', 'root', '', 'sconnect') or die('Error '.mysql_error($sql_connection));
+	// $sql_connection = mysqli_connect('localhost', 'root', '', 'sconnect') or die('Error '.mysql_error($sql_connection));
+
+	include('../data/connection_open.php');
 
 	$user_hash = $_SESSION['userhash'];
-	$target_dir = "../user_data/profile_image/";
+	$target_dir = "profile_image/";
 	$target_file = $target_dir . $user_hash. ".jpg";
 	$uploadOk = 1;
 	$fileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
@@ -30,10 +32,12 @@
 
 	else {
 		if(move_uploaded_file($_FILES["dp"]["tmp_name"], $target_file)) {
-			// echo "The file " .basename($_FILES["dp"]["name"]). "has been uploaded.";
-			echo "Your file ".basename($_FILES["dp"]["name"])." has been successfully uploaded";		
-		$query = "UPDATE sconnect_user SET profile_image_path = '$target_file' WHERE userhash = '$user_hash'";
-		$sql_connection->query($query) or die("Error : ".mysqli_error($sql_connection));
+			$returnObject = new stdClass();
+			$returnObject->message =  "Your file ".basename($_FILES["dp"]["name"])." has been successfully uploaded";
+			$returnObject->image_link = $target_file;
+			echo json_encode($returnObject);		
+			$query = "UPDATE sconnect_user SET profile_image_path = '$target_file' WHERE userhash = '$user_hash'";
+			$sql_connection->query($query) or die("Error : ".mysqli_error($sql_connection));
 		}
 
 		else {

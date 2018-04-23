@@ -14,18 +14,16 @@ jQuery(document).ready(function() {
 
 	jQuery("#save_settings").click(function(ev) {
 		ev.preventDefault();
-		alert("Working");
-		console.log(dob_setting);
-		$ajax({
+		$.ajax({
 			type: 'POST',
 			url: 'settings_submit.php',
 			data: {degree_view: degree_setting, major_view: major_setting, courses_view: courses_setting
 				, dob_view: dob_setting},
 				success:function(result){
 					console.log(result);
-					var objResult = JSON.parse(result);
-					console.log(objResult);
-				}
+					//var objResult = JSON.parse(result);
+					//console.log(objResult);
+				},
 				error: function(jqxhr, status, exception) {
 					alert('Error occurred.', exception);
 				}

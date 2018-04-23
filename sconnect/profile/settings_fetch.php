@@ -18,9 +18,16 @@
 		}
 	}
 
-	else{
-		echo "Unable to process request.";
+	else {
+		$degree_view = 0;
+		$major_view = 0;
+		$courses_view = 0;
+		$dob_view = 0;
 	}
+
+	// else{
+	// 	echo "Unable to process request.";
+	// }
 	
 
 

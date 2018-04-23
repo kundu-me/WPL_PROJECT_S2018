@@ -11,33 +11,42 @@
 
 include('../data/connection_open.php');
 
+
 $session = $_POST['session'];
 $CourseID = $_POST['CourseID'];
 $otp = $_POST['otp_received'];
-$course_query = "SELECT OTP, course_name, year FROM sconnect_courses_offered WHERE session = 'session' AND course_code = 'CourseID'";
+$user_hash = $_SESSION['userhash'];
+$course_query = "SELECT OTP, course_name, year, coursehash FROM sconnect_courses_offered WHERE session = '$session' AND course_code = '$CourseID'";
 
 $result = mysqli_query($sql_connection, $course_query);
 
+
 while($row = mysqli_fetch_assoc($result)) {
-	$data = array(
-	"course_name" => $row['course_name'],
-	"otp_found" => $row['OTP'],
-	"course_year" => $row['year']
-	// "success" => 'true';
-	);
-	$res[] = $data;
+	$courseDetails = [];
+    $courseDetails['course_name'] = $row['course_name'];
+    $courseDetails['year'] = $row['year'];
+    $coursehash = $row['coursehash'];
 
 	if($row['OTP'] == $otp) {
-	// $success = "true";
-	echo json_encode($res);
-	//echo json_encode($success);
-}
 
-else {
-	// $success = "false";
-	$success = "crap";
-	echo json_encode($success);
-}
+		//echo "before query";
+
+		// $courses_update_query = "INSERT INTO sconnect_courses_enrolled VALUES (NULL, '$user_hash', '$coursehash');";
+		//$res = mysqli_query($sql_connection, $courses_update_query);		
+		$returnObject = new stdClass();
+		$returnObject->success = "true";
+		$returnObject->message = "OK";
+		// $returnObject->courses_update = $res;
+		$returnObject->courseDetails = $courseDetails;
+		echo json_encode($returnObject);
+
+
+	}
+
+	else {
+		$success = "In else";
+		echo $success;
+	}
 }
 
 

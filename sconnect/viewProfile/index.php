@@ -16,6 +16,7 @@
 <!-- 	<script type="text/javascript" src="../static/js/profile/profile.js"></script>
  -->	<title><?php echo "SConnect " .$fname.' '.$lname; ?></title>
 	<div id="page">
+		<input type="hidden" id="viewed_user_hash" <?php echo 'value="' .$_GET['q'].'">' ?>>
 		<div class="col-sm-12 col-md-12 col-lg-3">
 			<span class="left_pane">
 				<div class="card container">
@@ -23,7 +24,7 @@
 					if($profile_image_path==null) {
 						$profile_image_path = 'sample.jpg';
 					}
-					echo '<img src="../user_data/" .$profile_image_path." alt="Display Image" style="width: 100%">'
+					echo '<img src="../user_data/' .$profile_image_path.'" alt="Display Image" style="width: 100%">'
 					?>
 					<?php 
 					echo '<h1>'.$fname.' '.$lname.'</h1>'

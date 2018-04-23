@@ -24,12 +24,6 @@
 			document.getElementById('my_image').click();
 		};
 
-		$(".fa-wrench").hide();
-		$("#toggle").click(function(){
-			$(".fa-wrench").toggle(1000, function(){
-				//alert("Toggled");
-			})
-		});
 
 		var deg = document.getElementById("degree_dropdown");
 		deg.classList.add("form-control");
@@ -55,13 +49,13 @@
 			console.log(dob_year_val);
 			$.ajax({
 				type:'POST',
-				url:'edit.php',
+				url:'../profile/edit.php',
 				data:{degree: degree_val, major: major_val, dob_month: dob_month_val, 
 					dob_day: dob_day_val, dob_year: dob_year_val},
 					success:function(result){
 						console.log(result);
-						//var objResult = JSON.parse(result);
-						//console.log(objResult);
+						var objResult = JSON.parse(result);
+						console.log(objResult);
 					// alert('Update successful');
 				},
 				error: function(jqxhr, status, exception) {
@@ -70,30 +64,7 @@
 			})
 		}) 
 
-		document.getElementById("degree_hide").onclick = function() {
-			document.getElementById('settings_lightbox').style.display='block';
-			// document.getElementById('fade').style.display='block';
-		}
 
-		document.getElementById("major_hide").onclick = function() {
-			document.getElementById('settings_lightbox').style.display='block';
-			// document.getElementById('fade').style.display='block';
-		}
-
-		document.getElementById("courses_hide").onclick = function() {
-			document.getElementById('settings_lightbox').style.display='block';
-			// document.getElementById('fade').style.display='block';
-		}
-
-		document.getElementById("dob_hide").onclick = function() {
-			document.getElementById('settings_lightbox').style.display='block';
-			// document.getElementById('fade').style.display='block';
-		}
-
-		$(".fa-wrench").hover(function() {
-			$("toogle_info_div").hide();
-			$("toggle_info_div").show();
-		});
 
 		$('#upload_resume').on('click', function() {
 			var file_data = $('#my_resume').prop('files')[0];
@@ -101,7 +72,7 @@
 			form_data.append('resume', file_data);
 			//alert(form_data);
 			$.ajax({
-				url: 'resume_upload.php',
+				url: '../profile/resume_upload.php',
 				dataType: 'text',
 				cache: false,
 				contentType: false,
@@ -110,7 +81,6 @@
 				type: 'post',
 				success: function(php_script_response) {
 					alert(php_script_response);
-					location.reload();
 				}
 			});
 		});
@@ -121,7 +91,7 @@
 			form_data.append('dp', file_data);
 			//alert(form_data);
 			$.ajax({
-				url: 'image_upload.php',
+				url: '../profile/image_upload.php',
 				dataType: 'text',
 				cache: false,
 				contentType: false,
@@ -130,7 +100,22 @@
 				type: 'post',
 				success: function(result) {
 					console.log(result);
-					location.reload();
+				}
+			});
+		});
+
+		$('#delete_profile').on('click', function() {
+			var user_hash_delete = $('#viewed_user_hash').val();
+			$.ajax({
+				url: '../data/adminViewProfile/delete_user.php',
+				type: 'post',
+				data: { user_hash: user_hash_delete},
+				success: function(result) {
+					alert(result);
+					location.href = "../feed/";
+				},
+				error: function() {
+					alert("Delete failed.");
 				}
 			});
 		});
@@ -138,17 +123,7 @@
 
 	});
 
-	// function addToTable(course_name, course_code, course_session)
-	// {
-	// 	var table=document.getElementById("courses");
-	// 	var row=table.insertRow(0);
-	// 	var cell1=row.insertCell(0);
-	// 	var cell2=row.insertCell(1);
-	// 	var cell3=row.insertCell(2);
-	// 	cell1.innerHTML=course_name;
-	// 	cell2.innerHTML=course_code;
-	// 	cell3.innerHTML=course_session;
-	// }
+
 
 	function startRead(evt) {
 		var file = document.getElementById('my_resume').files[0];
@@ -158,30 +133,14 @@
 		}
 	}
 
-	function startReadFromDrag(evt) {
-		var file = evt.dataTransfer.files;
-		if(file) {
-			var fileAttr = "Name: " + file.name + "\n" +
-			"Last modified date: " + file.lastModifiedDate;
-			$('#dragDiv').text(fileAttr);
-			alert(fileAttr);
-		}
-		evt.stopPropagation();
-		evt.preventDefault();
-	}
+	// function open_window() {
+	// 	window.open("../facultyAddClass/index.php");
+	// }
 
-	var droppingDiv = document.getElementById("dragDiv");
-	//droppingDiv.addEventListener('dragOver', domagic, false);
-	//droppingDiv.addEventListener('drop', startReadFromDrag, false);
-
-	function open_window() {
-		window.open("../facultyAddClass/index.php");
-	}
-
-	function open_course_box() {
-		document.getElementById('lightbox').style.display='block';
-		// document.getElementById('profile_card').style.display='block';
-		// document.getElementById('profile_main').style.display='block';
-		// jQuery('#profile_card').addClass('black_overlay');
-		// jQuery('#profile_main').addClass('black_overlay');
-	}
+	// function open_course_box() {
+	// 	document.getElementById('lightbox').style.display='block';
+	// 	// document.getElementById('profile_card').style.display='block';
+	// 	// document.getElementById('profile_main').style.display='block';
+	// 	// jQuery('#profile_card').addClass('black_overlay');
+	// 	// jQuery('#profile_main').addClass('black_overlay');
+	// }

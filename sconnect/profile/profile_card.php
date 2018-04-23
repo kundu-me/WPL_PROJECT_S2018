@@ -4,7 +4,7 @@
 		if($_SESSION['profile_image_path']==null) {
 			$_SESSION['profile_image_path'] = '../user_data/profile_image/profile.png';
 		}
-		echo '<img src="'.$_SESSION['profile_image_path'].'" alt="Display Image" style="width: 100%" id="profile_image">';
+		echo '<img src="../user_data/'.$_SESSION['profile_image_path'].'" alt="Display Image" style="width: 100%" id="profile_image">';
 		?>
 		<div>
 			<input id="my_image" type="file" name="image_upload">
@@ -20,8 +20,7 @@
 		<?php 
 		echo '<h1>'.$_SESSION['fname'].' '.$_SESSION['lname'].'</h1>'
 		?>
-		<p class="title"><?php echo $_SESSION['position'] ?><br> and <br><?php echo $_SESSION['degree'] ?> <br> <?php echo $_SESSION['major'] ?></p>
-		<p><?php echo $_SESSION['university_domain'] ?></p>
+		<p class="title"><?php echo strtoupper($_SESSION['position']) ?><br> and <br><?php echo $_SESSION['degree'] ?> <br> <?php echo $_SESSION['major'] ?></p>
 		<img src="<?php echo '../university_data/logo/' . $_SESSION['university_domain'] . '.jpg'?>" alt="University Logo" style="width: 30%"> 
 		<p><button>Connect</button></p>
 		<?php

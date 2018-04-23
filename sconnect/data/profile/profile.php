@@ -28,11 +28,13 @@
 		//$selected = $selected;
 		foreach ($options as $key => $option) {
 			$select = $selected==$key ? 'selected' : null;
-			$dropdown .= '<option value="' .$key. '"' .$select. '>' .$option. '</option>'."\n";
+			$dropdown .= '<option value="' .$option. '"' .$select. '>' .$option. '</option>'."\n";
 		}
 		$dropdown .= '</select>'."\n";
 
 		return $dropdown;
 	}
 ?>
+
+
 
