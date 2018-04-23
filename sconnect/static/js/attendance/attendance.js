@@ -166,6 +166,14 @@
 		});
 		
 		
+		$("#showAttendanceTable").click(function(e) {
+
+			e.preventDefault();
+			if($("#CourseID").val() == "") {
+				return;
+			}
+			location.href = "../attendanceTable/?q=" + $("#CourseID").val();
+		});
 
     });
 

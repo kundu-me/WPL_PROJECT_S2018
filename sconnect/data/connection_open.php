@@ -13,10 +13,10 @@ $sql_password = "Pass@1234";
 $sql_database = "kundujwg_sconnect_db1";
 
 
-$sql_servername = "localhost";
-$sql_username = "root";
-$sql_password = "";
-$sql_database = "sconnect";
+// $sql_servername = "localhost";
+// $sql_username = "root";
+// $sql_password = "";
+// $sql_database = "sconnect";
 
 
 // Create connection

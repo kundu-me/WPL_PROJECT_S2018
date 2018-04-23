@@ -34,6 +34,7 @@
 						<option value="" disabled selected hidden>Select from course list..</option>
 					</select>
                     <input type="hidden" id="attendancehash" name="attendancehash">
+                    <button class="col-lg-4" id="showAttendanceTable">Attendance Table</button>
                 </h3>
                 </div>
             </div>
