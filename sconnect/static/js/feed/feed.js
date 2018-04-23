@@ -10,14 +10,6 @@ jQuery(document).ready(function () {
 
   $('#add_text').hide();
 
-  document.getElementById('photo_upload').onclick = function() {
-    document.getElementById('my_image').click();
-  };
-
-  document.getElementById('video_upload').onclick = function() {
-    document.getElementById('my_video').click();      
-  };
-
   jQuery("#submitPost").click(function(e) {
     e.preventDefault();
     ajaxCallToSubmitNewPost();
