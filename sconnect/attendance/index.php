@@ -148,7 +148,54 @@
     </div>
 	
 	<br>
-	<table class="container" id="attendanceTable" style="text-align: left;" border="1"> <!--Dynamic population of div element on button click -->
+	<table class="container" id="attendanceTable" style="text-align: left; width: 600px;" border="1">
+     <!--Dynamic population of div element on button click -->
+     <thead>
+     <tr>
+        <th>
+            Student
+        </th>
+        <th>
+            Time
+        </th>
+    </tr>
+    <tr>
+        <th>
+            &nbsp;
+        </th>
+        <th>
+            &nbsp;
+        </th>
+     </tr>
+    </thead>
+    <tbody id="attendanceTableBody">
+    </tbody>
+        <tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr>
+        <tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr>
+        <tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr>
+        <tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr>
+        <tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr>
+        <tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr>
+        <tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr>
+        <tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr>
+        <tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr>
+        <tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr>
+        <tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr>
+        <tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr>
+        <tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr>
+        <tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr>
+        <tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr>
+        <tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr>
+        <tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr>
+        <tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr>
+        <tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr>
+        <tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr>
+        <tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr>
+        <tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr>
+        <tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr>
+        <tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr>
+        
+
     </table>
 	
 	<div class="col-lg-12 col-lg-3">

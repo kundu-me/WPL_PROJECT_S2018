@@ -218,10 +218,10 @@
         console.log(result);
         var objResult = JSON.parse(result);
         console.log(objResult);
-        $("#attendanceTable").empty();
+        $("#attendanceTableBody").empty();
         for(var row in objResult) {
 
-        	$("#attendanceTable").append(objResult[row]);
+        	$("#attendanceTableBody").append(objResult[row]);
         }
         
       }
