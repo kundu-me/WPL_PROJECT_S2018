@@ -90,7 +90,7 @@ function getFeedPost(isAll) {
 
         feed += '<div class="row marketing search-comment-div">';
 
-         feed += '<div class="col-sm-12 col-md-12 col-lg-1" style="text-align: left;"><span><img class="comment-user-profile-image" src="../user_data/profile_image/"' + searchFeed['user_from_profile_image_path'] + '></span></div>'; 
+         feed += '<div class="col-sm-12 col-md-12 col-lg-1" style="text-align: left;"><span><img class="comment-user-profile-image" src="../user_data/' + searchFeed['user_from_profile_image_path'] + '"></span></div>'; 
          feed += '<div class="col-sm-12 col-md-12 col-lg-10 user-comment-spans" style="text-align: left;">' + 
                   '<span class="comment-user-name">' + $("#session-fname").val() + ' ' + $("#session-lname").val() + '</span>'+
                   '<br>' + 
