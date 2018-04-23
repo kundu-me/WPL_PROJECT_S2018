@@ -151,6 +151,11 @@
 	<table class="container" id="attendanceTable" style="text-align: left; width: 600px;" border="1">
      <!--Dynamic population of div element on button click -->
      <thead>
+    <tr>
+        <th colspan="2" style="text-align: center;">
+            Real Time Attendance
+        </th>
+    </tr>
      <tr>
         <th>
             Student
@@ -169,32 +174,36 @@
      </tr>
     </thead>
     <tbody id="attendanceTableBody">
+    
+        <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+        <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+        <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+        <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+        <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+        <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+        <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+        <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+        <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+        <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+        <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+        <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+        <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+        <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+        <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+        <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+        <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+        <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+        <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+        <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+        <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+        <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+        <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+        <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+        <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+        <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+        <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+        <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
     </tbody>
-        <tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr>
-        <tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr>
-        <tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr>
-        <tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr>
-        <tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr>
-        <tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr>
-        <tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr>
-        <tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr>
-        <tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr>
-        <tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr>
-        <tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr>
-        <tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr>
-        <tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr>
-        <tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr>
-        <tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr>
-        <tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr>
-        <tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr>
-        <tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr>
-        <tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr>
-        <tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr>
-        <tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr>
-        <tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr>
-        <tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr>
-        <tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr>
-        
 
     </table>
 	
