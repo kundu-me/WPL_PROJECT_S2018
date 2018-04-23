@@ -65,8 +65,23 @@
 
 		while($row = $result->fetch_assoc()) {
 			$attendancehash = $row['attendancehash'];
-			$query = "INSERT INTO sconnect_attendance_realtime VALUES(NULL,'$attendancehash','$studentEmail','$currentTime')";
+			
+			//check if the same student wants to give attendance again
+			$query = "SELECT *
+ 			  			FROM sconnect_attendance_realtime 
+ 			  			WHERE student_id='$studentEmail'";
 
+ 			$result = mysqli_query ($sql_connection, $query);
+
+ 			if($result->num_rows == 0) { //the student has not yet given the attendance 
+		
+				$query = "INSERT INTO sconnect_attendance_realtime VALUES(NULL,'$attendancehash','$studentEmail','$currentTime')";
+			}
+			else { //the student wants to update his attendance time
+				$query = "UPDATE sconnect_attendance_realtime
+							SET time_24hr_hh_mm = '$currentTime'
+							WHERE student_id = '$studentEmail'";
+			}
 			if (mysqli_query ($sql_connection, $query)) {
 
 				$returnObject = new stdClass();
@@ -85,7 +100,7 @@
 				echo json_encode($returnObject);
 
 				exit();
-			}
+			}		
 		}	    
 	}	
 ?>
