@@ -29,6 +29,10 @@
 	</span>
 
 	<span class="sconnect-profile-header">
+		<h4><a href="../approveUser/"><u>Approve Pending User</u></a></h4>
+	</span>
+
+	<span class="sconnect-profile-header">
 		<h4><a href="../approveFeed/"><u>Approve Pending Feed</u></a></h4>
 	</span>
 

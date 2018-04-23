@@ -61,7 +61,8 @@
  	$query = "SELECT userhash, fname, lname, profile_image_path, university_domain, position
  			  FROM sconnect_user
  			  WHERE 
- 			  (fname LIKE '%$searchQuery_escape%' OR lname LIKE '%$searchQuery_escape%')
+ 			  (email LIKE '%$searchQuery_escape%' OR fname LIKE '%$searchQuery_escape%' OR 
+ 			  lname LIKE '%$searchQuery_escape%' OR status LIKE '%$searchQuery_escape%')
  			  AND
  			  (position LIKE '%$filterPosition%')
  			  AND
