@@ -10,7 +10,7 @@ session_start();
 
 include('../data/connection_open.php');
 
-$sql_connection = mysqli_connect($sql_servername, $sql_username, $sql_password, $sql_database);
+// $sql_connection = mysqli_connect($sql_servername, $sql_username, $sql_password, $sql_database);
 
 
 $degree = $_POST['degree'];

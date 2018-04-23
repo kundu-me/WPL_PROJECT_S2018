@@ -6,6 +6,8 @@
 
 	<?php include('../data/profile/profile.php'); ?>
 
+	<?php include('settings_fetch.php'); ?>
+
 	<link rel="stylesheet" type="text/css" href="../static/css/profile/profile_page.css">
 	
 	<script type="text/javascript" src="../static/js/profile/profile.js"></script>

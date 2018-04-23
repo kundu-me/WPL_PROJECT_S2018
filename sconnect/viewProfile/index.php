@@ -1,4 +1,4 @@
-<!-- @author: Gunjan Tomer
+`<!-- @author: Gunjan Tomer
 	Profile Page for SConnect
 	Updated on: 03/28/2018 -->
 
@@ -7,6 +7,8 @@
 	<?php include('../data/connection_open.php') ?> 
 
 	<?php include('../data/viewProfile/viewProfile.php'); ?>
+
+	<?php include('viewProfile_settings_fetch.php'); ?>
 
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -49,12 +51,12 @@
 						</div>
 						<div class="row marketing">
 
-							<div class="degree_div col-lg-12 col-lg-2">
+							<div class="degree_div col-lg-12 col-lg-2" <?php if($user_degree_view == 2){ echo 'style="display:none;"'; } ?>>
 								<label id="degree">Degree: <?php echo " " . $degree ?></label>
 							</div>
 						</div>
 						<div class="row">
-							<div class="major-div col-lg-12 col-lg-3">
+							<div class="major-div col-lg-12 col-lg-3" <?php if($user_major_view == 2){ echo 'style="display:none;"'; } ?>>
 								<label id="major">Major: <?php echo $major ?> </label>
 							</div>
 						</div>
@@ -63,7 +65,7 @@
 							</div>
 						</div>
 						<div class="row">
-							<div class="col-lg-12 col-lg-10"><label>Courses enrolled: </label>
+							<div class="col-lg-12 col-lg-10" <?php if($user_courses_view == 2){ echo 'style="display:none;"'; } ?>><label>Courses enrolled: </label>
 								<div>
 									<table id="courses" class="table table-striped table-bordered table-hover table-responsive">
 										<tr class="header">
@@ -79,7 +81,7 @@
 						</div>
 						<div class="row">
 							<div id="dob-div">
-								<div class="col-lg-12 col-lg-3">
+								<div class="col-lg-12 col-lg-3" <?php if($user_dob_view == 2){ echo 'style="display:none;"'; } ?>>
 									<label>Date of Birth: <?php echo $dob_dd. " " .$dob_mm. " " .$dob_yyyy ?></label>
 								</div>
 							</div>	

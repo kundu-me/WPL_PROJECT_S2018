@@ -1,20 +1,22 @@
 <?php
 //Include the database configuration file
 // include 'dbConfig.php';
-$dbHost2     = 'localhost';
-$dbUsername2 = 'root';
-$dbPassword2 = '';
-$dbName2     = 'sconnect';
+// $dbHost2     = 'localhost';
+// $dbUsername2 = 'root';
+// $dbPassword2 = '';
+// $dbName2     = 'sconnect';
 
-//Connect and select the database
-$db2 = new mysqli($dbHost2, $dbUsername2, $dbPassword2, $dbName2);
+// //Connect and select the database
+// $sql_connection = new mysqli($dbHost2, $dbUsername2, $dbPassword2, $dbName2);
+
+include('../data/connection_open.php');
 
 if(!empty($_POST["session"])){
 
     $session = $_POST['session'];
     echo "Session: " .$session;
     //Fetch all state data
-    $query = $db2->query("SELECT * FROM sconnect_courses_offered WHERE session = '$session' ORDER BY session ASC");
+    $query = $sql_connection->query("SELECT * FROM sconnect_courses_offered WHERE session = '$session' ORDER BY session ASC");
     
     //Count total number of rows
     $rowCount = $query->num_rows;
@@ -34,7 +36,7 @@ if(!empty($_POST["session"])){
         $otp = $_POST['otp_received'];
         echo '<label>Inside 2nd IF</label>';
 
-        $query2 = $db2->query("SELECT OTP FROM sconnect_courses_offered WHERE session = '$session' AND course_code = '$course_id'");
+        $query2 = $sql_connection->query("SELECT OTP FROM sconnect_courses_offered WHERE session = '$session' AND course_code = '$course_id'");
 
         echo '<script>console.log('.$otp.')</script>';
         $otp = $query2->fetch_assoc();

@@ -43,9 +43,12 @@
 		jQuery("#verifyCourse").click(function (event) {
 			event.preventDefault();
 			jQuery("#lblSuccess").text("");
-			var session = jQuery("#session").val();
-			var CourseID = jQuery("#CourseID").val();
+			var session = jQuery("#session option:selected").val();
+			var CourseID = jQuery("#CourseID option:selected").val();
 			var otp = jQuery("#otp_received").val();
+			console.log(session);
+			console.log(CourseID);
+			console.log(otp);
 			//OTP validation failure routine----------------------------------------------------------------------------------
 			if((!$('#session').val()) || (!$('#CourseID').val()) || (otp == "" || otp.length == 0 || otp.length > 4)) {
 				jQuery("#lblSuccess").text("Provide correct values in above fields (OTP should be 4 digits only)");
@@ -83,25 +86,28 @@
 			//Show table element when OTP validated, with fetched course details//
 			jQuery("table.container").show();
 			if(($('#session').val()) && ($('#CourseID').val()) && !(otp == "" || otp.length == 0 || otp.length > 4)) {
+				console.log(session);
+				console.log(CourseID);
+				console.log(otp);
 				$.ajax({
-					type: "POST",
+					type: 'POST',
 					url: "otp_submit.php",
 					dataType:'json',
 					data: ({session: session, CourseID: CourseID, otp_received: otp }),
-					success: function(data) {
-            			alert('successful');
-            			// var data = result;
-            			// console.log(result);
-            			// console.log(data);
-            			// var obj = JSON.parse(result);
-            			// $("#lblSuccess").text(obj['message']);
-            			// if(obj['redirect'] == "true") {
-            			// 	var redirectURL = obj['redirectURL'];
-            			// 	$(location).attr("href", redirectURL);
+					success: function(result) {
+						console.log(result);
+						$.each(result, function(idx, data){
+							alert(result.success);
+							if(result.success == "true"){
+								$("#CourseName").val(result.course_name);
+								$("#session_verified").val(session);
+								$("#year").val(result.course_year);
+							}
+						});
             			$('#courses > tbody').append("<tr><td>Crew Development Studies</td><td>AP 6344</td><td>Spring 2018</td></tr>");
             		},
             		error : function() {
-            			console.log('error');
+            			console.log("error");
 
             		}
 

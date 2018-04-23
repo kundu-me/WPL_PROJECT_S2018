@@ -18,6 +18,11 @@
 	margin: 0px 2px;
 }
 
+#instructions {
+	font-size: 17px;
+	text-align: center;
+}
+
 .btnDisable {
 	color: gray;
 	cursor: not-allowed;
