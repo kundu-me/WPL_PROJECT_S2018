@@ -21,6 +21,10 @@
 	</span>
 
 	<span class="sconnect-profile-header">
+		<h4><a href="../myFeed/"><u>My Posts</u></a></h4>
+	</span>
+
+	<span class="sconnect-profile-header">
 		<h4><a href="../<?php echo ($_SESSION['position'] == 'faculty')? "attendance" : "attendancee" ?> "><u>Class Attendance</u></a></h4>
 	</span>
 

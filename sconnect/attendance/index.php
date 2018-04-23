@@ -11,8 +11,14 @@
 <link rel="stylesheet" href="../static/css/attendance/attendance.css">
 
 <div class="row marketing left-right-com-div" style="margin-top: 15px;">
+       <div class="col-sm-12 col-md-12 col-lg-3" style="text-align: center;">
+        <?php include('../card_left/index.php'); ?>
+       </div>
+
+       <div class="col-sm-12 col-md-12 col-lg-9 search-feed-divs" style="text-align: center; overflow: scroll;">
+<div class="row marketing left-right-com-div" style="margin-top: 15px;">
    <div class="row header">
-      <div class="col-sm-12 col-md-12 col-lg-12" style="text-align: right;">
+      <div class="col-sm-12 col-md-12 col-lg-12" style="text-align: center;">
          <span class="sconnect-header">Class Attendance</span>
          <div class="sconnect-signup-div">
 	 <form id= "formData"> 
@@ -152,5 +158,7 @@
     </div>
       </div>
    </div>
+</div>
+</div>
 </div>
 	<?php include('../header_footer/footer.php'); ?>

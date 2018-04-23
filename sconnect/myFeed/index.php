@@ -1,4 +1,4 @@
-	<!--
+	<!-- 
 	    @author: Nirmallya Kundu <nxkundu@gmail.com>
 	    @page: Feed
 	    @description: This is the main landing page when the user login
@@ -6,7 +6,7 @@
 	              -->
       <?php include('../header_footer/header.php'); ?>
 
-      <script src="../static/js/approveFeed/approveFeed.js"></script>
+      <script src="../static/js/myFeed/myFeed.js"></script>
       <link rel="stylesheet" href="../static/css/feed/feed.css">
 
       <div class="row marketing left-right-com-div" style="margin-top: 15px;">

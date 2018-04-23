@@ -54,11 +54,11 @@
 	while($row = $result->fetch_assoc()) {
    
    		if($blnFirstTime) {
-    		$student_id_time_list .= $row['student_id'] . "_" . str_replace(":", "_", $row['time_24hr_hh_mm']);
+    		$student_id_time_list .= $row['student_id'] . "_" . str_replace(":", "", $row['time_24hr_hh_mm']);
     		$blnFirstTime = false;
     	}
     	else {
-    		$student_id_time_list .= "," . $row['student_id'] . "_" . str_replace(":", "_", $row['time_24hr_hh_mm']);
+    		$student_id_time_list .= "," . $row['student_id'] . "_" . str_replace(":", "", $row['time_24hr_hh_mm']);
     	}
     
 	}

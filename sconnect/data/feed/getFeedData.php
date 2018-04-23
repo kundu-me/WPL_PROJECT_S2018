@@ -73,7 +73,8 @@
  			   feed.text_data LIKE '%$searchQuery%' OR 
  			   feed.university_domain LIKE '%$searchQuery%' OR
  			   user_from.fname LIKE '%$searchQuery%' OR
- 			   user_from.lname LIKE '%$searchQuery%'
+ 			   user_from.lname LIKE '%$searchQuery%' OR
+ 			   user_from.userhash LIKE '%$searchQuery%'
  			   )
  			   AND
  			  (user_from.position LIKE '%$filterPosition%')
