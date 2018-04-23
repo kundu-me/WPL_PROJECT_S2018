@@ -12,7 +12,20 @@
        <?php include('../card_left/index.php'); ?>
     </div>
 
-     <div class="col-sm-12 col-md-12 col-lg-6 search-profile-divs" style="text-align: center;" id= "search-profile-divs">
+     <div class="col-sm-12 col-md-12 col-lg-6 search-profile-divs" style="text-align: center;" id= "search-profile-divs-outer">
+      <div id="search-profile-filter" style="text-align: right;">
+        <select class="select input-lg" id="filter-position">
+          <option value="">Any Position</option>
+          <option value="student">Student</option>
+          <option value="faculty">Faculty</option>
+        </select>
+        <select class="select input-lg" id="filter-university">
+          <option value="">Any University</option>
+          <option value="utdallas">Utdallas</option>
+        </select>
+        <input type="button" class="button input-lg" name="filter-search" id="filter-search" value="Filter Results">
+      </div>
+      <div id="search-profile-divs">
        Search Profile
        <div class="row marketing search-profile-div">
         <div class="col-sm-12 col-md-12 col-lg-3" style="text-align: left;">
@@ -22,6 +35,7 @@
          <span></span>
         </div>
        </div>
+     </div>
     </div>
 
      <div class="col-sm-12 col-md-12 col-lg-3" style="text-align: center;">
@@ -153,6 +167,13 @@
         searchFeed();
       }
     });
+
+    $("#filter-search").click(function() {
+
+      $("#search-profile-divs").empty();
+      searchProfile();
+      searchFeed();
+    });
   });
   
   function searchProfile() {
@@ -163,7 +184,7 @@
     $.ajax({
       type: "POST",
       url: "../data/searchProfile/searchProfile.php",
-      data: { searchQuery: $("#searchQuery").val() },
+      data: { searchQuery: $("#searchQuery").val(), position: $("#filter-position").val(), university_domain : $("#filter-university").val()},
       async: true,
       success: function(result) {
 
@@ -219,7 +240,7 @@
     $.ajax({
       type: "POST",
       url: "../data/feed/getFeedData.php",
-      data: { searchQuery: $("#searchQuery").val() },
+      data: { searchQuery: $("#searchQuery").val(), position: $("#filter-position").val(), university_domain : $("#filter-university").val() },
       async: true,
       success: function(result) {
 
@@ -245,7 +266,7 @@
 
           var searchFeed = searchFeeds[key];
 
-          var feed = '<div class="row marketing search-feed-div" id="' + searchFeed['feedhash'] + '">' +
+          var feed = '<div class="row marketing search-feed-div" id="feed_div_' + searchFeed['feedhash'] + '">' +
                      '<div class="col-sm-12 col-md-12 col-lg-3" style="text-align: left;">' + 
                      '<span><img class="feed-user-profile-image" src="../user_data/profile_image/sample.jpg"></span>' + 
                      '</div>' + 

@@ -107,7 +107,7 @@ function getFeedPost() {
 
         var searchFeed = searchFeeds[key];
 
-        var feed = '<div class="row marketing search-feed-div" id="' + searchFeed['feedhash'] + '" onclick="window.open(\'../viewFeed/?q=' + searchFeed['feedhash'] +'\', \'_blank\')">' +
+        var feed = '<div class="row marketing search-feed-div" id="feed_div_' + searchFeed['feedhash'] + '" onclick="location.href=(\'../viewFeed/?q=' + searchFeed['feedhash'] +'\')">' +
         '<div class="col-sm-12 col-md-12 col-lg-3" style="text-align: left;">' + 
         '<span><img class="feed-user-profile-image" src="../user_data/profile_image/sample.jpg"></span>' + 
         '</div>' + 

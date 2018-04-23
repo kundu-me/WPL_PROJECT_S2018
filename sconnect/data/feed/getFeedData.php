@@ -16,6 +16,10 @@
  
 	//Get the POST values
 	$searchQuery = $_POST['searchQuery'];
+
+	$filterPosition = isset($_POST['position']) ? $_POST['position'] : '';
+	$filterUniversity = isset($_POST['university']) ? $_POST['university'] : '';
+
 	//$university_domain = $_SESSION['university_domain'];
 	//$userhash = $_SESSION['userhash'];
  
@@ -47,6 +51,9 @@
 
  <?php
 
+	$filterPosition = mysqli_real_escape_string($sql_connection, $filterPosition);
+ 	$filterUniversity = mysqli_real_escape_string($sql_connection, $filterUniversity);
+
  	$query = "SELECT feed.feedhash as feedhash, feed.text_data as text_data, feed.photo_path as photo_path, 
  			  feed.video_path as video_path, feed.privacy as privacy, 
  			  feed.university_domain as university_domain, feed.userhash_to as userhash_to, 
@@ -64,6 +71,12 @@
  			   user_from.fname LIKE '%$searchQuery%' OR
  			   user_from.lname LIKE '%$searchQuery%'
  			   )
+ 			   AND
+ 			  (user_from.position LIKE '%$filterPosition%')
+ 			  AND
+ 			  (feed.university_domain LIKE '%$filterUniversity%')
+ 			  AND
+ 			  (feed.status = '0')
  			  ORDER BY feed.date_time_yyyy_mm_dd_hh_mm DESC";
 
 	$result = mysqli_query ($sql_connection, $query);
