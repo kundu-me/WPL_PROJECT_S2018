@@ -167,7 +167,8 @@
                           '<span><img alt="profile image" class="user-profile-image" src="../user_data/' + searchUser['profile_image_path'] + '"></span>' +
                           '</div>' + 
                           '<div class="col-sm-12 col-md-12 col-lg-8" style="text-align: left;" class="user-info">' + 
-                          '<span class="user-name">' + searchUser['fname'] + ' ' + searchUser['lname'] + '</span>' +
+                          '<span class="user-name" onclick="viewUserProfilePage(\'' + searchUser['userhash'] + '\')">' +
+                           searchUser['fname'] + ' ' + searchUser['lname'] + '</span>' +
                           '<br>'+
                           '<br>'+
                           '<span class="user-university">' + searchUser['university_domain'] + '</span>' +
@@ -186,12 +187,6 @@
         }
       }
     });
-  }
-
-
-
-  function viewProfile(userhash) {
-    alert(userhash);
   }
 
   function approveUser(userhash) {

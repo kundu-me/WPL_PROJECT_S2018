@@ -64,7 +64,7 @@
  			  feed.userhash_from as userhash_from, feed.date_time_yyyy_mm_dd_hh_mm as date_time_yyyy_mm_dd_hh_mm, 
  			  feed.status as status,
  			  user_from.fname as user_from_fname, user_from.lname as user_from_lname, user_from.position as user_from_position,
- 			  user_from.university_domain as user_from_university_domain
+ 			  user_from.university_domain as user_from_university_domain, user_from.profile_image_path as user_from_profile_image_path
  			  FROM sconnect_feed as feed
  			  INNER JOIN sconnect_user as user_from
  			  WHERE feed.userhash_from = user_from.userhash
@@ -121,6 +121,7 @@
 		$feed['user_from_position'] = $row['user_from_position'];
 		$feed['date_time_yyyy_mm_dd_hh_mm'] = $row['date_time_yyyy_mm_dd_hh_mm'];
 		$feed['status'] = $row['status'];
+		$feed['user_from_profile_image_path'] = $row['user_from_profile_image_path'];
 
 		$feeds[$row['feedhash']] = $feed;
 	}

@@ -101,10 +101,10 @@ function getFeedPost() {
 
         var feed = '<div class="row marketing search-feed-div" id="feed_div_' + searchFeed['feedhash'] + '" onclick="location.href=(\'../viewFeed/?q=' + searchFeed['feedhash'] +'\')">' +
         '<div class="col-sm-12 col-md-12 col-lg-3" style="text-align: left;">' + 
-        '<span><img class="feed-user-profile-image" src="../user_data/profile_image/sample.jpg"></span>' + 
+        '<span><img class="feed-user-profile-image" src="../user_data/' + searchFeed['user_from_profile_image_path'] + '"></span>' + 
         '</div>' + 
         '<div class="col-sm-12 col-md-12 col-lg-8" style="text-align: left;">' + 
-        '<span class="feed-user-name">' + searchFeed['user_from_name'] + ' (' + searchFeed['userhash_from'] + ')</span>' + 
+        '<span class="feed-user-name">' + searchFeed['user_from_name'] + '</span>' + 
         '<br>' + 
         '<span class="feed-user-data">' + searchFeed['user_from_university_domain'] + ' ' + searchFeed['user_from_position'] + '</span>' + 
         '<br>' + 

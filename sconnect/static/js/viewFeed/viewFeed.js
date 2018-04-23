@@ -30,12 +30,12 @@ function getFeedPost(isAll) {
             '<span><img class="feed-user-profile-image" src="../user_data/profile_image/sample.jpg"></span>' + 
             '</div>' + 
             '<div class="col-sm-12 col-md-12 col-lg-9" style="text-align: left;">' + 
-            '<span class="feed-user-name">a</span>' + 
+            '<span class="feed-user-name">Feed does not exists</span>' + 
             '<br>' + 
-            '<span class="feed-user-data">a</span>' + 
+            '<span class="feed-user-data"></span>' + 
             '<br>' + 
             '<br>' + 
-            '<span class="feed-text-data">a</span>' + 
+            '<span class="feed-text-data"></span>' + 
             '</div>' + 
             '</div>';
 
@@ -60,10 +60,10 @@ function getFeedPost(isAll) {
 
         var feed = '<div class="row marketing search-feed-div" id="' + currFeedhash + '">' +
                    '<div class="col-sm-12 col-md-12 col-lg-3" style="text-align: left;">' + 
-                   '<span><img class="feed-user-profile-image" src="../user_data/profile_image/sample.jpg"></span>' + 
+                   '<span><img class="feed-user-profile-image" src="../user_data/' + searchFeed['user_from_profile_image_path'] + '"></span>' + 
                    '</div>' + 
                    '<div class="col-sm-12 col-md-12 col-lg-8" style="text-align: left;">' + 
-                   '<span class="feed-user-name">' + searchFeed['user_from_name'] + ' (' + searchFeed['userhash_from'] + ')</span>' + 
+                   '<span class="feed-user-name">' + searchFeed['user_from_name'] + '</span>' + 
                    '<br>' + 
                    '<span class="feed-user-data">' + searchFeed['user_from_university_domain'] + ' ' + searchFeed['user_from_position'] + '</span>' + 
                    '<br>' + 
@@ -90,7 +90,7 @@ function getFeedPost(isAll) {
 
         feed += '<div class="row marketing search-comment-div">';
 
-         feed += '<div class="col-sm-12 col-md-12 col-lg-1" style="text-align: left;"><span><img class="comment-user-profile-image" src="../user_data/profile_image/sample.jpg"></span></div>'; 
+         feed += '<div class="col-sm-12 col-md-12 col-lg-1" style="text-align: left;"><span><img class="comment-user-profile-image" src="../user_data/profile_image/"' + searchFeed['user_from_profile_image_path'] + '></span></div>'; 
          feed += '<div class="col-sm-12 col-md-12 col-lg-10 user-comment-spans" style="text-align: left;">' + 
                   '<span class="comment-user-name">' + $("#session-fname").val() + ' ' + $("#session-lname").val() + '</span>'+
                   '<br>' + 
@@ -129,7 +129,7 @@ function getFeedPost(isAll) {
 
              feed += '<div class="row marketing search-comment-div">';
 
-             feed += '<div class="col-sm-12 col-md-12 col-lg-1" style="text-align: left;"><span><img class="comment-user-profile-image" src="../user_data/profile_image/sample.jpg"></span></div>'; 
+             feed += '<div class="col-sm-12 col-md-12 col-lg-1" style="text-align: left;"><span><img class="comment-user-profile-image" src="../user_data/' + comment['user_from_profile_image_path'] + '"></span></div>'; 
              feed += '<div class="col-sm-12 col-md-12 col-lg-10 user-comment-spans" style="text-align: left;">' + 
                       '<span class="comment-user-name">' + comment['user_from_name'] + '</span>'+
                       '<br>' + 

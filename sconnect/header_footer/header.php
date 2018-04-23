@@ -135,5 +135,9 @@
 		      }
 		    });
 		});
+
+		function viewUserProfilePage(userhash) {
+			location.href = "../profile/?q=" + userhash;
+		}
 	</script>
 

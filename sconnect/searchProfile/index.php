@@ -210,12 +210,13 @@
 
           var searchUser = searchUsers[key];
 
-          var profile =   '<div class="row marketing search-profile-div" onclick="viewProfile(this.id)" id="' + searchUser['userhash'] + '">' +
+          var profile =   '<div class="row marketing search-profile-div" id="' + searchUser['userhash'] + '">' +
                           '<div class="col-sm-12 col-md-12 col-lg-3" style="text-align: left;">' + 
                           '<span><img alt="profile image" class="user-profile-image" src="../user_data/' + searchUser['profile_image_path'] + '"></span>' +
                           '</div>' + 
                           '<div class="col-sm-12 col-md-12 col-lg-9" style="text-align: left;" class="user-info">' + 
-                          '<span class="user-name">' + searchUser['fname'] + ' ' + searchUser['lname'] + '</span>' +
+                          '<span class="user-name" onclick="viewUserProfilePage(\'' + searchUser['userhash'] + '\')">' +
+                           searchUser['fname'] + ' ' + searchUser['lname'] + '</span>' +
                           '<br>'+
                           '<br>'+
                           '<span class="user-university">' + searchUser['university_domain'] + '</span>' +
@@ -266,12 +267,13 @@
 
           var searchFeed = searchFeeds[key];
 
-          var feed = '<div class="row marketing search-feed-div" id="feed_div_' + searchFeed['feedhash'] + '">' +
+          var feed = '<div class="row marketing search-feed-div" id="feed_div_' + searchFeed['feedhash'] + '"' + 
+          'onclick="location.href=(\'../viewFeed/?q=' + searchFeed['feedhash'] +'\')">' +
                      '<div class="col-sm-12 col-md-12 col-lg-3" style="text-align: left;">' + 
-                     '<span><img class="feed-user-profile-image" src="../user_data/profile_image/sample.jpg"></span>' + 
+                     '<span><img class="feed-user-profile-image" src="../user_data/' + searchFeed['user_from_profile_image_path'] + '"></span>' + 
                      '</div>' + 
                      '<div class="col-sm-12 col-md-12 col-lg-8" style="text-align: left;">' + 
-                     '<span class="feed-user-name">' + searchFeed['user_from_name'] + ' (' + searchFeed['userhash_from'] + ')</span>' + 
+                     '<span class="feed-user-name">' + searchFeed['user_from_name'] + '</span>' + 
                      '<br>' + 
                      '<span class="feed-user-data">' + searchFeed['user_from_university_domain'] + ' ' + searchFeed['user_from_position'] + '</span>' + 
                      '<br>' + 
@@ -299,11 +301,5 @@
         $("#search-profile-divs").unmark().mark($("#searchQuery").val());
       }
     });
-  }
-
-
-
-  function viewProfile(userhash) {
-    alert(userhash);
   }
 </script>
