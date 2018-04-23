@@ -1,6 +1,6 @@
 /**
-	@author: Koulick Sankar Paul <koulick89@gmail.com>
     @author: Abhishek Dutta <abhi06548@yahoo.com>
+	@author: Koulick Sankar Paul <koulick89@gmail.com>
     @page: Addition of a class by a faculty 
     @description: This page allows a faculty member to add a new class to register students
  **/
@@ -172,7 +172,7 @@ jQuery(document).ready(function () {
 	});
 	
 	//Close button click functionality that takes to previous page URL----------------
-	jQuery("#btnClose").click(function () {
-		self.location = "https://www.google.com";
-	});
+	/*jQuery("#btnClose").click(function () {
+		self.location = "./././feed";
+	});*/
 });

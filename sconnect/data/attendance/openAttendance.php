@@ -45,10 +45,17 @@
 	$userhash_escape = mysqli_real_escape_string($sql_connection, $userhash);
 
 	$attendancehash = uniqid();
-	$date_mm = date("m");
+	$dt = new DateTime("now", new DateTimeZone('America/Chicago'));
+
+	$date_mm = $dt->format("m");
+	$date_dd = $dt->format("d");
+	$date_yyyy = $dt->format("Y");
+	$time_24hr_hh_mm = $dt->format("H_i");
+	
+	/*$date_mm = date("m");
 	$date_dd = date("d");
 	$date_yyyy = date("Y");
-	$time_24hr_hh_mm = date("H_i");
+	$time_24hr_hh_mm = date("H_i");*/
 
  	$query = "INSERT INTO sconnect_attendance (attendancehash, coursehash, date_mm, 
  			  date_dd, date_yyyy, time_24hr_hh_mm, lecture, timeout_mm, status, OTP)

@@ -16,8 +16,14 @@
  
 	//Get the POST values
 	$searchQuery = $_POST['searchQuery'];
+
+	$searchStatus = isset($_POST['status'])? isset($_POST['status']) : '0';
+
+	$filterPosition = isset($_POST['position']) ? $_POST['position'] : '';
+	$filterUniversity = isset($_POST['university']) ? $_POST['university'] : '';
+
 	//$university_domain = $_SESSION['university_domain'];
-	//$userhash = $_SESSION['userhash'];
+	$userhash = $_SESSION['userhash'];
  
 	//Input Validations
 	// if($university_domain == '') {
@@ -47,13 +53,18 @@
 
  <?php
 
+ 	$searchStatus = mysqli_real_escape_string($sql_connection, $searchStatus);
+
+	$filterPosition = mysqli_real_escape_string($sql_connection, $filterPosition);
+ 	$filterUniversity = mysqli_real_escape_string($sql_connection, $filterUniversity);
+
  	$query = "SELECT feed.feedhash as feedhash, feed.text_data as text_data, feed.photo_path as photo_path, 
  			  feed.video_path as video_path, feed.privacy as privacy, 
  			  feed.university_domain as university_domain, feed.userhash_to as userhash_to, 
  			  feed.userhash_from as userhash_from, feed.date_time_yyyy_mm_dd_hh_mm as date_time_yyyy_mm_dd_hh_mm, 
  			  feed.status as status,
  			  user_from.fname as user_from_fname, user_from.lname as user_from_lname, user_from.position as user_from_position,
- 			  user_from.university_domain as user_from_university_domain
+ 			  user_from.university_domain as user_from_university_domain, user_from.profile_image_path as user_from_profile_image_path
  			  FROM sconnect_feed as feed
  			  INNER JOIN sconnect_user as user_from
  			  WHERE feed.userhash_from = user_from.userhash
@@ -62,9 +73,23 @@
  			   feed.text_data LIKE '%$searchQuery%' OR 
  			   feed.university_domain LIKE '%$searchQuery%' OR
  			   user_from.fname LIKE '%$searchQuery%' OR
- 			   user_from.lname LIKE '%$searchQuery%'
- 			   )
- 			  ORDER BY feed.date_time_yyyy_mm_dd_hh_mm DESC";
+ 			   user_from.lname LIKE '%$searchQuery%' OR
+ 			   user_from.userhash LIKE '%$searchQuery%' OR
+			  user_from.email LIKE '%$searchQuery%' 			   )
+ 			   AND
+ 			  (user_from.position LIKE '%$filterPosition%')
+ 			  AND
+ 			  (feed.university_domain LIKE '%$filterUniversity%')
+ 			  AND
+ 			  (feed.status = '$searchStatus')
+ 			  AND
+ 			  (user_from.status = 'APPROVED')";
+
+ 	if($searchStatus != '0') {
+ 		//$query .= " AND (userhash_to = '$userhash') ";
+ 	}
+
+ 	$query .= "ORDER BY feed.date_time_yyyy_mm_dd_hh_mm DESC";
 
 	$result = mysqli_query ($sql_connection, $query);
 
@@ -98,6 +123,7 @@
 		$feed['user_from_position'] = $row['user_from_position'];
 		$feed['date_time_yyyy_mm_dd_hh_mm'] = $row['date_time_yyyy_mm_dd_hh_mm'];
 		$feed['status'] = $row['status'];
+		$feed['user_from_profile_image_path'] = $row['user_from_profile_image_path'];
 
 		$feeds[$row['feedhash']] = $feed;
 	}

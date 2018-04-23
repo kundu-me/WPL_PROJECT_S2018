@@ -11,7 +11,7 @@
 		jQuery("table#messageList #msgEach:first").focus();
     }
 
-	// function to make AJAX call to db for message-list fetch for the user
+	// function to make continuous AJAX calls to db for message-list fetch for the user
 	function ajaxCallToFetchMsgList() {
 		$.ajax({
 		type: "POST",
@@ -26,10 +26,15 @@
 			var messageList = objResult.messageList;
 			messageData = objResult.messageData;
 			console.log(messageList);
+			$("#messageList tbody").empty();
 
 			for(var row in messageList) {
 					$("#messageList tbody").append(messageList[row]);	
 			}
+			
+			setInterval(function(){ 
+				ajaxCallToFetchMsgList(); 
+			}, 20000);
 		}
 		});
 	}

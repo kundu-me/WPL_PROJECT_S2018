@@ -24,11 +24,6 @@
 	$date_time_yyyy_mm_dd_hh_mm = $_POST['currentDateTime'];
 	$privacy = $_POST['privacyType'];
 
-	//var_dump($_FILES);
-	var_dump($_FILES["image"]);
-	var_dump($_FILES["video"]);
-	//var_dump($_POST);
-
 	$feedhash = uniqid();
 	$userhash_to = "Timeline";
 	$status = "0"; //0 - OK, 1 - Deleted
@@ -55,12 +50,12 @@
 
 	if ($_FILES["image"] != NULL) {
 		$target_image_dir = "../../feed_data/image/";
-		$target_image_file = $target_image_dir.$userhash_from.'_'.$_FILES["image"]["name"];	
+		$target_image_file = $target_image_dir.$feedhash.'_'.$_FILES["image"]["name"];
 	}
 
 	if ($_FILES["video"] != NULL) {
 		$target_video_dir = "../../feed_data/video/";
-		$target_video_file = $target_video_dir.$userhash_from.'_'.$_FILES["video"]["name"];
+		$target_video_file = $target_video_dir.$feedhash.'_'.$_FILES["video"]["name"];
 	}
 
 	if ($text_data != NULL && $target_image_file == NULL && $target_video_file == NULL) {
@@ -80,11 +75,6 @@
 		$query = "INSERT INTO sconnect_feed VALUES('$feedhash','$text_data','$target_image_file','$target_video_file','$privacy','$university_domain','$userhash_to','$userhash_from','$date_time_yyyy_mm_dd_hh_mm','$status')";
 	}
 
-	/*if (move_uploaded_file($_FILES["video"]["tmp_name"], $target_video_file) && 
-		move_uploaded_file($_FILES["image"]["tmp_name"], $target_image_file)) {
-
-		$query = "INSERT INTO sconnect_feed VALUES('$feedhash','$text_data','$target_image_file','$target_video_file','$privacy','$university_domain','$userhash_to','$userhash_from','$date_time_yyyy_mm_dd_hh_mm','$status')";*/
-
 	if (mysqli_query($sql_connection, $query)) {
 
 		$returnObject = new stdClass();
@@ -103,7 +93,6 @@
 
 		exit();
 	}
-	/*}*/
-
+	
 	include('../connection_close.php');
 ?>

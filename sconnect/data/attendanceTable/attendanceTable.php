@@ -49,7 +49,8 @@
 
  	$query = "SELECT attendancehash, date_mm, date_dd, date_yyyy, lecture, student_id_time_list
  			  FROM sconnect_attendance
- 			  WHERE coursehash = '$coursehash';";
+ 			  WHERE coursehash = '$coursehash'
+ 			  AND status='CLOSE';";
 	$result = mysqli_query ($sql_connection, $query);
 
 	if($result == null || $result->num_rows == 0) {

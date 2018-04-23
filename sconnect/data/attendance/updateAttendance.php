@@ -23,13 +23,12 @@
 		$errmsg_arr[] = 'Incomplete Data';
 		$errflag = true;
 	}
- 
- 	$tableRows = array("<tr><td>Student</td><td>Time</td></tr>");
 	
+	$tableRows = [];
 	//If there are input validations, redirect back to the login form
 	if($errflag) {
 
-		array_push($tableRows, "<tr><td colspan='2'>No Student</td></tr>");
+		array_push($tableRows, "<tr><td>No Student</td><td>00:00</td></tr>");
 		echo json_encode($tableRows);
 
 		exit();
@@ -45,7 +44,29 @@
 
 	if($result->num_rows == 0) {
 		
-		array_push($tableRows, "<tr><td colspan='2'>No Student</td></tr>");
+		array_push($tableRows, "<tr><td>No Student</td><td>00:00</td></tr>");
+		array_push($tableRows, "<tr><td>&nbsp;</td><td>&nbsp;</td></tr>");
+		array_push($tableRows, "<tr><td>&nbsp;</td><td>&nbsp;</td></tr>");
+		array_push($tableRows, "<tr><td>&nbsp;</td><td>&nbsp;</td></tr>");
+		array_push($tableRows, "<tr><td>&nbsp;</td><td>&nbsp;</td></tr>");
+		array_push($tableRows, "<tr><td>&nbsp;</td><td>&nbsp;</td></tr>");
+		array_push($tableRows, "<tr><td>&nbsp;</td><td>&nbsp;</td></tr>");
+		array_push($tableRows, "<tr><td>&nbsp;</td><td>&nbsp;</td></tr>");
+		array_push($tableRows, "<tr><td>&nbsp;</td><td>&nbsp;</td></tr>");
+		array_push($tableRows, "<tr><td>&nbsp;</td><td>&nbsp;</td></tr>");
+		array_push($tableRows, "<tr><td>&nbsp;</td><td>&nbsp;</td></tr>");
+		array_push($tableRows, "<tr><td>&nbsp;</td><td>&nbsp;</td></tr>");
+		array_push($tableRows, "<tr><td>&nbsp;</td><td>&nbsp;</td></tr>");
+		array_push($tableRows, "<tr><td>&nbsp;</td><td>&nbsp;</td></tr>");
+		array_push($tableRows, "<tr><td>&nbsp;</td><td>&nbsp;</td></tr>");
+		array_push($tableRows, "<tr><td>&nbsp;</td><td>&nbsp;</td></tr>");
+		array_push($tableRows, "<tr><td>&nbsp;</td><td>&nbsp;</td></tr>");
+		array_push($tableRows, "<tr><td>&nbsp;</td><td>&nbsp;</td></tr>");
+		array_push($tableRows, "<tr><td>&nbsp;</td><td>&nbsp;</td></tr>");
+		array_push($tableRows, "<tr><td>&nbsp;</td><td>&nbsp;</td></tr>");
+		array_push($tableRows, "<tr><td>&nbsp;</td><td>&nbsp;</td></tr>");
+		array_push($tableRows, "<tr><td>&nbsp;</td><td>&nbsp;</td></tr>");
+		array_push($tableRows, "<tr><td>&nbsp;</td><td>&nbsp;</td></tr>");
 		echo json_encode($tableRows);
 
 		exit();
@@ -58,6 +79,28 @@
 	        
 	    }
 
+		array_push($tableRows, "<tr><td>&nbsp;</td><td>&nbsp;</td></tr>");
+		array_push($tableRows, "<tr><td>&nbsp;</td><td>&nbsp;</td></tr>");
+		array_push($tableRows, "<tr><td>&nbsp;</td><td>&nbsp;</td></tr>");
+		array_push($tableRows, "<tr><td>&nbsp;</td><td>&nbsp;</td></tr>");
+		array_push($tableRows, "<tr><td>&nbsp;</td><td>&nbsp;</td></tr>");
+		array_push($tableRows, "<tr><td>&nbsp;</td><td>&nbsp;</td></tr>");
+		array_push($tableRows, "<tr><td>&nbsp;</td><td>&nbsp;</td></tr>");
+		array_push($tableRows, "<tr><td>&nbsp;</td><td>&nbsp;</td></tr>");
+		array_push($tableRows, "<tr><td>&nbsp;</td><td>&nbsp;</td></tr>");
+		array_push($tableRows, "<tr><td>&nbsp;</td><td>&nbsp;</td></tr>");
+		array_push($tableRows, "<tr><td>&nbsp;</td><td>&nbsp;</td></tr>");
+		array_push($tableRows, "<tr><td>&nbsp;</td><td>&nbsp;</td></tr>");
+		array_push($tableRows, "<tr><td>&nbsp;</td><td>&nbsp;</td></tr>");
+		array_push($tableRows, "<tr><td>&nbsp;</td><td>&nbsp;</td></tr>");
+		array_push($tableRows, "<tr><td>&nbsp;</td><td>&nbsp;</td></tr>");
+		array_push($tableRows, "<tr><td>&nbsp;</td><td>&nbsp;</td></tr>");
+		array_push($tableRows, "<tr><td>&nbsp;</td><td>&nbsp;</td></tr>");
+		array_push($tableRows, "<tr><td>&nbsp;</td><td>&nbsp;</td></tr>");
+		array_push($tableRows, "<tr><td>&nbsp;</td><td>&nbsp;</td></tr>");
+		array_push($tableRows, "<tr><td>&nbsp;</td><td>&nbsp;</td></tr>");
+		array_push($tableRows, "<tr><td>&nbsp;</td><td>&nbsp;</td></tr>");
+		array_push($tableRows, "<tr><td>&nbsp;</td><td>&nbsp;</td></tr>");
 		echo json_encode($tableRows);
 
 	    exit();

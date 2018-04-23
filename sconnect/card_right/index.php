@@ -44,12 +44,13 @@
 
           var searchUser = searchUsers[key];
 
-          var profile =   '<div class="row marketing right-search-profile-div" onclick="viewProfile(this.id)">' +
+          var profile =   '<div class="row marketing right-search-profile-div">' +
                           '<div class="col-sm-12 col-md-12 col-lg-3" style="text-align: left;">' + 
                           '<span><img alt="profile image" class="right-user-profile-image" src="../user_data/' + searchUser['profile_image_path'] + '"></span>' +
                           '</div>' + 
                           '<div class="col-sm-12 col-md-12 col-lg-9" style="text-align: left;" class="user-info">' + 
-                          '<span class="user-name">' + searchUser['fname'] + ' ' + searchUser['lname'] + '</span>' +
+                          '<span class="user-name" onclick="viewUserProfilePage(\'' + searchUser['userhash'] + '\')">' +
+                           searchUser['fname'] + ' ' + searchUser['lname'] + '</span>' +
                           '<br>'+
                           '<span class="user-university">' + searchUser['university_domain'] + '</span>' +
                           '<br>'+

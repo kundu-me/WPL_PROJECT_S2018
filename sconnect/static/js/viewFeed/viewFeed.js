@@ -30,12 +30,12 @@ function getFeedPost(isAll) {
             '<span><img class="feed-user-profile-image" src="../user_data/profile_image/sample.jpg"></span>' + 
             '</div>' + 
             '<div class="col-sm-12 col-md-12 col-lg-9" style="text-align: left;">' + 
-            '<span class="feed-user-name">a</span>' + 
+            '<span class="feed-user-name">Feed does not exists</span>' + 
             '<br>' + 
-            '<span class="feed-user-data">a</span>' + 
+            '<span class="feed-user-data"></span>' + 
             '<br>' + 
             '<br>' + 
-            '<span class="feed-text-data">a</span>' + 
+            '<span class="feed-text-data"></span>' + 
             '</div>' + 
             '</div>';
 
@@ -58,18 +58,31 @@ function getFeedPost(isAll) {
         var countDislikes = activities[currFeedhash] == undefined? 0: (activities[currFeedhash]['dislikes'] == undefined? 0 : activities[currFeedhash]['dislikes']);
 
 
-        var feed = '<div class="row marketing search-feed-div" id="' + currFeedhash + '">' +
-                   '<div class="col-sm-12 col-md-12 col-lg-3" style="text-align: left;">' + 
-                   '<span><img class="feed-user-profile-image" src="../user_data/profile_image/sample.jpg"></span>' + 
+        var feed = '<div class="row marketing search-feed-div" id="' + currFeedhash + '">';
+
+        if(searchFeed['photo_path'] != null || searchFeed['video_path'] != null) {
+          feed = '<div class="row marketing search-feed-div-with-element" id="' + currFeedhash + '">';
+        }
+
+        feed +=    '<div class="col-sm-12 col-md-12 col-lg-3" style="text-align: left;">' + 
+                   '<span><img class="feed-user-profile-image" src="../user_data/' + searchFeed['user_from_profile_image_path'] + '"></span>' + 
                    '</div>' + 
                    '<div class="col-sm-12 col-md-12 col-lg-8" style="text-align: left;">' + 
-                   '<span class="feed-user-name">' + searchFeed['user_from_name'] + ' (' + searchFeed['userhash_from'] + ')</span>' + 
+                   '<span class="feed-user-name">' + searchFeed['user_from_name'] + '</span>' + 
                    '<br>' + 
                    '<span class="feed-user-data">' + searchFeed['user_from_university_domain'] + ' ' + searchFeed['user_from_position'] + '</span>' + 
                    '<br>' + 
                    '<br>' + 
-                   '<span class="feed-text-data">' + searchFeed['text_data'] + '</span>' + 
-                   '</div>' +
+                   '<span class="feed-text-data">' + searchFeed['text_data'] + '</span>';
+
+      if(searchFeed['photo_path'] != null) {
+          feed += '<div style="height:200px; padding-top:10px;"><embed src="../feed_data/image/' + searchFeed['photo_path'] + '" width="100%" height="250px;" scale="tofit"></embed></div>';
+        }
+        else if(searchFeed['video_path'] != null) {
+          feed += '<div style="height:200px; padding-top:10px;"><video width="100%" height="250px;" controls><source src="../feed_data/video/' + searchFeed['video_path'] + '" type="video/mp4"></video></div>';
+        }
+        
+        feed +=    '</div>' +
                    '<div class="col-sm-12 col-md-12 col-lg-1">';
 
         if($("#session-position").val() == "admin") {
@@ -90,7 +103,7 @@ function getFeedPost(isAll) {
 
         feed += '<div class="row marketing search-comment-div">';
 
-         feed += '<div class="col-sm-12 col-md-12 col-lg-1" style="text-align: left;"><span><img class="comment-user-profile-image" src="../user_data/profile_image/sample.jpg"></span></div>'; 
+         feed += '<div class="col-sm-12 col-md-12 col-lg-1" style="text-align: left;"><span><img class="comment-user-profile-image" src="../user_data/' + searchFeed['user_from_profile_image_path'] + '"></span></div>'; 
          feed += '<div class="col-sm-12 col-md-12 col-lg-10 user-comment-spans" style="text-align: left;">' + 
                   '<span class="comment-user-name">' + $("#session-fname").val() + ' ' + $("#session-lname").val() + '</span>'+
                   '<br>' + 
@@ -129,7 +142,7 @@ function getFeedPost(isAll) {
 
              feed += '<div class="row marketing search-comment-div">';
 
-             feed += '<div class="col-sm-12 col-md-12 col-lg-1" style="text-align: left;"><span><img class="comment-user-profile-image" src="../user_data/profile_image/sample.jpg"></span></div>'; 
+             feed += '<div class="col-sm-12 col-md-12 col-lg-1" style="text-align: left;"><span><img class="comment-user-profile-image" src="../user_data/' + comment['user_from_profile_image_path'] + '"></span></div>'; 
              feed += '<div class="col-sm-12 col-md-12 col-lg-10 user-comment-spans" style="text-align: left;">' + 
                       '<span class="comment-user-name">' + comment['user_from_name'] + '</span>'+
                       '<br>' + 

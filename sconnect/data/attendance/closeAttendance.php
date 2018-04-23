@@ -42,8 +42,29 @@
 
 	$userhash_escape = mysqli_real_escape_string($sql_connection, $userhash);
 
+	$query = "SELECT student_id, time_24hr_hh_mm
+					FROM sconnect_attendance_realtime
+ 			  		WHERE attendancehash = '$attendancehash'";
+
+	$result = mysqli_query ($sql_connection, $query);
+
+	$student_id_time_list = "";
+
+	$blnFirstTime = true;
+	while($row = $result->fetch_assoc()) {
+   
+   		if($blnFirstTime) {
+    		$student_id_time_list .= $row['student_id'] . "_" . str_replace(":", "", $row['time_24hr_hh_mm']);
+    		$blnFirstTime = false;
+    	}
+    	else {
+    		$student_id_time_list .= "," . $row['student_id'] . "_" . str_replace(":", "", $row['time_24hr_hh_mm']);
+    	}
+    
+	}
+
  	$query = "UPDATE sconnect_attendance
- 			  SET status = 'CLOSE'
+ 			  SET status = 'CLOSE', student_id_time_list = '$student_id_time_list'
  			  WHERE coursehash = '$coursehash' and attendancehash = '$attendancehash'";
 
 

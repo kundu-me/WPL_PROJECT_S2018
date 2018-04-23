@@ -16,6 +16,8 @@
  
 	//Get the POST values
 	$searchQuery = $_POST['searchQuery'];
+	$filterPosition = isset($_POST['position']) ? $_POST['position'] : '';
+	$filterUniversity = isset($_POST['university']) ? $_POST['university'] : '';
 	//$university_domain = $_SESSION['university_domain'];
 	//$userhash = $_SESSION['userhash'];
  
@@ -53,9 +55,19 @@
  
  	$searchQuery_escape = mysqli_real_escape_string($sql_connection, $searchQuery);
 
+ 	$filterPosition = mysqli_real_escape_string($sql_connection, $filterPosition);
+ 	$filterUniversity = mysqli_real_escape_string($sql_connection, $filterUniversity);
+
  	$query = "SELECT userhash, fname, lname, profile_image_path, university_domain, position
  			  FROM sconnect_user
- 			  WHERE fname LIKE '%$searchQuery_escape%' OR lname LIKE '%$searchQuery_escape%'";
+ 			  WHERE 
+ 			  (email LIKE '%$searchQuery_escape%' OR fname LIKE '%$searchQuery_escape%' OR 
+ 			  lname LIKE '%$searchQuery_escape%' OR status LIKE '%$searchQuery_escape%')
+ 			  AND
+ 			  (position LIKE '%$filterPosition%')
+ 			  AND
+ 			  (university_domain LIKE '%$filterUniversity%')
+ 			  AND status='APPROVED'";
 
 	$result = mysqli_query ($sql_connection, $query);
 

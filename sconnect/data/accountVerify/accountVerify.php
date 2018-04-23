@@ -161,9 +161,19 @@
 
 				$returnObject = new stdClass();
 				$returnObject->success = "true";
-				$returnObject->message = "Account Verification Success! Logging In...";
-				$returnObject->redirect = "true";
-				$returnObject->redirectURL = "../feed/";
+
+				if($updated_status == "PENDING_DOCUMENT") {
+
+					$returnObject->message = "Account Verification Success! Pending Document Verification";
+					$returnObject->redirect = "false";
+				}
+				else {
+
+					$returnObject->message = "Account Verification Success! Logging In...";
+					$returnObject->redirect = "true";
+					$returnObject->redirectURL = "../feed/";
+				}
+
 				echo json_encode($returnObject);
 
 				exit();

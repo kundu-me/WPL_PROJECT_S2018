@@ -30,4 +30,21 @@
     </div>
  </div>
 </div>
+
+<script type="text/javascript">
+  function deleteFeed(feedhash) {
+
+    $.ajax({
+      type: "POST",
+      url: "../data/feed/deleteFeed.php",
+      data: {feedhash: feedhash},
+      success: function(result) {
+
+        console.log(result);
+
+        location.href= "../feed/";
+      }
+    });
+}
+</script>
 <?php include('../header_footer/footer.php'); ?>
