@@ -17,11 +17,13 @@
 	//Get the POST values
 	$searchQuery = $_POST['searchQuery'];
 
+	$searchStatus = isset($_POST['status'])? isset($_POST['status']) : '0';
+
 	$filterPosition = isset($_POST['position']) ? $_POST['position'] : '';
 	$filterUniversity = isset($_POST['university']) ? $_POST['university'] : '';
 
 	//$university_domain = $_SESSION['university_domain'];
-	//$userhash = $_SESSION['userhash'];
+	$userhash = $_SESSION['userhash'];
  
 	//Input Validations
 	// if($university_domain == '') {
@@ -51,6 +53,8 @@
 
  <?php
 
+ 	$searchStatus = mysqli_real_escape_string($sql_connection, $searchStatus);
+
 	$filterPosition = mysqli_real_escape_string($sql_connection, $filterPosition);
  	$filterUniversity = mysqli_real_escape_string($sql_connection, $filterUniversity);
 
@@ -76,8 +80,13 @@
  			  AND
  			  (feed.university_domain LIKE '%$filterUniversity%')
  			  AND
- 			  (feed.status = '0')
- 			  ORDER BY feed.date_time_yyyy_mm_dd_hh_mm DESC";
+ 			  (feed.status = '$searchStatus')";
+
+ 	if($searchStatus != '0') {
+ 		//$query .= " AND (userhash_to = '$userhash') ";
+ 	}
+
+ 	$query .= "ORDER BY feed.date_time_yyyy_mm_dd_hh_mm DESC";
 
 	$result = mysqli_query ($sql_connection, $query);
 
