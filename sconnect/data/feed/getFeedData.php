@@ -17,7 +17,7 @@
 	//Get the POST values
 	$searchQuery = $_POST['searchQuery'];
 
-	$searchStatus = isset($_POST['status'])? isset($_POST['status']) : '0';
+	$searchStatus = isset($_POST['status'])? $_POST['status'] : '0';
 
 	$filterPosition = isset($_POST['position']) ? $_POST['position'] : '';
 	$filterUniversity = isset($_POST['university']) ? $_POST['university'] : '';
