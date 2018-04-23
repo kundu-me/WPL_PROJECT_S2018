@@ -66,7 +66,8 @@
  			  AND
  			  (position LIKE '%$filterPosition%')
  			  AND
- 			  (university_domain LIKE '%$filterUniversity%')";
+ 			  (university_domain LIKE '%$filterUniversity%')
+ 			  AND status='APPROVED'";
 
 	$result = mysqli_query ($sql_connection, $query);
 

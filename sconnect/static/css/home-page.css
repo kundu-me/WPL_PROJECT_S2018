@@ -371,6 +371,17 @@ img {vertical-align: middle;}
     height: 150px;
     cursor: pointer;
   }
+
+  .search-feed-div-with-element {
+    padding-left: 20px;
+    padding-top: 10px;
+    margin-top: 20px;
+    border: 2px;
+    background: white;
+    height: 350px;
+    cursor: pointer;
+  }
+
   .search-feed-divs {
     overflow-y: scroll;
   }

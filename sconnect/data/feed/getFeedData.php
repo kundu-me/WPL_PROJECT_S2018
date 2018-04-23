@@ -81,7 +81,9 @@
  			  AND
  			  (feed.university_domain LIKE '%$filterUniversity%')
  			  AND
- 			  (feed.status = '$searchStatus')";
+ 			  (feed.status = '$searchStatus')
+ 			  AND
+ 			  (user_from.status = 'APPROVED')";
 
  	if($searchStatus != '0') {
  		//$query .= " AND (userhash_to = '$userhash') ";
