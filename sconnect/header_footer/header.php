@@ -76,7 +76,6 @@
 				<a class="a-header-href" href="../message" title="Message">M</a>
 				<a class="a-header-href" href="<?php echo $_SESSION['position'] == 'faculty'? '../attendance' : '../attendancee' ?>" title="Attendance">A</a>
 				<a class="a-header-href" href="../profile" title="Profile">P</a>
-				<a class="a-header-href" href="../feed" title="Settings">*</a>
 				<a class="a-header-href" href="../help" title="Help Me">?</a>
 				&nbsp;&nbsp;
 				<a class="a-header-logout" href="../session_logout.php">Logout</a>
