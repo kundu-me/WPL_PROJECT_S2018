@@ -67,6 +67,8 @@
                         <select class="input-signup-email input-sm" type="text" name="signup-email-domain" id="signup-email-domain">
                            <option value="">domain</option>
                            <option value="utdallas">utdallas</option>
+                           <option value="uta">uta</option>
+                           <option value="tamu">tamu</option>
                         </select>
                         <span class="signup-label">.edu</span>
                      </td>

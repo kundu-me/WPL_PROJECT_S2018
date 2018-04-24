@@ -18,7 +18,7 @@
     $.ajax({
       type: "POST",
       url: "../data/searchProfile/searchProfile.php",
-      data: { searchQuery: '' },
+      data: { searchQuery: '', university:$("#session-university_domain").val() },
       async: true,
       success: function(result) {
 
