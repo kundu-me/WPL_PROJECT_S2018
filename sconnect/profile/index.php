@@ -59,7 +59,7 @@
 								<div class="email-div col-lg-12 col-lg-3"><label>Email: </label><br><label id="email"><?php echo $_SESSION['email']; ?></label>
 								</div>
 							</div>
-							<div class="row">
+							<div class="row" <?php if($_SESSION['position'] == 'faculty') {echo "style= 'display: none';";}?>>
 								<div class="col-lg-12 col-lg-10"><label>Courses enrolled: </label>
 									<i class="fa fa-wrench" id="courses_hide"></i>
 									<div>
