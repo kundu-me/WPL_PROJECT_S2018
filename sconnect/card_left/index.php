@@ -5,7 +5,7 @@
     @description: This page verifies the user with the email and OTP
 -->
 <?php include('../data/message/getNewMessageCount.php'); ?>
-<div class="row" style="text-align: center; background: white; height: 800px; width: 340px; position: fixed;">
+<div class="row" style="text-align: center; background: white; height: 800px; width: 350px; position: fixed;">
 	<img src="<?php echo "../user_data/" .  $_SESSION['profile_image_path'] ?>"  style="margin-top: 15px; width:100; height: 300px;">
 	<br>
 	<br>
