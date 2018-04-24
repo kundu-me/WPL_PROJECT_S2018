@@ -88,7 +88,7 @@
  			  AND
  			  (       (feed.privacy = 'Public') 
  			       OR (feed.privacy = 'Private' AND feed.userhash_from = '$userhash')
- 			       OR (feed.privacy = 'University' AND user_from.university_domain = '$university_domain')
+ 			       OR (feed.privacy = 'University' AND user_from.university_domain = '$session_university_domain')
  			  )";
 
  	if($searchStatus == '2') {

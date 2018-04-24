@@ -4,7 +4,7 @@
     @description: This page verifies the user with the email and OTP
 -->
 
-<div id= "right-search-profile-divs">
+<div id= "right-search-profile-divs" style="background: white; height: 800px; width: 360px; position: fixed; overflow-y: scroll;">
 </div>
 
 <script type="text/javascript">
