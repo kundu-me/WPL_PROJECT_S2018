@@ -27,7 +27,7 @@
 		if($_SESSION['resume_path']==null) {
 			$_SESSION['resume_path'] = '../../user_data/resume/sample.pdf';
 		}
-		echo '<a href="sconnect/' .$_SESSION['resume_path'].'" target="_blank"><embed src="sconnect/' .$_SESSION['resume_path'].'" width="200px" height="295px" scale="tofit"></embed></a>'
+		echo '<a href="../user_data/' .$_SESSION['resume_path'].'" target="_blank"><embed src="../user_data/' .$_SESSION['resume_path'].'" width="200px" height="295px" scale="tofit"></embed></a>'
 		?>
 		<div>
 			<input id="my_resume" type="file" name="resume_upload">

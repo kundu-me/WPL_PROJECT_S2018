@@ -6,7 +6,7 @@
 	include('../connection_open.php');
 
 	$user_hash = $_SESSION['userhash'];
-	$target_dir = "../user_data/profile_image/";
+	$target_dir = "../../user_data/profile_image/";
 	$target_file = $target_dir . $user_hash. ".jpg";
 	$uploadOk = 1;
 	$fileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
@@ -37,7 +37,7 @@
 			$returnObject->message =  "Your file ".basename($_FILES["dp"]["name"])." has been successfully uploaded";
 			$returnObject->image_link = $target_file;
 			echo json_encode($returnObject);		
-			$query = "UPDATE sconnect_user SET profile_image_path = '$target_file' WHERE userhash = '$user_hash'";
+			$query = "UPDATE sconnect_user SET profile_image_path =  'profile_image/" .$user_hash. ".jpg' WHERE userhash = '$user_hash'";
 			$sql_connection->query($query) or die("Error : ".mysqli_error($sql_connection));
 		}
 
@@ -46,7 +46,7 @@
 		}
 	}
 
-	$_SESSION["profile_image_path"] = $target_file;
+	$_SESSION["profile_image_path"] = "profile_image/" .$user_hash. ".jpg";
 
 	/*
 	*	If file was successfully uploaded in the destination folder

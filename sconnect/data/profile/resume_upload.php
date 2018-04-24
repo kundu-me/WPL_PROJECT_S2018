@@ -5,7 +5,7 @@
 	$user_hash = $_SESSION['userhash'];
 	$target_dir = "../../user_data/resume/";
 	//$target_file = $target_dir . basename($_FILES["resume_upload"]["name"]);
-	$target_file = $target_dir . $user_hash. ".pdf";
+	$target_file = "../usr_data/resume/" .$user_hash. ".pdf";
 	$uploadOk = 1;
 	$fileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 
