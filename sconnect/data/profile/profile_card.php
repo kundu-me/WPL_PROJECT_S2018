@@ -4,7 +4,7 @@
 		if($_SESSION['profile_image_path']==null) {
 			$_SESSION['profile_image_path'] = '../user_data/profile_image/profile.png';
 		}
-		echo '<img src="sconnect/'.$_SESSION['profile_image_path'].'" alt="Display Image" style="width: 100%" id="profile_image">';
+		echo '<img src="../user_data/'.$_SESSION['profile_image_path'].'" alt="Display Image" style="width: 100%" id="profile_image">';
 		?>
 		<div>
 			<input id="my_image" type="file" name="image_upload">

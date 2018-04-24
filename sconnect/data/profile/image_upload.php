@@ -6,7 +6,7 @@
 	include('../connection_open.php');
 
 	$user_hash = $_SESSION['userhash'];
-	$target_dir = "../../user_data/profile_image/";
+	$target_dir = "../user_data/profile_image/";
 	$target_file = $target_dir . $user_hash. ".jpg";
 	$uploadOk = 1;
 	$fileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
