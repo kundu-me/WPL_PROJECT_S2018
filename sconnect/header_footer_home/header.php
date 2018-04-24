@@ -9,6 +9,7 @@
 <head>
     <meta charset="utf-8">
     <title>SConnect</title>
+    <link rel="shortcut icon" href="../static/img/sconnect-logo-3.jpg" type="image/x-icon">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -23,7 +24,7 @@
 
 
 	<div class="row marketing">
-		<div class="row header">
+		<div class="row header header-fixed">
 		  <div class="col-sm-12 col-md-12 col-lg-3">
 		     <table class="table-responsive cursor-pointer">
 		        <tbody>
@@ -53,6 +54,7 @@
 		  </div>
 		</div>
 	</div>
+	<div class="after-header-fixed"></div>
 	<style type="text/css">
 		.a-header-href {
 		    background-color: white;
@@ -80,6 +82,19 @@
 		    margin: 4px 2px;
 		    cursor: pointer;
 		    text-align: right;
+		}
+		.header-fixed {
+			position: fixed;
+		    width: 100%;
+		    top: 0;
+		    left: 0;
+		    right: 0;
+		    z-index:9999;
+		}
+
+		.after-header-fixed {
+
+			margin-top:80px;
 		}
 	</style>
 	<script type="text/javascript">

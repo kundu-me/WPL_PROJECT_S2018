@@ -4,9 +4,9 @@
     @page: Account Verification UI
     @description: This page verifies the user with the email and OTP
 -->
-
-<div class="row" style="text-align: center;">
-	<img src="<?php echo "../user_data/" .  $_SESSION['profile_image_path'] ?>"  style="width:100; height: 300px;">
+<?php include('../data/message/getNewMessageCount.php'); ?>
+<div class="row" style="text-align: center; background: white; height: 800px; width: 350px; position: fixed;">
+	<img src="<?php echo "../user_data/" .  $_SESSION['profile_image_path'] ?>"  style="margin-top: 15px; width:100; height: 300px;">
 	<br>
 	<br>
 	<span class="sconnect-profile-header"><h3><?php echo " " . $_SESSION['fname'] . " " . $_SESSION['lname'] ?> </h3></span>
@@ -17,10 +17,6 @@
 	</span>
 
 	<span class="sconnect-profile-header">
-		<h4><a href="../message/"><u>Message</u></a></h4>
-	</span>
-
-	<span class="sconnect-profile-header">
 		<h4><a href="../myFeed/"><u>My Posts</u></a></h4>
 	</span>
 
@@ -28,6 +24,10 @@
 		<h4><a href="../<?php echo ($_SESSION['position'] == 'faculty')? "attendance" : "attendancee" ?> "><u>Class Attendance</u></a></h4>
 	</span>
 
+	<span class="sconnect-profile-header">
+		<h4><a href="../message/"><u>Message <?php echo " (" . $getNewMessageCount . " Unread)" ?></u></a></h4>
+	</span>
+	
 	<span class="sconnect-profile-header">
 		<h4><a href="../approveUser/"><u>Approve Pending User</u></a></h4>
 	</span>

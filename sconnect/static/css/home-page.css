@@ -423,8 +423,9 @@ img {vertical-align: middle;}
   .feed-text-data {
 
     color: black;
-    font-style: italic;
-    font-size: 16px;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: Helvetica;
   }
 
   .search-profile-div {
@@ -517,32 +518,6 @@ img {vertical-align: middle;}
     border: 2px;
     background: white;
     cursor: pointer;
-  }
- 
-  .feed-user-profile-image {
-    width:120px;
-    height:120px;
-    vertical-align: middle;
-    padding-top: 10px;
-  }
-  .feed-user-name {
-
-    color: blue;
-    text-decoration: underline;
-    font-weight: bold;
-    font-size: 18px;
-  }
-  .feed-user-data {
-
-    color: black;
-    font-size: 12px;
-    font-style: italic;
-  }
-  .feed-text-data {
-
-    color: black;
-    font-style: italic;
-    font-size: 16px;
   }
 
   .user-comment-spans {

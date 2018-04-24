@@ -93,6 +93,9 @@
 						 '$signup_lname_escape', 'PENDING_EMAIL', '$user_OTP', 'profile_image/sample.jpg', 'resume/sample.pdf')";
 
 	if (mysqli_query($sql_connection, $query_insert_user)) {
+
+		$query_insert_user = "INSERT INTO sconnect_privacy_settings (userhash) VALUES ('$user_hash_code')";
+		mysqli_query($sql_connection, $query_insert_user);
     	
     	$returnObject = new stdClass();
 		$returnObject->success = "true";

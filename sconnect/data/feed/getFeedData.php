@@ -17,13 +17,14 @@
 	//Get the POST values
 	$searchQuery = $_POST['searchQuery'];
 
-	$searchStatus = isset($_POST['status'])? isset($_POST['status']) : '0';
+	$searchStatus = isset($_POST['status'])? $_POST['status'] : '0';
 
 	$filterPosition = isset($_POST['position']) ? $_POST['position'] : '';
 	$filterUniversity = isset($_POST['university']) ? $_POST['university'] : '';
 
 	//$university_domain = $_SESSION['university_domain'];
 	$userhash = $_SESSION['userhash'];
+	$session_university_domain = $_SESSION['university_domain'];
  
 	//Input Validations
 	// if($university_domain == '') {
@@ -70,23 +71,33 @@
  			  WHERE feed.userhash_from = user_from.userhash
  			  AND 
  			  (
- 			   feed.text_data LIKE '%$searchQuery%' OR 
- 			   feed.university_domain LIKE '%$searchQuery%' OR
- 			   user_from.fname LIKE '%$searchQuery%' OR
- 			   user_from.lname LIKE '%$searchQuery%' OR
- 			   user_from.userhash LIKE '%$searchQuery%' OR
+ 			  feed.text_data LIKE '%$searchQuery%' OR 
+ 			  feed.university_domain LIKE '%$searchQuery%' OR
+ 			  user_from.fname LIKE '%$searchQuery%' OR
+ 			  user_from.lname LIKE '%$searchQuery%' OR
+ 			  user_from.userhash LIKE '%$searchQuery%' OR
 			  user_from.email LIKE '%$searchQuery%' 			   )
- 			   AND
+ 			  AND
  			  (user_from.position LIKE '%$filterPosition%')
  			  AND
  			  (feed.university_domain LIKE '%$filterUniversity%')
  			  AND
  			  (feed.status = '$searchStatus')
  			  AND
- 			  (user_from.status = 'APPROVED')";
+ 			  (user_from.status = 'APPROVED')
+ 			  AND
+ 			  (       (feed.privacy = 'Public') 
+ 			       OR (feed.privacy = 'Private' AND feed.userhash_from = '$userhash')
+ 			       OR (feed.privacy = 'University' AND user_from.university_domain = '$session_university_domain')
+ 			  )";
 
- 	if($searchStatus != '0') {
- 		//$query .= " AND (userhash_to = '$userhash') ";
+ 	if($searchStatus == '2') {
+ 		
+ 		$query .= " AND (feed.userhash_to = '$userhash') AND (feed.status = '2') ";
+ 	}
+ 	else {
+
+ 		$query .= " AND (feed.status = '0') ";
  	}
 
  	$query .= "ORDER BY feed.date_time_yyyy_mm_dd_hh_mm DESC";

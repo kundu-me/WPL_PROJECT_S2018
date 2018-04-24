@@ -34,7 +34,7 @@
 			
 			setInterval(function(){ 
 				ajaxCallToFetchMsgList(); 
-			}, 20000);
+			}, 25000);
 		}
 		});
 	}
@@ -44,7 +44,7 @@
 		$.ajax({
 		type: "POST",
 		async: true,
-		url: "../data/message/updateMessagetable.php",
+		url: "../data/message/updateMessageTable.php",
 		data: {messageid:messageid},
 		success: function(result) {
 

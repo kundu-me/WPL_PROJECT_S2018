@@ -99,31 +99,6 @@
   .search-feed-divs {
     overflow-y: scroll;
   }
-  .feed-user-profile-image {
-    width:120px;
-    height:120px;
-    vertical-align: middle;
-    padding-top: 10px;
-  }
-  .feed-user-name {
-
-    color: blue;
-    text-decoration: underline;
-    font-weight: bold;
-    font-size: 18px;
-  }
-  .feed-user-data {
-
-    color: black;
-    font-size: 12px;
-    font-style: italic;
-  }
-  .feed-text-data {
-
-    color: black;
-    font-style: italic;
-    font-size: 16px;
-  }
   
   mark {
     background-color: #FFD700;
