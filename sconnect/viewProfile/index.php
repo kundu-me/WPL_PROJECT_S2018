@@ -77,8 +77,7 @@
 											<th class="col-lg-2">Code</th>
 											<th class="col-lg-3">Session</th>
 										</tr>
-										<tr><td>Advanced Sailing Maneuvers</td><td>AP 7522</td><td>Spring 2018</td></tr>
-										<tr><td>Crew Development Studies</td><td>AP 6344</td><td>Spring 2018</td></tr>
+										<?php include('../data/viewProfile/courses_populate.php'); ?>
 									</table>
 								</div>
 							</div>

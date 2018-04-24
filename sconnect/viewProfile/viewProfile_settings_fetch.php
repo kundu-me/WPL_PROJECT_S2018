@@ -2,7 +2,7 @@
 	
 	//include('../data/connection_open.php');
 
-	$user_hash = $_SESSION['userhash'];
+	$user_hash = $_GET['q'];
 
 	$settings_query  = $sql_connection->query("SELECT * FROM sconnect_privacy_settings WHERE userhash = '$user_hash'");
 
@@ -19,7 +19,11 @@
 	}
 
 	else{
-		echo "Unable to process request.";
+		$user_degree_view = 0;
+		$user_major_view = 0;
+		$user_courses_view = 0;
+		$user_dob_view = 0;
+		//echo "Unable to process request.";
 	}
 	
 

@@ -63,7 +63,7 @@
 												<th class="col-lg-2">Code</th>
 												<th class="col-lg-3">Session</th>
 											</tr>
-											<?php include('../data/profile/courses_populate.php'); ?>
+											<?php include('../data/viewProfile/courses_populate.php'); ?>
 										</table>
 									</div>
 								</div>
