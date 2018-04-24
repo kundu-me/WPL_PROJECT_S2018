@@ -1,35 +1,98 @@
-<!--
-    @author: Koulick Sankar Paul <koulick89@gmail.com>
-    @page: New Post Card (used in feed and viewProfile)
-    @description: This page shows the new post area for uploading text, photo and video
--->
+`<!-- @author: Gunjan Tomer
+	Profile Page for SConnect
+	Updated on: 03/28/2018 -->
 
-	<div id="newPost">
-		<div class="col-sm-12 col-md-12 col-lg-12">
-			<textarea placeholder="What's on your mind?" id="newPostTextArea" rows="8" cols="80"></textarea>
-			<label id="add_text"></label>
-		</div>
-		<div class="col-sm-12 col-md-12 col-lg-3" style="padding-left: 40px;">
-			<input type="file" id="my_image" name="image" accept="image/*">
-			<label for="my_image" class="custom-file-upload">
-				<h4><i class="fa fa-cloud-upload"></i>
-				Photo</h4>
-			</label>
-		</div>
+	<?php include('../header_footer/header.php'); ?>
+
+	<?php include('../data/connection_open.php') ?> 
+
+	<?php include('../data/viewProfile/viewProfile.php'); ?>
+
+	<?php include('viewProfile_settings_fetch.php'); ?>
+
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="../static/css/profile/profile_page.css">
+	<link rel="stylesheet" href="../static/css/feed/feed.css">
+	<script src="../static/js/viewProfile/viewProfile.js"></script>
+<!-- 	<script type="text/javascript" src="../static/js/profile/profile.js"></script>
+ -->	<title><?php echo "SConnect " .$fname.' '.$lname; ?></title>
+	<div id="page">
+		<input type="hidden" id="viewed_user_hash" <?php echo 'value="' .$_GET['q'].'"' ?>>
 		<div class="col-sm-12 col-md-12 col-lg-3">
-			<input type="file" id="my_video" name="video" accept="video/*">
-			<label for="my_video" class="custom-file-upload">
-				<h4><i class="fa fa-cloud-upload"></i> Video</h4>
-			</label>
+			<span class="left_pane">
+				<div class="card container">
+					<?php
+					if($profile_image_path==null) {
+						$profile_image_path = 'sample.jpg';
+					}
+					echo '<img src="../user_data/' .$profile_image_path.'" alt="Display Image" style="width: 100%">'
+					?>
+					<?php 
+					echo '<h1>'.$fname.' '.$lname.'</h1>'
+					?>
+					<p class="title"><?php echo $position ?><br><?php echo $degree ?> <br> <?php echo $major ?></p>
+					<p><?php echo $university_domain ?></p>
+					<img src="<?php echo '../university_data/logo/' . $university_domain . '.jpg'?>" alt="University Logo" style="width: 30%"> 
+					<p><button>Connect</button></p>
+					<?php
+					if($resume_path==null) {
+						$resume_path = 'sample.pdf';
+					}
+					echo '<a href="../user_data/' .$resume_path.'" target="_blank"><embed src="../user_data/' .$resume_path.'" width="200px" height="295px" scale="tofit"></embed></a>'
+					?>
+				</div>
+			</span>
 		</div>
-		<div class="col-sm-12 col-md-12 col-lg-3">
-			<h4><select id="select_Audience">
-				<option value="Public" selected="selected">Public</option>
-				<option value="University">University</option>
-				<option value="Private">Private</option>
-			</select></h4>
+		<div class="col-sm-12 col-md-12 col-lg-8" style="text-align: left;">
+			<?php include ('../new_post_card/index.php'); ?>
+			<span class="container-fluid text-center">
+				<div class="card_main">
+					<div class="container">
+						<div class="row" style="text-align: center;">
+							<span class="sconnect-profile-header">Profile - <?php echo " " . $fname . " " . $lname ?> 
+							</span>
+						</div>
+						<div class="row marketing">
+
+							<div class="degree_div col-lg-12 col-lg-2" <?php if($user_degree_view == 2){ echo 'style="display:none;"'; } ?>>
+								<label id="degree">Degree: <?php echo " " . $degree ?></label>
+							</div>
+						</div>
+						<div class="row">
+							<div class="major-div col-lg-12 col-lg-3" <?php if($user_major_view == 2){ echo 'style="display:none;"'; } ?>>
+								<label id="major">Major: <?php echo $major ?> </label>
+							</div>
+						</div>
+						<div class="row">
+							<div class="email-div col-lg-12 col-lg-3"><label>Email: </label><br><label id="email"><?php echo $email; ?></label>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-lg-12 col-lg-10" <?php if($user_courses_view == 2){ echo 'style="display:none;"'; } ?>><label>Courses enrolled: </label>
+								<div>
+									<table id="courses" class="table table-striped table-bordered table-hover table-responsive">
+										<tr class="header">
+											<th class="col-lg-3">Course</th>
+											<th class="col-lg-2">Code</th>
+											<th class="col-lg-3">Session</th>
+										</tr>
+										<tr><td>Advanced Sailing Maneuvers</td><td>AP 7522</td><td>Spring 2018</td></tr>
+										<tr><td>Crew Development Studies</td><td>AP 6344</td><td>Spring 2018</td></tr>
+									</table>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div id="dob-div">
+								<div class="col-lg-12 col-lg-3" <?php if($user_dob_view == 2){ echo 'style="display:none;"'; } ?>>
+									<label>Date of Birth: <?php echo $dob_dd. " " .$dob_mm. " " .$dob_yyyy ?></label>
+								</div>
+							</div>	
+						</div>
+					</div>
+				</div>
+			</span>
 		</div>
-		<div class="col-sm-12 col-md-12 col-lg-3" style="padding-top: 8px; padding-right: 20px;">
-			<button class="btn btn-primary" id="submitPost">POST</button>
-		</div>
-	</div>
+
+		<?php include("../header_footer/footer.php"); ?>
