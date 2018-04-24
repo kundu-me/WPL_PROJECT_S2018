@@ -24,6 +24,7 @@
 
 	//$university_domain = $_SESSION['university_domain'];
 	$userhash = $_SESSION['userhash'];
+	$session_university_domain = $_SESSION['university_domain'];
  
 	//Input Validations
 	// if($university_domain == '') {
@@ -70,22 +71,28 @@
  			  WHERE feed.userhash_from = user_from.userhash
  			  AND 
  			  (
- 			   feed.text_data LIKE '%$searchQuery%' OR 
- 			   feed.university_domain LIKE '%$searchQuery%' OR
- 			   user_from.fname LIKE '%$searchQuery%' OR
- 			   user_from.lname LIKE '%$searchQuery%' OR
- 			   user_from.userhash LIKE '%$searchQuery%' OR
+ 			  feed.text_data LIKE '%$searchQuery%' OR 
+ 			  feed.university_domain LIKE '%$searchQuery%' OR
+ 			  user_from.fname LIKE '%$searchQuery%' OR
+ 			  user_from.lname LIKE '%$searchQuery%' OR
+ 			  user_from.userhash LIKE '%$searchQuery%' OR
 			  user_from.email LIKE '%$searchQuery%' 			   )
- 			   AND
+ 			  AND
  			  (user_from.position LIKE '%$filterPosition%')
  			  AND
  			  (feed.university_domain LIKE '%$filterUniversity%')
  			  AND
  			  (feed.status = '$searchStatus')
  			  AND
- 			  (user_from.status = 'APPROVED')";
+ 			  (user_from.status = 'APPROVED')
+ 			  AND
+ 			  (feed.status = '0')
+ 			  AND
+ 			  (   (feed.privacy = 'Public') 
+ 			       OR (feed.privacy = 'Private' AND userhash_from = '$userhash')
+ 			       OR (feed.privacy = 'University' AND user_from_university_domain = '$session_university_domain'))";
 
- 	if($searchStatus != '0') {
+ 	if($searchStatus == '2') {
  		//$query .= " AND (userhash_to = '$userhash') ";
  	}
 
