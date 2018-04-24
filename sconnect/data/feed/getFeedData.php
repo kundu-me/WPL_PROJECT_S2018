@@ -86,14 +86,18 @@
  			  AND
  			  (user_from.status = 'APPROVED')
  			  AND
- 			  (feed.status = '0')
- 			  AND
- 			  (   (feed.privacy = 'Public') 
- 			       OR (feed.privacy = 'Private' AND userhash_from = '$userhash')
- 			       OR (feed.privacy = 'University' AND user_from_university_domain = '$session_university_domain'))";
+ 			  (       (feed.privacy = 'Public') 
+ 			       OR (feed.privacy = 'Private' AND feed.userhash_from = '$userhash')
+ 			       OR (feed.privacy = 'University' AND user_from.university_domain = '$university_domain')
+ 			  )";
 
  	if($searchStatus == '2') {
- 		//$query .= " AND (userhash_to = '$userhash') ";
+ 		
+ 		$query .= " AND (feed.userhash_to = '$userhash') AND (feed.status = '2') ";
+ 	}
+ 	else {
+
+ 		$query .= " AND (feed.status = '0') ";
  	}
 
  	$query .= "ORDER BY feed.date_time_yyyy_mm_dd_hh_mm DESC";
