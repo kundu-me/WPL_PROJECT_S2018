@@ -13,10 +13,12 @@
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="../static/css/profile/profile_page.css">
+	<link rel="stylesheet" href="../static/css/feed/feed.css">
+	<script src="../static/js/viewProfile/viewProfile.js"></script>
 <!-- 	<script type="text/javascript" src="../static/js/profile/profile.js"></script>
  -->	<title><?php echo "SConnect " .$fname.' '.$lname; ?></title>
 	<div id="page">
-		<input type="hidden" id="viewed_user_hash" <?php echo 'value="' .$_GET['q'].'">' ?>>
+		<input type="hidden" id="viewed_user_hash" <?php echo 'value="' .$_GET['q'].'"' ?>>
 		<div class="col-sm-12 col-md-12 col-lg-3">
 			<span class="left_pane">
 				<div class="card container">
@@ -43,6 +45,7 @@
 			</span>
 		</div>
 		<div class="col-sm-12 col-md-12 col-lg-8" style="text-align: left;">
+			<?php include ('../new_post_card/index.php'); ?>
 			<span class="container-fluid text-center">
 				<div class="card_main">
 					<div class="container">
