@@ -9,7 +9,7 @@
 // //Connect and select the database
 // $sql_connection = new mysqli($dbHost2, $dbUsername2, $dbPassword2, $dbName2);
 
-include('../data/connection_open.php');
+include('../connection_open.php');
 
 if(!empty($_POST["session"])){
 

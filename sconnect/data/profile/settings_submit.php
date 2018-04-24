@@ -1,6 +1,6 @@
 <?php
 
-	include('../data/connection_open.php');
+	include('../connection_open.php');
 	session_start();
 
 	$degree_view = $_POST['degree_view'];

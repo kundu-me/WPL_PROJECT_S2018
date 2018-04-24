@@ -6,7 +6,7 @@
 
 	<?php include('../data/profile/profile.php'); ?>
 
-	<?php include('settings_fetch.php'); ?>
+	<?php include('../data/profile/settings_fetch.php'); ?>
 
 	<link rel="stylesheet" type="text/css" href="../static/css/profile/profile_page.css">
 	
@@ -15,7 +15,7 @@
 
 	<div id="page">
 		<div class="col-sm-12 col-md-12 col-lg-3" id="profile_card">
-			<?php include('profile_card.php');	?>
+			<?php include('../data/profile/profile_card.php');	?>
 		</div>
 		<div class="col-sm-12 col-md-12 col-lg-8" style="text-align: left;" id="profile_main">
 			<span class="container-fluid text-center">
@@ -83,10 +83,10 @@
 										?>>Add new course</button>
 									</div>
 									<div id="lightbox" class="white_content">
-										<?php include('course_box.php'); ?>
+										<?php include('../data/profile/course_box.php'); ?>
 									</div>
 									<div id="settings_lightbox" class="white_content">
-										<?php include('settings_box.php'); ?>
+										<?php include('../data/profile/settings_box.php'); ?>
 									</div>
 									<div class="row"><label for="dob-div">Date of birth: </label>
 										<i class="fa fa-wrench" id="dob_hide"></i>

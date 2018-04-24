@@ -1,9 +1,9 @@
 <?php 
-	include('../data/connection_open.php');
+	include('../connection_open.php');
 	session_start();
 
 	$user_hash = $_SESSION['userhash'];
-	$target_dir = "../user_data/resume/";
+	$target_dir = "../../user_data/resume/";
 	//$target_file = $target_dir . basename($_FILES["resume_upload"]["name"]);
 	$target_file = $target_dir . $user_hash. ".pdf";
 	$uploadOk = 1;

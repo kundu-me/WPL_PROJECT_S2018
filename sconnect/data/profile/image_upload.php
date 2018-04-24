@@ -3,13 +3,14 @@
 
 	// $sql_connection = mysqli_connect('localhost', 'root', '', 'sconnect') or die('Error '.mysql_error($sql_connection));
 
-	include('../data/connection_open.php');
+	include('../connection_open.php');
 
 	$user_hash = $_SESSION['userhash'];
-	$target_dir = "profile_image/";
+	$target_dir = "../../user_data/profile_image/";
 	$target_file = $target_dir . $user_hash. ".jpg";
 	$uploadOk = 1;
 	$fileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+
 
 	// if(file_exists($target_file)) {
 	// 	echo "Sorry, the file already exists.";

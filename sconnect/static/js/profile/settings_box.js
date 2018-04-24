@@ -16,7 +16,7 @@ jQuery(document).ready(function() {
 		ev.preventDefault();
 		$.ajax({
 			type: 'POST',
-			url: 'settings_submit.php',
+			url: '../data/profile/settings_submit.php',
 			data: {degree_view: degree_setting, major_view: major_setting, courses_view: courses_setting
 				, dob_view: dob_setting},
 				success:function(result){

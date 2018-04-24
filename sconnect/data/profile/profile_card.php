@@ -4,7 +4,7 @@
 		if($_SESSION['profile_image_path']==null) {
 			$_SESSION['profile_image_path'] = '../user_data/profile_image/profile.png';
 		}
-		echo '<img src="../user_data/'.$_SESSION['profile_image_path'].'" alt="Display Image" style="width: 100%" id="profile_image">';
+		echo '<img src="sconnect/'.$_SESSION['profile_image_path'].'" alt="Display Image" style="width: 100%" id="profile_image">';
 		?>
 		<div>
 			<input id="my_image" type="file" name="image_upload">
@@ -25,9 +25,9 @@
 		<p><button>Connect</button></p>
 		<?php
 		if($_SESSION['resume_path']==null) {
-			$_SESSION['resume_path'] = '../user_data/resume/sample.pdf';
+			$_SESSION['resume_path'] = '../../user_data/resume/sample.pdf';
 		}
-		echo '<a href="../user_data/' .$_SESSION['resume_path'].'" target="_blank"><embed src="../user_data/' .$_SESSION['resume_path'].'" width="200px" height="295px" scale="tofit"></embed></a>'
+		echo '<a href="sconnect/' .$_SESSION['resume_path'].'" target="_blank"><embed src="sconnect/' .$_SESSION['resume_path'].'" width="200px" height="295px" scale="tofit"></embed></a>'
 		?>
 		<div>
 			<input id="my_resume" type="file" name="resume_upload">

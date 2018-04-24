@@ -8,7 +8,7 @@
 // //Connect and select the database
 // $db = new mysqli($dbHost, $dbUsername, $dbPassword, $dbName);
 
-include('../data/connection_open.php');
+//include('../data/connection_open.php');
 
 if ($sql_connection->connect_error) {
     die("Connection failed: " . $sql_connection->connect_error);

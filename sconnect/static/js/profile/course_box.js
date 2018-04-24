@@ -29,7 +29,7 @@
 				//alert("Session is: " + session);
 				$.ajax({
 					type:'POST',
-					url:'coursefetch.php',
+					url:'../data/profile/coursefetch.php',
 					data:'session='+session,
 					success:function(html){
 						$('#CourseID').html(html);
@@ -91,7 +91,7 @@
 				console.log(otp);
 				$.ajax({
 					type: 'POST',
-					url: "otp_submit.php",
+					url: "../data/profile/otp_submit.php",
 					dataType:'json',
 					data: ({session: session, CourseID: CourseID, otp_received: otp }),
 					success: function(result) {

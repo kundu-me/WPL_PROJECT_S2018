@@ -55,7 +55,7 @@
 			console.log(dob_year_val);
 			$.ajax({
 				type:'POST',
-				url:'edit.php',
+				url:'../data/profile/edit.php',
 				data:{degree: degree_val, major: major_val, dob_month: dob_month_val, 
 					dob_day: dob_day_val, dob_year: dob_year_val},
 					success:function(result){
@@ -101,7 +101,7 @@
 			form_data.append('resume', file_data);
 			//alert(form_data);
 			$.ajax({
-				url: 'resume_upload.php',
+				url: '../data/profile/resume_upload.php',
 				dataType: 'text',
 				cache: false,
 				contentType: false,
@@ -121,7 +121,7 @@
 			form_data.append('dp', file_data);
 			//alert(form_data);
 			$.ajax({
-				url: 'image_upload.php',
+				url: '../data/profile/image_upload.php',
 				dataType: 'text',
 				cache: false,
 				contentType: false,

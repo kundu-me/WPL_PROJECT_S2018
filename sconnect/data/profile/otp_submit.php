@@ -9,7 +9,7 @@
 // // Create connection
 // $sql_connection = mysqli_connect($sql_servername, $sql_username, $sql_password, $sql_database);
 
-include('../data/connection_open.php');
+include('../connection_open.php');
 
 
 $session = $_POST['session'];
