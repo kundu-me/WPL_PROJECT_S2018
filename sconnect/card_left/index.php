@@ -4,7 +4,7 @@
     @page: Account Verification UI
     @description: This page verifies the user with the email and OTP
 -->
-
+<?php include('../data/message/getNewMessageCount.php'); ?>
 <div class="row" style="text-align: center;">
 	<img src="<?php echo "../user_data/" .  $_SESSION['profile_image_path'] ?>"  style="width:100; height: 300px;">
 	<br>
@@ -17,7 +17,7 @@
 	</span>
 
 	<span class="sconnect-profile-header">
-		<h4><a href="../message/"><u>Message</u></a></h4>
+		<h4><a href="../message/"><u>Message <?php echo " (" . $getNewMessageCount . " )" ?></u></a></h4>
 	</span>
 
 	<span class="sconnect-profile-header">
