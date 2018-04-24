@@ -6,12 +6,9 @@
 -->
 <?php include('../data/message/getNewMessageCount.php'); ?>
 <div class="row" style="text-align: center; background: white; height: 800px; width: 350px; position: fixed;">
-	<img src="<?php echo "../user_data/" .  $_SESSION['profile_image_path'] ?>"  style="margin-top: 15px; width:100; height: 300px;">
-	<br>
-	<br>
+	<img src="<?php echo "../user_data/" .  $_SESSION['profile_image_path'] ?>"  style="margin-top: 15px; width:100; height: 250px;">
 	<span class="sconnect-profile-header"><h3><?php echo " " . $_SESSION['fname'] . " " . $_SESSION['lname'] ?> </h3></span>
-	<br>
-	<br>
+	<img src="<?php echo '../university_data/logo/' . $_SESSION['university_domain'] . '.jpg'?>" alt="University Logo" style="width: 30%"> 
 	<span class="sconnect-profile-header">
 		<h4><a href="../profile/"><u>Profile</u></a></h4>
 	</span>
