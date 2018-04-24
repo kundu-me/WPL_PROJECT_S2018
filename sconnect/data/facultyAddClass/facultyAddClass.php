@@ -15,16 +15,16 @@
 	session_start();
 
 	$courseHashCode = uniqid();
-	//$universityDomain = $_SESSION['session_university_domain'];
-	$universityDomain = "UTDallas";
+	$universityDomain = $_SESSION['university_domain'];
+	//$universityDomain = "UTDallas";
 	$courseID = $_POST["CourseID"];
 	$courseName = $_POST["CourseName"];
 	$session = $_POST["Session"];
 	$year = $_POST["Year"];
 	$otpGen = $_POST["OTP"];
 	$studentIdList = $_POST["StudentIdList"];
-	//$userhashCode = $_SESSION['session_user_hash_code'];
-	$userhashCode = uniqid();
+	$userhashCode = $_SESSION['userhash'];
+	//$userhashCode = uniqid();
 	
 	//Query the database to insert into the table named 'sconnect_courses_offered'
 	//INSERT INTO `sconnect_courses_offered`(`coursehash`, `university_domain`, `course_code`, `course_name`, `session`, `year`, `OTP`, `student_id_list`, `status`, `userhash`) VALUES ([value-1],[value-2],[value-3],[value-4],[value-5],[value-6],[value-7],[value-8],[value-9],[value-10])
