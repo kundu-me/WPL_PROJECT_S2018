@@ -1,14 +1,9 @@
+<!-- @author: Gunjan Tomer <gxt160930@utdallas.edu>
+	@page: Display a lightbox to allow user to add new course from currently offered courses
+	Updated on: 04/25/2018 -->
+
+
 <?php
-// //Database credentials
-// $dbHost     = "kundu.me";
-// $dbUsername = "kundujwg_sc";
-// $dbPassword = "Pass@1234";
-// $dbName     = "kundujwg_sconnect_db1";
-
-// //Connect and select the database
-// $db = new mysqli($dbHost, $dbUsername, $dbPassword, $dbName);
-
-//include('../data/connection_open.php');
 
 if ($sql_connection->connect_error) {
     die("Connection failed: " . $sql_connection->connect_error);
@@ -20,13 +15,9 @@ if ($sql_connection->connect_error) {
 <html lang="en">
 <head>
 	<link rel="stylesheet" type="text/css" href="../static/css/profile/course_box.css">
-<!-- 	<meta charset="UTF-8">
- -->	<title>Add New Course Interface</title>
+ 	<title>Add New Course Interface</title>
 	<script type="text/javascript" src="../static/js/profile/course_box.js"></script>
-	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+	
 </head>
 
 <body>

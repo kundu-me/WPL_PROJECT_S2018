@@ -1,3 +1,8 @@
+<!-- @author: Gunjan Tomer <gxt160930@utdallas.edu>
+	@page: Habdle profile image uploads, check validity of file, add path to DB and update user profile
+	Updated on: 04/25/2018 -->
+
+
 <?php 
 	session_start();
 

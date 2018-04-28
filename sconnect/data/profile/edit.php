@@ -1,16 +1,15 @@
+<!-- @author: Gunjan Tomer <gxt160930@utdallas.edu>
+	@page: Save details modified by user on profile page to DB to be fetched later
+	Updated on: 04/25/2018 -->
+
+
 <?php 
 
 session_start();
-// $sql_servername = "kundu.me";
-// $sql_username = "kundujwg_sc";
-// $sql_password = "Pass@1234";
-// $sql_database = "kundujwg_sconnect_db1";
 
 // Create connection
 
 include('../connection_open.php');
-
-// $sql_connection = mysqli_connect($sql_servername, $sql_username, $sql_password, $sql_database);
 
 
 $degree = $_POST['degree'];

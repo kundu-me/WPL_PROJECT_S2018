@@ -1,7 +1,9 @@
+<!-- @author: Gunjan Tomer <gxt160930@utdallas.edu>
+	@page: Fetch privacy settings for currently logged in user
+	Updated on: 04/25/2018 -->
+
 <?php
 	
-	//include('../data/connection_open.php');
-
 	$user_hash = $_SESSION['userhash'];
 
 	$settings_query  = $sql_connection->query("SELECT * FROM sconnect_privacy_settings WHERE userhash = '$user_hash'");

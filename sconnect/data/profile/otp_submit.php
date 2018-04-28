@@ -1,13 +1,8 @@
+<!-- @author: Gunjan Tomer <gxt160930@utdallas.edu>
+	@page: Verify OTP for a course and modify DB and user profile if correct
+	Updated on: 04/25/2018 -->
+
 <?php 
-
-// session_start();
-// $sql_servername = "localhost";
-// $sql_username = "root";
-// $sql_password = "";
-// $sql_database = "sconnect";
-
-// // Create connection
-// $sql_connection = mysqli_connect($sql_servername, $sql_username, $sql_password, $sql_database);
 
 include('../connection_open.php');
 

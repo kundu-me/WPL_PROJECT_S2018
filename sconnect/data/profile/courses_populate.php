@@ -1,3 +1,8 @@
+<!-- @author: Gunjan Tomer <gxt160930@utdallas.edu>
+	@page: Populate courses table after courses fetched from DB
+	Updated on: 04/25/2018 -->
+
+
 <?php
 	
 		$user_hash = $_SESSION['userhash'];

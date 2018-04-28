@@ -1,3 +1,8 @@
+<!-- @author: Gunjan Tomer <gxt160930@utdallas.edu>
+	@page: Fetch previously saved privacy settings for user to display in privacy settings box
+	Updated on: 04/25/2018 -->
+
+
 <?php
 	include('settings_fetch.php');
 ?>

@@ -1,3 +1,8 @@
+<!-- @author: Gunjan Tomer <gxt160930@utdallas.edu>
+	@page: Fetch user details from DB based on userhash provided in GET
+	Updated on: 04/25/2018 -->
+
+
 <?php
 
 	$user_hash = $_GET['q'];

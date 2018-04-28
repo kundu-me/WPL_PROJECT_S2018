@@ -1,3 +1,7 @@
+<!-- @author: Gunjan Tomer <gxt160930@utdallas.edu>
+	@page: Profile Card for displaying user image, resume and position in the university
+	Updated on: 04/25/2018 -->
+
 <span class="left_pane">
 	<div class="card container">
 		<?php

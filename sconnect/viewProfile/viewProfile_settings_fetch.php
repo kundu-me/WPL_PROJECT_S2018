@@ -1,3 +1,7 @@
+<!-- @author: Gunjan Tomer <gxt160930@utdallas.edu>
+	@page: Fetch privacy settings for user whose profile is being viewed and display information accordingly
+	Updated on: 04/25/2018 -->
+
 <?php
 	
 	//include('../data/connection_open.php');

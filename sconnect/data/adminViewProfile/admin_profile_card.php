@@ -1,3 +1,7 @@
+<!-- @author: Gunjan Tomer <gxt160930@utdallas.edu>
+	 @page: A different profile card for admin view profile
+	 Updated on: 04/25/2018 -->
+
 <span class="left_pane">
 	<div class="card container">
 		<?php

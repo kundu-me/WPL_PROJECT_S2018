@@ -1,3 +1,7 @@
+<!-- @author: Gunjan Tomer <gxt160930@utdallas.edu>
+	@page: Handle resume uploads and verify validity of file, update user profile if successful
+	Updated on: 04/25/2018 -->
+
 <?php 
 	include('../connection_open.php');
 	session_start();

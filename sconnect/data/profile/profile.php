@@ -1,3 +1,7 @@
+<!-- @author: Gunjan Tomer <gxt160930@utdallas.edu>
+	@page: Populate the dropdown boxes in user profile for degree and major from DB
+	Updated on: 04/25/2018 -->
+
 <?php 
 
 	$deg_stmt = $sql_connection->prepare("SELECT degree from sconnect_lookup_degree");

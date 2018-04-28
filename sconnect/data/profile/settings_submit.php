@@ -1,3 +1,7 @@
+<!-- @author: Gunjan Tomer <gxt160930@utdallas.edu>
+	@page: Save privacy options selected by user to DB
+	Updated on: 04/25/2018 -->
+
 <?php
 
 	include('../connection_open.php');

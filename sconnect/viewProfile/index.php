@@ -1,5 +1,5 @@
 `<!-- @author: Gunjan Tomer
-	Profile Page for SConnect
+	  @page: View Profile Page for SConnect
 	Updated on: 03/28/2018 -->
 
 	<?php include('../header_footer/header.php'); ?>

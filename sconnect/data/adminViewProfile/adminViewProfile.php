@@ -1,3 +1,8 @@
+<!-- @author: Gunjan Tomer <gxt160930@utdallas.edu>
+	@page: Populate courses from DB after querying using userhash
+	Updated on: 04/25/2018 -->
+
+
 <?php
 
 	$user_hash = $_GET['q'];

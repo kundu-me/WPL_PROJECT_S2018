@@ -1,6 +1,6 @@
-<!-- @author: Gunjan Tomer
-	Profile Page for SConnect
-	Updated on: 03/28/2018 -->
+<!-- @author: Gunjan Tomer <gxt160930@utdallas.edu>
+	@page: Profile Page for SConnect
+	Updated on: 04/28/2018 -->
 
 	<?php include('../header_footer/header.php'); ?>
 

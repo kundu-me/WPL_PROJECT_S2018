@@ -1,3 +1,7 @@
+<!-- @author: Gunjan Tomer <gxt160930@utdallas.edu>
+	@page: Soft delete user after admin toggle on user profile
+	Updated on: 04/25/2018 -->
+
 <?php
 
 	include('../connection_open.php');

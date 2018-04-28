@@ -1,13 +1,10 @@
+<!-- @author: Gunjan Tomer <gxt160930@utdallas.edu>
+    @page: Fetch courses currently being offered using a series of dependent dropdowns
+    Updated on: 04/25/2018 -->
+
+
 <?php
 //Include the database configuration file
-// include 'dbConfig.php';
-// $dbHost2     = 'localhost';
-// $dbUsername2 = 'root';
-// $dbPassword2 = '';
-// $dbName2     = 'sconnect';
-
-// //Connect and select the database
-// $sql_connection = new mysqli($dbHost2, $dbUsername2, $dbPassword2, $dbName2);
 
 include('../connection_open.php');
 
