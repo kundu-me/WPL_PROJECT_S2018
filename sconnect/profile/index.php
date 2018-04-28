@@ -8,10 +8,10 @@
 
 	<?php include('../data/profile/settings_fetch.php'); ?>
 
-	<link rel="stylesheet" type="text/css" href="../static/css/profile/profile_page.css">
-	
 	<script type="text/javascript" src="../static/js/profile/profile.js"></script>
 	<script type="text/javascript" src="../static/js/profile/settings_box.js"></script>
+	<link rel="stylesheet" type="text/css" href="../static/css/profile/profile_page.css">
+
 
 	<div id="page">
 		<div class="col-sm-12 col-md-12 col-lg-3" id="profile_card">
