@@ -52,8 +52,8 @@
 	if($result->num_rows == 0) {
 
 		$returnObject = new stdClass();
-		$returnObject->success = "false";
-		$returnObject->message = "Email does not exists!";
+		$returnObject->success = "true";
+		$returnObject->message = "Use the OTP Sent in Email to Reset Password!";
 		$returnObject->redirect = "false";
 		$returnObject->redirectURL = "";
 		echo json_encode($returnObject);
