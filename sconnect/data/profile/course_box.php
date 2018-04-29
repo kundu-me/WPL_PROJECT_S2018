@@ -1,4 +1,5 @@
-<!-- @author: Gunjan Tomer <gxt160930@utdallas.edu>
+<!--@author: Abhishek Datta <abhi06548@yahoo.com>
+	@author: Gunjan Tomer <gxt160930@utdallas.edu>
 	@page: Display a lightbox to allow user to add new course from currently offered courses
 	Updated on: 04/25/2018 -->
 
